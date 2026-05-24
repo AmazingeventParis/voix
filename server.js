@@ -7,18 +7,76 @@ import * as faq from './faq.js';
 import * as logger from './logger.js';
 import { promises as fsp } from 'fs';
 
-let CATALOGUE_JSON = '';
+let CATALOGUE = null;
 async function loadCatalogue() {
   try {
     const raw = await fsp.readFile('data/catalogue.json', 'utf8');
     const parsed = JSON.parse(raw);
     delete parsed._note;
-    CATALOGUE_JSON = JSON.stringify(parsed, null, 2);
+    CATALOGUE = parsed;
     return parsed;
   } catch (err) {
-    CATALOGUE_JSON = '';
+    CATALOGUE = null;
     return null;
   }
+}
+
+// Map URL slug → borne key (pour détecter quelles bornes sont concernées par les chunks RAG)
+const URL_SLUG_TO_BORNE = {
+  'vegas': 'vegas',
+  'aircam-360': 'aircam_360',
+  'aircam': 'aircam_360',
+  'le-ring': 'ring',
+  'le-spinner': 'spinner',
+  'spinner': 'spinner',
+  'fashion-box': 'fashion_box',
+  'location-photobooth': 'photobooth_classique',
+  'photobooth-anniversaire': 'photobooth_classique',
+  'photobooth-soiree-entreprise': 'photobooth_classique',
+  'karaoke': 'karaoke',
+  'photocall': 'photocall'
+};
+
+// Retourne UN résumé textuel court des bornes mentionnées (économie ~2k tokens/req)
+function buildCatalogueSnippet(message, chunks) {
+  if (!CATALOGUE) return '';
+  const msgLower = message.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const mentioned = new Set();
+
+  // Détection par nom dans la question
+  for (const [key, borne] of Object.entries(CATALOGUE.bornes)) {
+    const nomLower = (borne.nom || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    if (nomLower && msgLower.includes(nomLower)) mentioned.add(key);
+  }
+  // Détection par URL des chunks RAG
+  for (const chunk of chunks || []) {
+    const url = (chunk.url || '').toLowerCase();
+    for (const [slug, borneKey] of Object.entries(URL_SLUG_TO_BORNE)) {
+      if (url.includes(slug)) { mentioned.add(borneKey); break; }
+    }
+  }
+
+  // Si rien détecté → liste des noms seulement (pas la fiche complète)
+  if (!mentioned.size) {
+    const noms = Object.values(CATALOGUE.bornes).map(b => b.nom).join(', ');
+    return `Bornes Shootnbox disponibles : ${noms}.\nTarifs : ${CATALOGUE.tarifs?.from || 'sur devis'}. Devis : ${CATALOGUE.contact?.site_devis}.`;
+  }
+
+  // Sinon, fiche compacte de chaque borne mentionnée
+  const lines = [];
+  for (const key of mentioned) {
+    const b = CATALOGUE.bornes[key];
+    if (!b) continue;
+    const props = [];
+    if (b.capacite_max) props.push(`${b.capacite_max} personnes max`);
+    if (b.tirages_inclus) props.push(`${b.tirages_inclus} tirages inclus`);
+    if (b.format) props.push(b.format);
+    if (b.duree_attente) props.push(b.duree_attente);
+    if (b.operateur_inclus) props.push('opérateur inclus');
+    lines.push(`• ${b.nom} : ${b.description}${props.length ? ' (' + props.join(', ') + ')' : ''}`);
+  }
+  lines.push(`Tarifs : ${CATALOGUE.tarifs?.from || 'sur devis'}. Devis : ${CATALOGUE.contact?.site_devis}.`);
+  return lines.join('\n');
 }
 
 const app = express();
@@ -28,69 +86,44 @@ app.use(cors());
 app.use(express.json({ limit: '1mb' }));
 app.use(express.static('public'));
 
-const SYSTEM_PROMPT_BASE = `Tu es l'assistant vocal officiel de Shootnbox et Smakk. Tu joues le rôle d'un commercial expert au téléphone : à la fois chaleureux ET qualifiant.
+const SYSTEM_PROMPT_BASE = `Tu es l'assistant vocal Shootnbox/Smakk. Rôle : commercial expert au téléphone, chaleureux + qualifiant.
 
-Shootnbox loue des photobooths haut de gamme (bornes Aircam 360, Photobooth, Ring, Spinner, Vegas, Fashion Box, Karaoké, Photocall) partout en France pour tout type d'évènement.
-Smakk (smakk.fr) est la marque dédiée aux mariages.
-L'application MyShootnbox permet aux invités d'un évènement de récupérer leurs photos, participer à des défis photo et accéder à la galerie partagée.
+Shootnbox loue des photobooths partout en France (mariages, soirées entreprise, anniversaires). Smakk = marque mariage. MyShootnbox = app invités (photos, défis).
 
-═══ RÈGLES DE STYLE ═══
-- Réponses COURTES et orales : 1 à 3 phrases par tour, comme à l'oral. Pas de listes à puces, pas de markdown.
-- Toujours en français, ton chaleureux et professionnel, tutoiement OK si le client tutoie.
-- Base-toi UNIQUEMENT sur les FAQ, le catalogue et les extraits du site ci-dessous. JAMAIS d'invention de prix ou specs.
+RÈGLES :
+- Réponses orales courtes (1-3 phrases). Pas de markdown.
+- Français, chaleureux. Tutoiement si client tutoie.
+- Base-toi UNIQUEMENT sur les FAQ/catalogue/extraits fournis. Jamais d'invention de prix.
 
-═══ MODE COMMERCIAL ACTIF — POSE DES QUESTIONS ═══
-Tu n'es pas qu'un répondeur — tu qualifies la demande comme un vrai commercial.
+MODE COMMERCIAL — POSE DES QUESTIONS :
+Avant de donner un tarif, vérifie que tu connais : LIEU, DATE, TYPE événement, NB invités, DURÉE.
+Si une info manque → pose UNE seule question. Si déjà donnée dans l'historique, ne re-demande pas.
 
-Avant de donner un tarif ou une recommandation précise, tu as besoin de connaître :
-  1. Le LIEU de l'évènement (Paris/IDF, province, ville)
-  2. La DATE ou période
-  3. Le TYPE d'évènement (mariage, soirée entreprise, anniversaire, lancement…)
-  4. Le NOMBRE d'invités estimé
-  5. La DURÉE souhaitée
+Multi-questions : réponds à chacune (1-2 phrases) en enchaînant "Alors, pour… Et concernant…".
+Hors-sujet : ramène poliment vers Shootnbox/Smakk.`;
 
-Si une question concerne un tarif/recommandation et que ces infos te manquent, POSE UNE QUESTION (UNE SEULE à la fois) pour les récupérer avant de répondre.
-
-Exemples de bons enchaînements :
-  Client : "Combien coûte le Ring ?"
-  Toi : "Pour vous donner le bon tarif, où se passe votre événement et c'est pour quand ?"
-
-  Client : "À Lyon le 15 juin pour un mariage"
-  Toi : "Super, pour un mariage à Lyon en juin, le Ring est parfait. Combien d'invités prévus ?"
-
-  Client : "120 personnes"
-  Toi : "Top, pour 120 invités le Ring tient largement. Le tarif de base est à partir de X€, avec déplacement Lyon environ Y€. Je vous fais un devis précis sur shootnbox.fr ?"
-
-Si le client a déjà donné une info dans la conversation précédente (vérifie l'historique), NE LA REDEMANDE PAS.
-
-═══ MULTI-QUESTIONS ═══
-Si le message contient PLUSIEURS questions, réponds à CHACUNE en 1-2 phrases dans l'ordre. Commence par "Alors, pour…" et enchaîne "Et concernant…".
-
-═══ HORS-SUJET ═══
-Si la question sort du domaine Shootnbox/Smakk/MyShootnbox, ramène poliment vers ces sujets.`;
-
-function buildSystemPrompt(contextChunks, faqMatches = []) {
+function buildSystemPrompt(contextChunks, faqMatches = [], message = '') {
   let prompt = SYSTEM_PROMPT_BASE;
 
-  // 1. Catalogue produits (source de vérité officielle)
-  if (CATALOGUE_JSON) {
-    prompt += `\n\n=== CATALOGUE OFFICIEL SHOOTNBOX (source de vérité — utilise EXACTEMENT ces infos) ===\n\n${CATALOGUE_JSON}\n\n=== FIN CATALOGUE ===`;
+  // 1. Catalogue contextualisé (seulement les bornes pertinentes)
+  const snippet = buildCatalogueSnippet(message, contextChunks);
+  if (snippet) {
+    prompt += `\n\n--- CATALOGUE (source de vérité, à utiliser EXACTEMENT) ---\n${snippet}`;
   }
 
-  // 2. FAQ pertinentes
+  // 2. FAQ pertinentes (max 2)
   if (faqMatches.length) {
-    const faqBlock = faqMatches.map((f) =>
-      `Q: ${f.questions[0]}\nR: ${f.answer}`
-    ).join('\n\n');
-    prompt += `\n\n=== RÉPONSES OFFICIELLES (FAQ) — utilise-les EN PRIORITÉ si la question correspond ===\n\n${faqBlock}\n\n=== FIN FAQ ===`;
+    const faqBlock = faqMatches.slice(0, 2).map(f => `Q: ${f.questions[0]}\nR: ${f.answer}`).join('\n\n');
+    prompt += `\n\n--- FAQ officielles (à utiliser en priorité) ---\n${faqBlock}`;
   }
 
-  // 3. Extraits du site (RAG)
+  // 3. Extraits du site (RAG) — version courte
   if (contextChunks.length) {
-    const ctx = contextChunks.map((c, i) =>
-      `[Extrait ${i+1} — ${c.title} (${c.url})]\n${c.text}`
-    ).join('\n\n---\n\n');
-    prompt += `\n\n=== EXTRAITS DU SITE PERTINENTS POUR LA QUESTION ===\n\n${ctx}\n\n=== FIN DES EXTRAITS ===`;
+    const ctx = contextChunks.slice(0, 3).map(c => {
+      const txt = c.text.length > 350 ? c.text.slice(0, 350) + '…' : c.text;
+      return `[${c.title}]\n${txt}`;
+    }).join('\n\n');
+    prompt += `\n\n--- Extraits site ---\n${ctx}`;
   }
 
   return prompt;
@@ -98,9 +131,11 @@ function buildSystemPrompt(contextChunks, faqMatches = []) {
 
 // --- LLM (Groq prioritaire, Gemini fallback) ---
 async function askLLM(userMessage, history = [], systemPrompt = SYSTEM_PROMPT_BASE) {
+  // Limite l'historique aux 6 derniers messages (3 tours) pour économiser des tokens
+  const trimmedHistory = history.slice(-6);
   const messages = [
     { role: 'system', content: systemPrompt },
-    ...history,
+    ...trimmedHistory,
     { role: 'user', content: userMessage }
   ];
 
