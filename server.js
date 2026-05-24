@@ -156,13 +156,21 @@ async function askGroq(messages) {
 }
 
 async function askGemini(systemPrompt, history, userMessage) {
+  // Renforce le prompt pour que Gemini suive bien le mode commercial (il est plus litteral que Groq)
+  const enforcedPrompt = systemPrompt + `
+
+==== INSTRUCTIONS CRITIQUES (à respecter ABSOLUMENT) ====
+TU DOIS poser des questions de qualification quand un client demande un tarif sans donner : lieu, date, type d'event, invités, durée.
+Exemple OBLIGATOIRE : Client="Combien coûte le Ring ?" → Toi="Pour vous donner le bon tarif, où se passe votre événement et c'est pour quand ?"
+NE JAMAIS dire "je ne trouve pas d'info" — toujours rebondir avec une question commerciale.`;
+
   const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
     {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        system_instruction: { parts: [{ text: systemPrompt }] },
+        system_instruction: { parts: [{ text: enforcedPrompt }] },
         contents: [
           ...history.map(m => ({
             role: m.role === 'assistant' ? 'model' : 'user',
@@ -179,6 +187,30 @@ async function askGemini(systemPrompt, history, userMessage) {
   return data.candidates[0].content.parts[0].text.trim();
 }
 
+async function askOpenAI(messages) {
+  const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'gpt-4o-mini',
+      messages,
+      temperature: 0.6,
+      max_tokens: 250
+    })
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    const err = new Error(`OpenAI HTTP ${res.status}: ${body}`);
+    err.status = res.status;
+    throw err;
+  }
+  const data = await res.json();
+  return data.choices[0].message.content.trim();
+}
+
 async function askLLM(userMessage, history = [], systemPrompt = SYSTEM_PROMPT_BASE) {
   // Limite l'historique aux 6 derniers messages (3 tours) pour économiser des tokens
   const trimmedHistory = history.slice(-6);
@@ -190,27 +222,45 @@ async function askLLM(userMessage, history = [], systemPrompt = SYSTEM_PROMPT_BA
 
   const hasGroq = !!process.env.GROQ_API_KEY;
   const hasGemini = !!process.env.GEMINI_API_KEY;
+  const hasOpenAI = !!process.env.OPENAI_API_KEY;
 
-  if (!hasGroq && !hasGemini) {
-    throw new Error('Aucune clé LLM configurée. Mets GROQ_API_KEY ou GEMINI_API_KEY dans .env');
+  if (!hasGroq && !hasGemini && !hasOpenAI) {
+    throw new Error('Aucune clé LLM configurée. Mets GROQ_API_KEY, GEMINI_API_KEY ou OPENAI_API_KEY dans .env');
   }
 
-  // Essaye Groq en premier (plus rapide)
+  const isRecoverable = (status) => status === 429 || status === 503 || status === 502 || status === 500;
+
+  // Chain : Groq → Gemini → OpenAI
+  // À chaque étape, si erreur récupérable et qu'on a un fallback, on essaye le suivant
+  const errors = [];
+
   if (hasGroq) {
-    try {
-      return await askGroq(messages);
-    } catch (err) {
-      // Si rate limit / quota / 5xx ET on a Gemini → fallback automatique
-      if (hasGemini && (err.status === 429 || err.status === 503 || err.status === 502 || err.status >= 500)) {
-        console.warn(`[LLM] Groq ${err.status}, fallback Gemini`);
-        return await askGemini(systemPrompt, trimmedHistory, userMessage);
-      }
-      throw err;
+    try { return await askGroq(messages); }
+    catch (err) {
+      errors.push(`Groq: ${err.message}`);
+      if (!isRecoverable(err.status) || (!hasGemini && !hasOpenAI)) throw err;
+      console.warn(`[LLM] Groq ${err.status} → fallback`);
     }
   }
 
-  // Pas de Groq → Gemini direct
-  return askGemini(systemPrompt, trimmedHistory, userMessage);
+  if (hasGemini) {
+    try { return await askGemini(systemPrompt, trimmedHistory, userMessage); }
+    catch (err) {
+      errors.push(`Gemini: ${err.message}`);
+      if (!hasOpenAI) throw err;
+      console.warn(`[LLM] Gemini KO → fallback OpenAI`);
+    }
+  }
+
+  if (hasOpenAI) {
+    try { return await askOpenAI(messages); }
+    catch (err) {
+      errors.push(`OpenAI: ${err.message}`);
+      throw new Error(`Tous les LLM ont échoué: ${errors.join(' | ')}`);
+    }
+  }
+
+  throw new Error(`Tous les LLM ont échoué: ${errors.join(' | ')}`);
 }
 
 // --- TTS Edge (gratuit, voix Microsoft neurales) ---
