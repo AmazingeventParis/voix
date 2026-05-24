@@ -129,7 +129,56 @@ function buildSystemPrompt(contextChunks, faqMatches = [], message = '') {
   return prompt;
 }
 
-// --- LLM (Groq prioritaire, Gemini fallback) ---
+// --- LLM (Groq prioritaire, Gemini fallback auto si Groq plante) ---
+async function askGroq(messages) {
+  const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      model: 'llama-3.3-70b-versatile',
+      messages,
+      temperature: 0.6,
+      max_tokens: 250
+    })
+  });
+  if (!res.ok) {
+    const body = await res.text();
+    const err = new Error(`Groq HTTP ${res.status}`);
+    err.status = res.status;
+    err.body = body;
+    throw err;
+  }
+  const data = await res.json();
+  return data.choices[0].message.content.trim();
+}
+
+async function askGemini(systemPrompt, history, userMessage) {
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: systemPrompt }] },
+        contents: [
+          ...history.map(m => ({
+            role: m.role === 'assistant' ? 'model' : 'user',
+            parts: [{ text: m.content }]
+          })),
+          { role: 'user', parts: [{ text: userMessage }] }
+        ],
+        generationConfig: { temperature: 0.6, maxOutputTokens: 250 }
+      })
+    }
+  );
+  if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${await res.text()}`);
+  const data = await res.json();
+  return data.candidates[0].content.parts[0].text.trim();
+}
+
 async function askLLM(userMessage, history = [], systemPrompt = SYSTEM_PROMPT_BASE) {
   // Limite l'historique aux 6 derniers messages (3 tours) pour économiser des tokens
   const trimmedHistory = history.slice(-6);
@@ -139,50 +188,29 @@ async function askLLM(userMessage, history = [], systemPrompt = SYSTEM_PROMPT_BA
     { role: 'user', content: userMessage }
   ];
 
-  if (process.env.GROQ_API_KEY) {
-    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        messages,
-        temperature: 0.6,
-        max_tokens: 250
-      })
-    });
-    if (!res.ok) throw new Error(`Groq HTTP ${res.status}: ${await res.text()}`);
-    const data = await res.json();
-    return data.choices[0].message.content.trim();
+  const hasGroq = !!process.env.GROQ_API_KEY;
+  const hasGemini = !!process.env.GEMINI_API_KEY;
+
+  if (!hasGroq && !hasGemini) {
+    throw new Error('Aucune clé LLM configurée. Mets GROQ_API_KEY ou GEMINI_API_KEY dans .env');
   }
 
-  if (process.env.GEMINI_API_KEY) {
-    const res = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: systemPrompt }] },
-          contents: [
-            ...history.map(m => ({
-              role: m.role === 'assistant' ? 'model' : 'user',
-              parts: [{ text: m.content }]
-            })),
-            { role: 'user', parts: [{ text: userMessage }] }
-          ],
-          generationConfig: { temperature: 0.6, maxOutputTokens: 250 }
-        })
+  // Essaye Groq en premier (plus rapide)
+  if (hasGroq) {
+    try {
+      return await askGroq(messages);
+    } catch (err) {
+      // Si rate limit / quota / 5xx ET on a Gemini → fallback automatique
+      if (hasGemini && (err.status === 429 || err.status === 503 || err.status === 502 || err.status >= 500)) {
+        console.warn(`[LLM] Groq ${err.status}, fallback Gemini`);
+        return await askGemini(systemPrompt, trimmedHistory, userMessage);
       }
-    );
-    if (!res.ok) throw new Error(`Gemini HTTP ${res.status}: ${await res.text()}`);
-    const data = await res.json();
-    return data.candidates[0].content.parts[0].text.trim();
+      throw err;
+    }
   }
 
-  throw new Error('Aucune clé LLM configurée. Mets GROQ_API_KEY ou GEMINI_API_KEY dans .env');
+  // Pas de Groq → Gemini direct
+  return askGemini(systemPrompt, trimmedHistory, userMessage);
 }
 
 // --- TTS Edge (gratuit, voix Microsoft neurales) ---
