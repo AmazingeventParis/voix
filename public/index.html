@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voix Shootnbox — Test</title>
+  <style>
+    :root {
+      --rose: #ff3d8b;
+      --rose-dark: #d62a73;
+      --bg: #fef7fa;
+      --ink: #1a1a2e;
+      --muted: #6b6b80;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fef7fa 0%, #fff0f5 100%);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      margin: 20px 0 8px;
+      font-size: 28px;
+      background: linear-gradient(90deg, var(--rose), #ff6b9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: var(--muted); margin-bottom: 24px; font-size: 14px; }
+
+    .voice-select {
+      margin-bottom: 16px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #e0d0d8;
+      background: white;
+      font-size: 14px;
+    }
+
+    #chat {
+      width: 100%;
+      max-width: 600px;
+      flex: 1;
+      background: white;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 8px 32px rgba(255, 61, 139, 0.12);
+      overflow-y: auto;
+      max-height: 50vh;
+      margin-bottom: 16px;
+    }
+    .msg {
+      margin: 8px 0;
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 85%;
+      font-size: 15px;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+    .msg.user {
+      background: var(--rose);
+      color: white;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+    .msg.bot {
+      background: #f3f0f5;
+      color: var(--ink);
+      border-bottom-left-radius: 4px;
+    }
+    .msg.system {
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .controls {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      gap: 8px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1px solid #e0d0d8;
+      font-size: 15px;
+      outline: none;
+    }
+    input[type="text"]:focus { border-color: var(--rose); }
+
+    button {
+      padding: 14px 20px;
+      border-radius: 28px;
+      border: none;
+      background: var(--rose);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px;
+    }
+    button:hover { background: var(--rose-dark); }
+    button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    #mic-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      padding: 0;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #mic-btn.listening {
+      background: #ff1744;
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 23, 68, 0.4); }
+      50%      { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(255, 23, 68, 0); }
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+      text-align: center;
+      min-height: 18px;
+    }
+  </style>
+    /* LOGIN OVERLAY */
+    #login-overlay {
+      position: fixed; inset: 0;
+      background: linear-gradient(135deg, #fef7fa 0%, #fff0f5 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 999; padding: 20px;
+    }
+    #login-overlay .box {
+      background: white; padding: 24px;
+      border-radius: 20px; max-width: 360px; width: 100%;
+      box-shadow: 0 8px 32px rgba(255, 61, 139, 0.15);
+    }
+    #login-overlay h2 {
+      font-size: 22px; margin-bottom: 6px;
+      background: linear-gradient(90deg, var(--rose), #ff6b9d);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    #login-overlay p { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+    #login-overlay input {
+      width: 100%; padding: 12px 16px; font-size: 15px;
+      border: 1px solid #e0d0d8; border-radius: 12px; outline: none;
+    }
+    #login-overlay input:focus { border-color: var(--rose); }
+    #login-overlay button {
+      width: 100%; margin-top: 12px; padding: 12px;
+      background: var(--rose); color: white; border: none;
+      border-radius: 12px; font-weight: 600; font-size: 15px; cursor: pointer;
+    }
+    #login-overlay .err { color: var(--rose); font-size: 13px; margin-top: 8px; min-height: 18px; }
+  </style>
+</head>
+<body>
+  <div id="login-overlay">
+    <div class="box">
+      <h2>🔐 Accès Voix Shootnbox</h2>
+      <p>Espace privé — entre le mot de passe pour continuer.</p>
+      <input type="password" id="login-pwd" placeholder="Mot de passe" autofocus>
+      <button id="login-btn">Se connecter</button>
+      <div class="err" id="login-err"></div>
+    </div>
+  </div>
+
+  <h1>🎙️ Voix Shootnbox</h1>
+  <p class="subtitle">Parle ou tape — l'assistant répond en voix</p>
+
+  <select id="voice" class="voice-select">
+    <optgroup label="OpenAI — voix ultra-naturelles (~2€/mois)">
+      <option value="coral" selected>Coral (femme chaleureuse)</option>
+      <option value="nova">Nova (femme jeune, dynamique)</option>
+      <option value="shimmer">Shimmer (femme calme, douce)</option>
+      <option value="sage">Sage (femme posée, mûre)</option>
+      <option value="alloy">Alloy (neutre, professionnel)</option>
+      <option value="ash">Ash (homme grave)</option>
+      <option value="echo">Echo (homme jeune)</option>
+      <option value="ballad">Ballad (homme expressif)</option>
+      <option value="onyx">Onyx (homme profond)</option>
+      <option value="fable">Fable (homme britannique)</option>
+      <option value="verse">Verse (homme conteur)</option>
+    </optgroup>
+    <optgroup label="Microsoft Edge — gratuit (peut échouer en sandbox)">
+      <option value="fr-FR-DeniseNeural">Denise (femme chaleureuse)</option>
+      <option value="fr-FR-EloiseNeural">Eloise (femme jeune)</option>
+      <option value="fr-FR-VivienneMultilingualNeural">Vivienne (femme multilingue)</option>
+      <option value="fr-FR-HenriNeural">Henri (homme posé)</option>
+      <option value="fr-FR-RemyMultilingualNeural">Rémy (homme multilingue)</option>
+    </optgroup>
+  </select>
+  <button id="preview-btn" style="margin-bottom:16px;padding:6px 14px;border-radius:20px;background:white;color:var(--rose);border:1px solid var(--rose);font-size:13px;cursor:pointer;">🔊 Preview cette voix</button>
+
+  <div id="chat">
+    <div class="msg system">Clique le micro 🎤 et pose ta question (ex : "Combien coûte la location d'une borne Aircam ?")</div>
+  </div>
+
+  <div class="controls">
+    <button id="mic-btn" title="Parler">🎤</button>
+    <input type="text" id="text-input" placeholder="ou tape ta question...">
+    <button id="send-btn">Envoyer</button>
+  </div>
+  <div class="status" id="status"></div>
+
+  <audio id="audio" style="display:none"></audio>
+
+  <script>
+    let TOKEN = localStorage.getItem('voix-admin-token') || '';
+
+    async function tryLogin(pwd) {
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pwd })
+      });
+      return res.ok;
+    }
+    async function showOrHideLogin() {
+      const overlay = document.getElementById('login-overlay');
+      if (TOKEN && await tryLogin(TOKEN)) {
+        overlay.style.display = 'none';
+      } else {
+        TOKEN = '';
+        localStorage.removeItem('voix-admin-token');
+        overlay.style.display = 'flex';
+        document.getElementById('login-pwd').focus();
+      }
+    }
+    document.getElementById('login-btn').addEventListener('click', async () => {
+      const pwd = document.getElementById('login-pwd').value.trim();
+      const err = document.getElementById('login-err');
+      err.textContent = '';
+      if (await tryLogin(pwd)) {
+        TOKEN = pwd;
+        localStorage.setItem('voix-admin-token', TOKEN);
+        document.getElementById('login-overlay').style.display = 'none';
+      } else {
+        err.textContent = 'Mot de passe incorrect';
+      }
+    });
+    document.getElementById('login-pwd').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') document.getElementById('login-btn').click();
+    });
+    showOrHideLogin();
+
+    const chat = document.getElementById('chat');
+    const micBtn = document.getElementById('mic-btn');
+    const sendBtn = document.getElementById('send-btn');
+    const textInput = document.getElementById('text-input');
+    const status = document.getElementById('status');
+    const voiceSelect = document.getElementById('voice');
+    const audio = document.getElementById('audio');
+
+    const history = [];
+
+    function addMessage(text, who) {
+      const div = document.createElement('div');
+      div.className = 'msg ' + who;
+      div.textContent = text;
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function send(message) {
+      if (!message.trim()) return;
+      addMessage(message, 'user');
+      textInput.value = '';
+      status.textContent = '💭 L\'assistant réfléchit...';
+      sendBtn.disabled = true;
+      micBtn.disabled = true;
+
+      try {
+        const res = await fetch('/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
+          body: JSON.stringify({
+            message,
+            history,
+            voice: voiceSelect.value
+          })
+        });
+        if (res.status === 401) {
+          showOrHideLogin();
+          throw new Error('Session expirée — reconnecte-toi');
+        }
+        if (!res.ok) throw new Error('Erreur serveur ' + res.status);
+        const data = await res.json();
+
+        addMessage(data.text, 'bot');
+        history.push({ role: 'user', content: message });
+        history.push({ role: 'assistant', content: data.text });
+
+        const blob = new Blob(
+          [Uint8Array.from(atob(data.audio_base64), c => c.charCodeAt(0))],
+          { type: data.audio_mime }
+        );
+        audio.src = URL.createObjectURL(blob);
+        audio.play();
+        status.textContent = '🔊 Lecture...';
+        audio.onended = () => { status.textContent = ''; };
+      } catch (err) {
+        status.textContent = '❌ ' + err.message;
+        addMessage('Désolé, erreur : ' + err.message, 'system');
+      } finally {
+        sendBtn.disabled = false;
+        micBtn.disabled = false;
+      }
+    }
+
+    sendBtn.addEventListener('click', () => send(textInput.value));
+    textInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') send(textInput.value);
+    });
+
+    // Preview voix
+    document.getElementById('preview-btn').addEventListener('click', async () => {
+      const btn = document.getElementById('preview-btn');
+      const oldText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = '⏳ Génération...';
+      try {
+        const res = await fetch('/tts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-admin-token': TOKEN },
+          body: JSON.stringify({
+            text: 'Bonjour, bienvenue chez Shootnbox. Je suis votre assistante vocale. Comment puis-je vous aider à organiser votre événement ?',
+            voice: voiceSelect.value
+          })
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const blob = await res.blob();
+        audio.src = URL.createObjectURL(blob);
+        audio.play();
+      } catch (err) {
+        alert('Erreur : ' + err.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = oldText;
+      }
+    });
+
+    // --- Reconnaissance vocale (Web Speech API) ---
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      micBtn.disabled = true;
+      micBtn.title = 'Reconnaissance vocale non supportée (utilise Chrome ou Edge)';
+      status.textContent = '⚠️ Reconnaissance vocale non dispo dans ce navigateur';
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'fr-FR';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      micBtn.addEventListener('click', () => {
+        if (micBtn.classList.contains('listening')) {
+          recognition.stop();
+        } else {
+          recognition.start();
+          micBtn.classList.add('listening');
+          status.textContent = '🎤 Je t\'écoute...';
+        }
+      });
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        send(transcript);
+      };
+      recognition.onerror = (event) => {
+        status.textContent = '❌ Micro : ' + event.error;
+      };
+      recognition.onend = () => {
+        micBtn.classList.remove('listening');
+      };
+    }
+  </script>
+</body>
+</html>

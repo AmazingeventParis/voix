@@ -1,0 +1,112 @@
+{
+  "_note": "Source de vérité pour l'assistant vocal. Édite les prix réels avant la prod. L'assistant utilise EXACTEMENT ces infos plutôt que d'inventer.",
+
+  "bornes": {
+    "vegas": {
+      "nom": "Vegas",
+      "description": "Le photobooth star de Shootnbox. Borne photo premium polyvalente pour tous événements.",
+      "capacite_max": 8,
+      "tirages_inclus": 600,
+      "photos": "illimitées",
+      "personnalisation": "contour personnalisé inclus",
+      "ideal_pour": ["mariage", "soirée d'entreprise", "anniversaire", "lancement de marque"],
+      "url": "https://shootnbox.fr/vegas/"
+    },
+    "aircam_360": {
+      "nom": "AirCam 360",
+      "description": "Premier vidéobooth en France, caméra 4K qui filme par le haut. Expérience vidéo collective.",
+      "capacite_max": 15,
+      "format": "vidéo 4K",
+      "duree_attente": "moins de 2 minutes par groupe",
+      "operateur_inclus": true,
+      "ideal_pour": ["soirée d'entreprise", "lancement de produit", "mariage moderne", "événement original"],
+      "url": "https://shootnbox.fr/aircam-360/"
+    },
+    "ring": {
+      "nom": "Ring",
+      "description": "Photobooth circulaire moderne avec éclairage Ring Light intégré pour selfies parfaits.",
+      "ideal_pour": ["soirée", "mariage chic", "événement mode"],
+      "url": "https://shootnbox.fr/le-ring/"
+    },
+    "spinner": {
+      "nom": "Spinner",
+      "description": "Vidéobooth 360° rotatif au sol, plateforme tournante qui crée des vidéos slow-motion impressionnantes.",
+      "format": "vidéo slow-motion 360°",
+      "ideal_pour": ["mariage", "soirée d'entreprise haut de gamme", "lancement de produit"],
+      "url": "https://shootnbox.fr/le-spinner/"
+    },
+    "fashion_box": {
+      "nom": "Fashion Box",
+      "description": "Borne photo dans une cabine façon dressing pour des photos style éditorial mode.",
+      "ideal_pour": ["mariage chic", "événement fashion", "soirée glamour"],
+      "url": "https://shootnbox.fr/location-fashion-box/"
+    },
+    "photobooth_classique": {
+      "nom": "Photobooth",
+      "description": "La borne photo classique Shootnbox, valeur sûre pour tous les événements.",
+      "ideal_pour": ["mariage", "anniversaire", "soirée"],
+      "url": "https://shootnbox.fr/location-photobooth/"
+    },
+    "karaoke": {
+      "nom": "Karaoké",
+      "description": "Borne karaoké pour animer vos soirées avec un large catalogue de chansons.",
+      "ideal_pour": ["mariage", "anniversaire", "soirée d'entreprise"],
+      "url": "https://shootnbox.fr/location-karaoke/"
+    },
+    "photocall": {
+      "nom": "Photocall / Mur photo",
+      "description": "Fond personnalisé pour vos photos d'événement, idéal en complément d'une borne ou seul.",
+      "ideal_pour": ["lancement de produit", "événement corporate", "mariage thématique"],
+      "url": "https://shootnbox.fr/location-photocall/"
+    }
+  },
+
+  "options": {
+    "livraison_installation": "Inclus dans l'IDF selon créneau (matin, après-midi, soirée). Province : sur devis.",
+    "operateur": "Présence d'un opérateur dédié — inclus avec AirCam 360, optionnel sur les autres bornes",
+    "personnalisation_contour": "Contour photo personnalisé aux couleurs/logo de l'événement — gratuit",
+    "tirages_supplementaires": "Pack supplémentaire si vous dépassez les 600 tirages inclus",
+    "galerie_en_ligne": "Accès en ligne à toutes les photos après l'événement — inclus",
+    "qualite_studio": "Capteur photo qualité studio — inclus sur Vegas, AirCam, Ring, Spinner",
+    "assurance_degradation": "Couverture en cas de dégradation accidentelle — optionnelle"
+  },
+
+  "tarifs": {
+    "_note": "Tarifs indicatifs — à éditer avec les vrais prix. L'assistant ne donnera JAMAIS de prix tant que cette section n'est pas précise.",
+    "from": "Les prix commencent à 299€ pour un photobooth classique",
+    "devis": "Pour un tarif précis, demander un devis sur shootnbox.fr (2 minutes)",
+    "tarif_par_borne": null,
+    "tarif_par_duree": null
+  },
+
+  "zones_livraison": {
+    "_note": "Zones et frais à éditer avec les vraies infos commerciales",
+    "ile_de_france": "Frais à partir de 50€",
+    "province": "Sur devis selon distance",
+    "france_entiere": true
+  },
+
+  "duree_prestation": {
+    "standard": "4 heures de prestation effective",
+    "extension_possible": true,
+    "presence_avant_apres": "Installation et démontage en plus, sans surcoût"
+  },
+
+  "contact": {
+    "site_devis": "https://shootnbox.fr",
+    "site_mariage": "https://smakk.fr",
+    "app_invites": "MyShootnbox (iOS + Android)"
+  },
+
+  "app_myshootnbox": {
+    "description": "Application mobile pour les invités d'un événement Shootnbox. Permet de récupérer les photos, participer à des défis photo et accéder à la galerie partagée de l'événement.",
+    "plateformes": ["iOS", "Android"],
+    "gratuit_invites": true,
+    "features": [
+      "Récupération de toutes les photos de l'événement",
+      "Galerie partagée entre tous les invités",
+      "Défis photo pour animer la soirée",
+      "Partage facile des souvenirs"
+    ]
+  }
+}

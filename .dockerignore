@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.env
+.env.local
+.git
+.gitignore
+*.log
+Thumbs.db
+.DS_Store
+README.md
+Voix.md
+*.mp3
+data/conversations.jsonl

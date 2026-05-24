@@ -1,0 +1,20 @@
+{
+  "name": "voix-shootnbox",
+  "version": "0.1.0",
+  "description": "Assistant vocal Shootnbox/Smakk - STT navigateur + LLM Groq + TTS Edge",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "gray-matter": "^4.0.3",
+    "minisearch": "^7.2.0",
+    "msedge-tts": "^1.3.4"
+  }
+}

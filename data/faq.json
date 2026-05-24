@@ -1,0 +1,54 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "questions": [
+        "Combien ça coûte ?",
+        "Quel est le prix d'une location ?",
+        "Tarif photobooth",
+        "Combien pour louer une borne ?"
+      ],
+      "answer": "Nos tarifs commencent à 299€ pour un photobooth classique. Le prix dépend du type de borne, de la durée, des options et du lieu. Pour un devis précis en 2 minutes, rends-toi sur shootnbox.fr.",
+      "tags": [
+        "tarif",
+        "prix",
+        "devis"
+      ]
+    },
+    {
+      "id": 2,
+      "questions": [
+        "Vous livrez où ?",
+        "Quelle zone de livraison ?",
+        "Vous venez à Lyon ?"
+      ],
+      "answer": "Nous livrons partout en France, avec des frais qui dépendent de la distance. Île-de-France à partir de 50€, province sur devis. Tu peux indiquer ton code postal sur shootnbox.fr pour un calcul automatique.",
+      "tags": [
+        "livraison",
+        "zone",
+        "france"
+      ]
+    },
+    {
+      "id": 3,
+      "questions": [
+        "Combien de personnes peut accueillir l'Aircam 360 ?",
+        "L'Aircam c'est pour combien de monde ?"
+      ],
+      "answer": "L'AirCam 360 peut accueillir jusqu'à 15 personnes simultanément. C'est notre vidéobooth le plus populaire pour les groupes, avec une caméra 4K qui filme par le haut.",
+      "tags": [
+        "aircam",
+        "360",
+        "capacité"
+      ]
+    },
+    {
+      "id": 4,
+      "questions": [
+        "jaimerai savoir quand arrive le livreur ?"
+      ],
+      "answer": "Le créneau que vous avez choisi est de 13h à 16h ; le livreur arrivera bien dans ce délai. 😊",
+      "tags": []
+    }
+  ]
+}

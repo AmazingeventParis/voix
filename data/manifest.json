@@ -1,0 +1,2854 @@
+{
+  "generated_at": "2026-05-23T21:30:57.458Z",
+  "sites": {
+    "shootnbox.fr": {
+      "total": 385,
+      "kept": 206,
+      "scraped": 205,
+      "pages": [
+        {
+          "url": "https://shootnbox.fr/un-photobooth-pour-noel-cest-hotte/",
+          "slug": "un-photobooth-pour-noel-cest-hotte",
+          "title": "Un Photobooth Noël : Créez des Souvenirs Personnalisés",
+          "file": "data\\scraped\\shootnbox.fr\\un-photobooth-pour-noel-cest-hotte.md",
+          "chars": 7177
+        },
+        {
+          "url": "https://shootnbox.fr/quest-ce-quun-photobooth/",
+          "slug": "quest-ce-quun-photobooth",
+          "title": "Qu’est-ce qu’un Photobooth ou photomaton ? - Shootnbox",
+          "file": "data\\scraped\\shootnbox.fr\\quest-ce-quun-photobooth.md",
+          "chars": 1649
+        },
+        {
+          "url": "https://shootnbox.fr/techniques-personnalisation-evenementiel/",
+          "slug": "techniques-personnalisation-evenementiel",
+          "title": "Techniques de Personnalisation dans l'Événementiel",
+          "file": "data\\scraped\\shootnbox.fr\\techniques-personnalisation-evenementiel.md",
+          "chars": 6029
+        },
+        {
+          "url": "https://shootnbox.fr/polaroid-photo-booth/",
+          "slug": "polaroid-photo-booth",
+          "title": "Polaroid Photo Booth 📸 Trouvez la Solution Parfaite",
+          "file": "data\\scraped\\shootnbox.fr\\polaroid-photo-booth.md",
+          "chars": 6580
+        },
+        {
+          "url": "https://shootnbox.fr/photobooth-anniversaire-enfant/",
+          "slug": "photobooth-anniversaire-enfant",
+          "title": "Anniversaire Enfant : Photobooth pour une Animation d'Enfer",
+          "file": "data\\scraped\\shootnbox.fr\\photobooth-anniversaire-enfant.md",
+          "chars": 9416
+        },
+        {
+          "url": "https://shootnbox.fr/location-photobooth-bar-mitzvah-ajouter-du-plaisir-et-des-souvenirs-a-votre-celebration-speciale/",
+          "slug": "location-photobooth-bar-mitzvah-ajouter-du-plaisir-et-des-souvenirs-a-votre-cele",
+          "title": "Location de Photobooth Bar Mitzvah",
+          "file": "data\\scraped\\shootnbox.fr\\location-photobooth-bar-mitzvah-ajouter-du-plaisir-et-des-souvenirs-a-votre-cele.md",
+          "chars": 6264
+        },
+        {
+          "url": "https://shootnbox.fr/application-mobile-mariage/",
+          "slug": "application-mobile-mariage",
+          "title": "Application Mobile No-Code pour Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\application-mobile-mariage.md",
+          "chars": 6142
+        },
+        {
+          "url": "https://shootnbox.fr/appareil-photo-instantane-mariage/",
+          "slug": "appareil-photo-instantane-mariage",
+          "title": "Appareil Photo Instantané 📷 Sélection pour Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\appareil-photo-instantane-mariage.md",
+          "chars": 11920
+        },
+        {
+          "url": "https://shootnbox.fr/tarif-photographe-evenementiel/",
+          "slug": "tarif-photographe-evenementiel",
+          "title": "Photographe Événementiel Tarif Sans Surprise 📸💰",
+          "file": "data\\scraped\\shootnbox.fr\\tarif-photographe-evenementiel.md",
+          "chars": 8706
+        },
+        {
+          "url": "https://shootnbox.fr/nos-meilleures-idees-danimations-galettes-des-rois/",
+          "slug": "nos-meilleures-idees-danimations-galettes-des-rois",
+          "title": "Nos meilleures idées d’animations Galettes des Rois en Entreprise",
+          "file": "data\\scraped\\shootnbox.fr\\nos-meilleures-idees-danimations-galettes-des-rois.md",
+          "chars": 3837
+        },
+        {
+          "url": "https://shootnbox.fr/fumigene-mariage/",
+          "slug": "fumigene-mariage",
+          "title": "Fumigène de Mariage : Photos Créatives pour les Mariés",
+          "file": "data\\scraped\\shootnbox.fr\\fumigene-mariage.md",
+          "chars": 5245
+        },
+        {
+          "url": "https://shootnbox.fr/album-photo-papier/",
+          "slug": "album-photo-papier",
+          "title": "Grand Album Photo Papier 📖 Avantages & Conseils",
+          "file": "data\\scraped\\shootnbox.fr\\album-photo-papier.md",
+          "chars": 7243
+        },
+        {
+          "url": "https://shootnbox.fr/ceremonie-laique-champetre/",
+          "slug": "ceremonie-laique-champetre",
+          "title": "Cérémonie Laïque Champêtre 💍 Déco, Lieux, Rituels",
+          "file": "data\\scraped\\shootnbox.fr\\ceremonie-laique-champetre.md",
+          "chars": 15784
+        },
+        {
+          "url": "https://shootnbox.fr/bracelet-photo-personnalise/",
+          "slug": "bracelet-photo-personnalise",
+          "title": "Bracelet Photo Personnalisé : Bijou Unique Pas Cher",
+          "file": "data\\scraped\\shootnbox.fr\\bracelet-photo-personnalise.md",
+          "chars": 4939
+        },
+        {
+          "url": "https://shootnbox.fr/gala-noel-2023-tout-le-monde-contre-cancer/",
+          "slug": "gala-noel-2023-tout-le-monde-contre-cancer",
+          "title": "Gala de noël 2023 Tout le Monde Contre le Cancer avec Shootnbox",
+          "file": "data\\scraped\\shootnbox.fr\\gala-noel-2023-tout-le-monde-contre-cancer.md",
+          "chars": 9009
+        },
+        {
+          "url": "https://shootnbox.fr/animation-ehpad/",
+          "slug": "animation-ehpad",
+          "title": "Animation en EHPAD : 26 Idées Pour Les Résidents",
+          "file": "data\\scraped\\shootnbox.fr\\animation-ehpad.md",
+          "chars": 13105
+        },
+        {
+          "url": "https://shootnbox.fr/celebration-noces-diamant-60-ans-mariage/",
+          "slug": "celebration-noces-diamant-60-ans-mariage",
+          "title": "Nés Pendant la Guerre, Ils Fêtent un Événement Unique en 2024",
+          "file": "data\\scraped\\shootnbox.fr\\celebration-noces-diamant-60-ans-mariage.md",
+          "chars": 2559
+        },
+        {
+          "url": "https://shootnbox.fr/secret-mariage-donald-trump/",
+          "slug": "secret-mariage-donald-trump",
+          "title": "Secret de Mariage : Révélation Choc sur Donald Trump",
+          "file": "data\\scraped\\shootnbox.fr\\secret-mariage-donald-trump.md",
+          "chars": 6943
+        },
+        {
+          "url": "https://shootnbox.fr/coiffure-tresse-mariage/",
+          "slug": "coiffure-tresse-mariage",
+          "title": "Coiffure Tressée pour Mariage : Tendance Élégant",
+          "file": "data\\scraped\\shootnbox.fr\\coiffure-tresse-mariage.md",
+          "chars": 5118
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-civil/",
+          "slug": "mariage-civil",
+          "title": "Mariage Civil : Toutes les Infos pour la Mairie",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-civil.md",
+          "chars": 9441
+        },
+        {
+          "url": "https://shootnbox.fr/reussir-lancement-nouveau-produit-strategie-marketing/",
+          "slug": "reussir-lancement-nouveau-produit-strategie-marketing",
+          "title": "Réussir son Lancement de Produit : Hack Ultime Marketing",
+          "file": "data\\scraped\\shootnbox.fr\\reussir-lancement-nouveau-produit-strategie-marketing.md",
+          "chars": 16342
+        },
+        {
+          "url": "https://shootnbox.fr/organiser-soiree-caritative/",
+          "slug": "organiser-soiree-caritative",
+          "title": "Réussir sa Soirée Caritative : Maximiser les Dons [Guide]",
+          "file": "data\\scraped\\shootnbox.fr\\organiser-soiree-caritative.md",
+          "chars": 10803
+        },
+        {
+          "url": "https://shootnbox.fr/animation-commerciale/",
+          "slug": "animation-commerciale",
+          "title": "Animation Commerciale : Booster vos Ventes Facilement",
+          "file": "data\\scraped\\shootnbox.fr\\animation-commerciale.md",
+          "chars": 12229
+        },
+        {
+          "url": "https://shootnbox.fr/winter-party/",
+          "slug": "winter-party",
+          "title": "Winter Party Réussie : Déco & Animations",
+          "file": "data\\scraped\\shootnbox.fr\\winter-party.md",
+          "chars": 7971
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-theme-voyage/",
+          "slug": "mariage-theme-voyage",
+          "title": "Un Mariage sur le Thème du Voyage Mythique",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-theme-voyage.md",
+          "chars": 9007
+        },
+        {
+          "url": "https://shootnbox.fr/animation-carnaval/",
+          "slug": "animation-carnaval",
+          "title": "Animations Carnaval 🎭 9 Idées pour Événement Réussi",
+          "file": "data\\scraped\\shootnbox.fr\\animation-carnaval.md",
+          "chars": 7268
+        },
+        {
+          "url": "https://shootnbox.fr/voiture-ancienne-pour-mariage/",
+          "slug": "voiture-ancienne-pour-mariage",
+          "title": "Mariage en Voiture Ancienne : Quel Modèle ?",
+          "file": "data\\scraped\\shootnbox.fr\\voiture-ancienne-pour-mariage.md",
+          "chars": 9092
+        },
+        {
+          "url": "https://shootnbox.fr/photo-de-noel/",
+          "slug": "photo-de-noel",
+          "title": "Photo de Noël : Idée Originale à Conserver",
+          "file": "data\\scraped\\shootnbox.fr\\photo-de-noel.md",
+          "chars": 7721
+        },
+        {
+          "url": "https://shootnbox.fr/la-journee-des-droits-des-femmes/",
+          "slug": "la-journee-des-droits-des-femmes",
+          "title": "Célébrer la Journée des Droits des Femmes avec Impact",
+          "file": "data\\scraped\\shootnbox.fr\\la-journee-des-droits-des-femmes.md",
+          "chars": 8942
+        },
+        {
+          "url": "https://shootnbox.fr/offrir-fleur-mariage/",
+          "slug": "offrir-fleur-mariage",
+          "title": "Offrir des Fleurs à un Mariage 💐 Guide Tendance",
+          "file": "data\\scraped\\shootnbox.fr\\offrir-fleur-mariage.md",
+          "chars": 4648
+        },
+        {
+          "url": "https://shootnbox.fr/idees-animations-restaurants/",
+          "slug": "idees-animations-restaurants",
+          "title": "Idées Animations Restaurants: Attirez et Fidélisez Votre Clientèle",
+          "file": "data\\scraped\\shootnbox.fr\\idees-animations-restaurants.md",
+          "chars": 11327
+        },
+        {
+          "url": "https://shootnbox.fr/imprimante-photo-portable-mariage/",
+          "slug": "imprimante-photo-portable-mariage",
+          "title": "Imprimante Photo Portable : Dernière Tendance de Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\imprimante-photo-portable-mariage.md",
+          "chars": 5618
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-champetre-photobooth/",
+          "slug": "mariage-champetre-photobooth",
+          "title": "Photobooth Mariage Champêtre 🧺 [Organisation]",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-champetre-photobooth.md",
+          "chars": 20142
+        },
+        {
+          "url": "https://shootnbox.fr/team-building-bordeaux/",
+          "slug": "team-building-bordeaux",
+          "title": "Team Building Bordeaux : 25 Activités Originales",
+          "file": "data\\scraped\\shootnbox.fr\\team-building-bordeaux.md",
+          "chars": 9404
+        },
+        {
+          "url": "https://shootnbox.fr/officiante-ceremonie-laique/",
+          "slug": "officiante-ceremonie-laique",
+          "title": "Officiante Cérémonie laïque : Choisir la Bonne Personne",
+          "file": "data\\scraped\\shootnbox.fr\\officiante-ceremonie-laique.md",
+          "chars": 5992
+        },
+        {
+          "url": "https://shootnbox.fr/activites-team-building/",
+          "slug": "activites-team-building",
+          "title": "Top 10 Activités Team Building : Motivation & Cohésion",
+          "file": "data\\scraped\\shootnbox.fr\\activites-team-building.md",
+          "chars": 5165
+        },
+        {
+          "url": "https://shootnbox.fr/halloween-pourquoi-pas-louer-une-animation-photobooth/",
+          "slug": "halloween-pourquoi-pas-louer-une-animation-photobooth",
+          "title": "Animation Halloween en Entreprise 🎃 Idée de Fête",
+          "file": "data\\scraped\\shootnbox.fr\\halloween-pourquoi-pas-louer-une-animation-photobooth.md",
+          "chars": 12461
+        },
+        {
+          "url": "https://shootnbox.fr/nos-animations-workshop/",
+          "slug": "nos-animations-workshop",
+          "title": "Secrets de l’Animation Workshop : Meilleurs Conseils",
+          "file": "data\\scraped\\shootnbox.fr\\nos-animations-workshop.md",
+          "chars": 7383
+        },
+        {
+          "url": "https://shootnbox.fr/outil-marketing-evenementiel/",
+          "slug": "outil-marketing-evenementiel",
+          "title": "Tendance Marketing Événementiel à Adopter 📢 [Guide 2025]",
+          "file": "data\\scraped\\shootnbox.fr\\outil-marketing-evenementiel.md",
+          "chars": 14748
+        },
+        {
+          "url": "https://shootnbox.fr/animation-saint-valentin-nos-meilleures-idees/",
+          "slug": "animation-saint-valentin-nos-meilleures-idees",
+          "title": "Animation Saint Valentin 💖 14 Idées Qui Font Carton",
+          "file": "data\\scraped\\shootnbox.fr\\animation-saint-valentin-nos-meilleures-idees.md",
+          "chars": 13549
+        },
+        {
+          "url": "https://shootnbox.fr/louer-du-mobilier-pour-un-mariage/",
+          "slug": "louer-du-mobilier-pour-un-mariage",
+          "title": "Louer du Mobilier Mariage : Le Bon Plan Ultime",
+          "file": "data\\scraped\\shootnbox.fr\\louer-du-mobilier-pour-un-mariage.md",
+          "chars": 7176
+        },
+        {
+          "url": "https://shootnbox.fr/idees-danimations-pour-une-summer-party/",
+          "slug": "idees-danimations-pour-une-summer-party",
+          "title": "Summer Party ☀️ Idées d'Animation Insolite & Thème",
+          "file": "data\\scraped\\shootnbox.fr\\idees-danimations-pour-une-summer-party.md",
+          "chars": 12016
+        },
+        {
+          "url": "https://shootnbox.fr/flash-mob-mariage/",
+          "slug": "flash-mob-mariage",
+          "title": "Flash Mob Mariage 👯‍♂️ 6 Étapes pour une Surprise Réussie",
+          "file": "data\\scraped\\shootnbox.fr\\flash-mob-mariage.md",
+          "chars": 10064
+        },
+        {
+          "url": "https://shootnbox.fr/organisation-mariage/",
+          "slug": "organisation-mariage",
+          "title": "Organisation de Mariage ✅ Check List de 20 ConseilsOrganisation de Réception de MariageGestion des Formalités Administratives",
+          "file": "data\\scraped\\shootnbox.fr\\organisation-mariage.md",
+          "chars": 21168
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-harry-potter/",
+          "slug": "anniversaire-harry-potter",
+          "title": "Anniversaire Harry Potter 🧙‍♂️⚡ Déco & Activités Enfants",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-harry-potter.md",
+          "chars": 11095
+        },
+        {
+          "url": "https://shootnbox.fr/soiree-amoureux/",
+          "slug": "soiree-amoureux",
+          "title": "Soirée en Amoureux 👩‍❤️‍👨 10 Idées de Date Night",
+          "file": "data\\scraped\\shootnbox.fr\\soiree-amoureux.md",
+          "chars": 13899
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-manga/",
+          "slug": "anniversaire-manga",
+          "title": "Anniversaire Manga : Organiser une Fête d'Otaku [Guide]",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-manga.md",
+          "chars": 9123
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-enfant-bordeaux/",
+          "slug": "anniversaire-enfant-bordeaux",
+          "title": "Anniversaire Enfant Bordeaux : Meilleures Activités & Conseils",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-enfant-bordeaux.md",
+          "chars": 8853
+        },
+        {
+          "url": "https://shootnbox.fr/reportage-photo/",
+          "slug": "reportage-photo",
+          "title": "Reportage Photo : 15 Astuces à Connaître Absolument",
+          "file": "data\\scraped\\shootnbox.fr\\reportage-photo.md",
+          "chars": 7841
+        },
+        {
+          "url": "https://shootnbox.fr/vin-honneur-mariage/",
+          "slug": "vin-honneur-mariage",
+          "title": "Vin d'Honneur Mariage 🍾 Économisez Sans Compromis",
+          "file": "data\\scraped\\shootnbox.fr\\vin-honneur-mariage.md",
+          "chars": 15216
+        },
+        {
+          "url": "https://shootnbox.fr/pot-de-depart/",
+          "slug": "pot-de-depart",
+          "title": "Pot de Départ 🍾 Cadeau Pas Cher pour Collègue",
+          "file": "data\\scraped\\shootnbox.fr\\pot-de-depart.md",
+          "chars": 12586
+        },
+        {
+          "url": "https://shootnbox.fr/idee-animation-fete-de-village/",
+          "slug": "idee-animation-fete-de-village",
+          "title": "Fête de Village : Animations Originales pour Tous les ÂgesBudget et Idées d'Animation",
+          "file": "data\\scraped\\shootnbox.fr\\idee-animation-fete-de-village.md",
+          "chars": 7593
+        },
+        {
+          "url": "https://shootnbox.fr/faire-part-mariage/",
+          "slug": "faire-part-mariage",
+          "title": "Faire Part Mariage ✉️ Modèle Gratuit à Imprimer",
+          "file": "data\\scraped\\shootnbox.fr\\faire-part-mariage.md",
+          "chars": 14831
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-tropical/",
+          "slug": "mariage-tropical",
+          "title": "Mariage Tropical Chic 🌺 Thème & Déco",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-tropical.md",
+          "chars": 11310
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-theme-coachella/",
+          "slug": "anniversaire-theme-coachella",
+          "title": "Soirée Thème Coachella : 8 Conseils Essentiels 🏜️",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-theme-coachella.md",
+          "chars": 10088
+        },
+        {
+          "url": "https://shootnbox.fr/30-ans-mariage/",
+          "slug": "30-ans-mariage",
+          "title": "30 ans de Mariage 💍 Idées Cadeaux Noces de Perle",
+          "file": "data\\scraped\\shootnbox.fr\\30-ans-mariage.md",
+          "chars": 7149
+        },
+        {
+          "url": "https://shootnbox.fr/combien-jour-conge-mariage/",
+          "slug": "combien-jour-conge-mariage",
+          "title": "Congé Mariage : Combien de Jours ? Droits & DémarchesGénérateur de lettre de congé mariage",
+          "file": "data\\scraped\\shootnbox.fr\\combien-jour-conge-mariage.md",
+          "chars": 7362
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-4-ans-mariage/",
+          "slug": "anniversaire-4-ans-mariage",
+          "title": "Noces de Cire - 4 Ans de Mariage : Toutes Nos Idées",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-4-ans-mariage.md",
+          "chars": 6862
+        },
+        {
+          "url": "https://shootnbox.fr/meilleures-activites-evenement/",
+          "slug": "meilleures-activites-evenement",
+          "title": "Meilleures Activités à Intégrer à Votre Evenement",
+          "file": "data\\scraped\\shootnbox.fr\\meilleures-activites-evenement.md",
+          "chars": 6271
+        },
+        {
+          "url": "https://shootnbox.fr/cadeau-anniversaire-de-mariage/",
+          "slug": "cadeau-anniversaire-de-mariage",
+          "title": "Cadeau Anniversaire de Mariage : 25 Idées SurprenantesGénérateur Cadeau Anniversaire de MariageIdées de cadeaux pour anniversaire de mariage",
+          "file": "data\\scraped\\shootnbox.fr\\cadeau-anniversaire-de-mariage.md",
+          "chars": 5793
+        },
+        {
+          "url": "https://shootnbox.fr/entree-mariage/",
+          "slug": "entree-mariage",
+          "title": "Entrée des Mariés : 14 Idées Originales d'Arrivées dans la Salle",
+          "file": "data\\scraped\\shootnbox.fr\\entree-mariage.md",
+          "chars": 11127
+        },
+        {
+          "url": "https://shootnbox.fr/astuces-faire-part-mariage-pas-cher/",
+          "slug": "astuces-faire-part-mariage-pas-cher",
+          "title": "Faire Part de Mariage Pas Cher : 10 Astuces DIY",
+          "file": "data\\scraped\\shootnbox.fr\\astuces-faire-part-mariage-pas-cher.md",
+          "chars": 10432
+        },
+        {
+          "url": "https://shootnbox.fr/decoration-salle-mariage/",
+          "slug": "decoration-salle-mariage",
+          "title": "Décoration Salle de Mariage : 6 Astuces à Petit Prix💲💶",
+          "file": "data\\scraped\\shootnbox.fr\\decoration-salle-mariage.md",
+          "chars": 17674
+        },
+        {
+          "url": "https://shootnbox.fr/logiciel-photobooth-comparatif/",
+          "slug": "logiciel-photobooth-comparatif",
+          "title": "Choix du Meilleur Logiciel Photobooth : Comparatif & Avis",
+          "file": "data\\scraped\\shootnbox.fr\\logiciel-photobooth-comparatif.md",
+          "chars": 7955
+        },
+        {
+          "url": "https://shootnbox.fr/organiser-une-garden-party/",
+          "slug": "organiser-une-garden-party",
+          "title": "Organiser Garden Party 🌸 Déco, Animations Originales & Repas",
+          "file": "data\\scraped\\shootnbox.fr\\organiser-une-garden-party.md",
+          "chars": 10270
+        },
+        {
+          "url": "https://shootnbox.fr/tendance-mariage-intime/",
+          "slug": "tendance-mariage-intime",
+          "title": "Organisation d'un Mariage Intime en Petit Comité : Conseil Expert",
+          "file": "data\\scraped\\shootnbox.fr\\tendance-mariage-intime.md",
+          "chars": 8736
+        },
+        {
+          "url": "https://shootnbox.fr/guide-photographie-mariage/",
+          "slug": "guide-photographie-mariage",
+          "title": "Photographie de Mariage 📷 Style de Photo Pour son Photographe",
+          "file": "data\\scraped\\shootnbox.fr\\guide-photographie-mariage.md",
+          "chars": 13424
+        },
+        {
+          "url": "https://shootnbox.fr/seance-photo-couple/",
+          "slug": "seance-photo-couple",
+          "title": "Séance Photo de Couple : Erreurs à Éviter et Idées Originales",
+          "file": "data\\scraped\\shootnbox.fr\\seance-photo-couple.md",
+          "chars": 8513
+        },
+        {
+          "url": "https://shootnbox.fr/idee-deguisement-evjf/",
+          "slug": "idee-deguisement-evjf",
+          "title": "Déguisements pour un EVJF : Idées Originales et Fun",
+          "file": "data\\scraped\\shootnbox.fr\\idee-deguisement-evjf.md",
+          "chars": 9582
+        },
+        {
+          "url": "https://shootnbox.fr/destination-evjf-pas-cher/",
+          "slug": "destination-evjf-pas-cher",
+          "title": "Destination EVJF Pas Chère : France & Europe Low Cost",
+          "file": "data\\scraped\\shootnbox.fr\\destination-evjf-pas-cher.md",
+          "chars": 10786
+        },
+        {
+          "url": "https://shootnbox.fr/organiser-un-evjf/",
+          "slug": "organiser-un-evjf",
+          "title": "Organiser EVJF Inoubliable : 10 Étapes Clés",
+          "file": "data\\scraped\\shootnbox.fr\\organiser-un-evjf.md",
+          "chars": 13477
+        },
+        {
+          "url": "https://shootnbox.fr/stand-salon-professionnel/",
+          "slug": "stand-salon-professionnel",
+          "title": "10 Animation de Stand de Salon Pro pour Boostez vos Visites",
+          "file": "data\\scraped\\shootnbox.fr\\stand-salon-professionnel.md",
+          "chars": 9585
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-automne/",
+          "slug": "mariage-automne",
+          "title": "Mariage en Automne : Idées Déco & Conseils d'Organisation",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-automne.md",
+          "chars": 11598
+        },
+        {
+          "url": "https://shootnbox.fr/arches-de-ballon-mariage/",
+          "slug": "arches-de-ballon-mariage",
+          "title": "Arche de Ballon Mariage : 10 Idées de Déco Splendide",
+          "file": "data\\scraped\\shootnbox.fr\\arches-de-ballon-mariage.md",
+          "chars": 7493
+        },
+        {
+          "url": "https://shootnbox.fr/livre-or-mariage/",
+          "slug": "livre-or-mariage",
+          "title": "10 Alternatives Livre d'Or Mariage 📖 Idées Originales",
+          "file": "data\\scraped\\shootnbox.fr\\livre-or-mariage.md",
+          "chars": 16832
+        },
+        {
+          "url": "https://shootnbox.fr/transformer-photos-mariage-impression/",
+          "slug": "transformer-photos-mariage-impression",
+          "title": "Sublimer vos Souvenirs de Mariage avec l'Impression des Photos",
+          "file": "data\\scraped\\shootnbox.fr\\transformer-photos-mariage-impression.md",
+          "chars": 7637
+        },
+        {
+          "url": "https://shootnbox.fr/robe-invitee-mariage/",
+          "slug": "robe-invitee-mariage",
+          "title": "Robe Invitée Mariage : Meilleures Adresses Bons Plans",
+          "file": "data\\scraped\\shootnbox.fr\\robe-invitee-mariage.md",
+          "chars": 7825
+        },
+        {
+          "url": "https://shootnbox.fr/ou-organiser-soiree-entreprise-conseils/",
+          "slug": "ou-organiser-soiree-entreprise-conseils",
+          "title": "Où Organiser une Soirée Entreprise ? Guide + Lieux Insolites",
+          "file": "data\\scraped\\shootnbox.fr\\ou-organiser-soiree-entreprise-conseils.md",
+          "chars": 7138
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-peniche/",
+          "slug": "mariage-peniche",
+          "title": "Mariage sur une Péniche 🛥️ Célébration Exceptionnelle",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-peniche.md",
+          "chars": 9669
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-boheme-chic/",
+          "slug": "mariage-boheme-chic",
+          "title": "Organiser un Mariage Bohème Tendance : Déco & Animation",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-boheme-chic.md",
+          "chars": 12760
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-eco-responsable/",
+          "slug": "mariage-eco-responsable",
+          "title": "Mariage Éco Responsable et Chic : Idées à Moins de 50€",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-eco-responsable.md",
+          "chars": 14193
+        },
+        {
+          "url": "https://shootnbox.fr/plateforme-organisation-mariage/",
+          "slug": "plateforme-organisation-mariage",
+          "title": "Plateforme Organisation de Mariage pour Cérémonie en Bretagne",
+          "file": "data\\scraped\\shootnbox.fr\\plateforme-organisation-mariage.md",
+          "chars": 6519
+        },
+        {
+          "url": "https://shootnbox.fr/bracelet-evenementiel-branding-experience/",
+          "slug": "bracelet-evenementiel-branding-experience",
+          "title": "Bracelet Événementiel & Branding : Boostez l’Expérience",
+          "file": "data\\scraped\\shootnbox.fr\\bracelet-evenementiel-branding-experience.md",
+          "chars": 8505
+        },
+        {
+          "url": "https://shootnbox.fr/linkaband/",
+          "slug": "linkaband",
+          "title": "Linkaband : Réserver un Artiste pour Vos Événements",
+          "file": "data\\scraped\\shootnbox.fr\\linkaband.md",
+          "chars": 3290
+        },
+        {
+          "url": "https://shootnbox.fr/tendance-mariage-sans-smartphone/",
+          "slug": "tendance-mariage-sans-smartphone",
+          "title": "Mariage sans Smartphone : Guide Unplugged Wedding",
+          "file": "data\\scraped\\shootnbox.fr\\tendance-mariage-sans-smartphone.md",
+          "chars": 8978
+        },
+        {
+          "url": "https://shootnbox.fr/videaste-mariage-tarif-guide/",
+          "slug": "videaste-mariage-tarif-guide",
+          "title": "Vidéaste de Mariage : Quel Tarif pour un Professionnel de Qualité",
+          "file": "data\\scraped\\shootnbox.fr\\videaste-mariage-tarif-guide.md",
+          "chars": 14276
+        },
+        {
+          "url": "https://shootnbox.fr/cadeau-invite-mariage/",
+          "slug": "cadeau-invite-mariage",
+          "title": "Cadeau Invité Mariage 🎁 25 Idées Originales dès 2€",
+          "file": "data\\scraped\\shootnbox.fr\\cadeau-invite-mariage.md",
+          "chars": 18064
+        },
+        {
+          "url": "https://shootnbox.fr/universal-paperclips/",
+          "slug": "universal-paperclips",
+          "title": "Universal Paperclips : Jeu Facile Pour Optimiser Son Temps",
+          "file": "data\\scraped\\shootnbox.fr\\universal-paperclips.md",
+          "chars": 9540
+        },
+        {
+          "url": "https://shootnbox.fr/idees-activites-reveillon-nouvel-an/",
+          "slug": "idees-activites-reveillon-nouvel-an",
+          "title": "Animation du Nouvel An : Activités du Réveillon à la MaisonAnimations pour le Nouvel An",
+          "file": "data\\scraped\\shootnbox.fr\\idees-activites-reveillon-nouvel-an.md",
+          "chars": 13631
+        },
+        {
+          "url": "https://shootnbox.fr/organiser-pendaison-cremaillere/",
+          "slug": "organiser-pendaison-cremaillere",
+          "title": "Pendaison de Crémaillère 🍾 : Idées, Jeux, Quantités & Invité",
+          "file": "data\\scraped\\shootnbox.fr\\organiser-pendaison-cremaillere.md",
+          "chars": 8750
+        },
+        {
+          "url": "https://shootnbox.fr/prix-animateur-dj-mariage/",
+          "slug": "prix-animateur-dj-mariage",
+          "title": "Choisir Animateur DJ Mariage : Prix & Erreurs à EviterPrix DJ Mariage 2025FAQ DJ Mariage 2025",
+          "file": "data\\scraped\\shootnbox.fr\\prix-animateur-dj-mariage.md",
+          "chars": 15509
+        },
+        {
+          "url": "https://shootnbox.fr/idee-animation-soiree-entreprise/",
+          "slug": "idee-animation-soiree-entreprise",
+          "title": "Animation Soirée d’Entreprise : 25 Idées + Prix (2025)",
+          "file": "data\\scraped\\shootnbox.fr\\idee-animation-soiree-entreprise.md",
+          "chars": 11323
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-2-ans/",
+          "slug": "anniversaire-2-ans",
+          "title": "Anniversaire 2 Ans 🎂 Idées Thèmes, Jeux & Activités",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-2-ans.md",
+          "chars": 8542
+        },
+        {
+          "url": "https://shootnbox.fr/photo-naissance-bebe/",
+          "slug": "photo-naissance-bebe",
+          "title": "Photo Naissance Originale 🤱 15 Idées d'Images Uniques",
+          "file": "data\\scraped\\shootnbox.fr\\photo-naissance-bebe.md",
+          "chars": 8588
+        },
+        {
+          "url": "https://shootnbox.fr/photos-famille-studio-professionnel/",
+          "slug": "photos-famille-studio-professionnel",
+          "title": "Réussir ses Photos de Famille : L'Atout du Studio Professionnel",
+          "file": "data\\scraped\\shootnbox.fr\\photos-famille-studio-professionnel.md",
+          "chars": 7553
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-7-ans-mariage/",
+          "slug": "anniversaire-7-ans-mariage",
+          "title": "Anniversaire 7 Ans de Mariage : Noces de Laine Originales",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-7-ans-mariage.md",
+          "chars": 6877
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-dinosaure/",
+          "slug": "anniversaire-dinosaure",
+          "title": "Anniversaire Dinosaure 🦖 Guide Déco & Jeux pour Enfants",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-dinosaure.md",
+          "chars": 8891
+        },
+        {
+          "url": "https://shootnbox.fr/baby-shower/",
+          "slug": "baby-shower",
+          "title": "Baby Shower🤰: 8 Idées de Jeux, Animation (0% Ringard)",
+          "file": "data\\scraped\\shootnbox.fr\\baby-shower.md",
+          "chars": 12522
+        },
+        {
+          "url": "https://shootnbox.fr/idee-anniversaire-enfant/",
+          "slug": "idee-anniversaire-enfant",
+          "title": "Anniversaire Enfant à la Maison : Jeux & Animations (4-12 ans)",
+          "file": "data\\scraped\\shootnbox.fr\\idee-anniversaire-enfant.md",
+          "chars": 13313
+        },
+        {
+          "url": "https://shootnbox.fr/noces-de-coton/",
+          "slug": "noces-de-coton",
+          "title": "1 an de Mariage : Cadeaux Idéaux pour Noces de Coton",
+          "file": "data\\scraped\\shootnbox.fr\\noces-de-coton.md",
+          "chars": 8886
+        },
+        {
+          "url": "https://shootnbox.fr/idee-deguisement-halloween/",
+          "slug": "idee-deguisement-halloween",
+          "title": "Déguisement Halloween : 70 Idées pour Femme, Homme & Duo",
+          "file": "data\\scraped\\shootnbox.fr\\idee-deguisement-halloween.md",
+          "chars": 8840
+        },
+        {
+          "url": "https://shootnbox.fr/10-ans-mariage-noce-etain/",
+          "slug": "10-ans-mariage-noce-etain",
+          "title": "10 Ans de Mariage : Idées Cadeaux pour Noces d'Étain",
+          "file": "data\\scraped\\shootnbox.fr\\10-ans-mariage-noce-etain.md",
+          "chars": 14726
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-theme-feerie-hiver/",
+          "slug": "mariage-theme-feerie-hiver",
+          "title": "Mariage Thème Féerie : Déco, Palettes d'Hiver & Animations",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-theme-feerie-hiver.md",
+          "chars": 6546
+        },
+        {
+          "url": "https://shootnbox.fr/noel-entreprise/",
+          "slug": "noel-entreprise",
+          "title": "Arbre de Noël Entreprise 2026 🎄 Idées Animation & Budget",
+          "file": "data\\scraped\\shootnbox.fr\\noel-entreprise.md",
+          "chars": 14487
+        },
+        {
+          "url": "https://shootnbox.fr/prix-photographe-mariage/",
+          "slug": "prix-photographe-mariage",
+          "title": "Prix Photographe Mariage 💶 Tarifs & Comment Economiser",
+          "file": "data\\scraped\\shootnbox.fr\\prix-photographe-mariage.md",
+          "chars": 11492
+        },
+        {
+          "url": "https://shootnbox.fr/tendances-mariage/",
+          "slug": "tendances-mariage",
+          "title": "Tendances Mariage 2026 : Découvrez les Nouveautés",
+          "file": "data\\scraped\\shootnbox.fr\\tendances-mariage.md",
+          "chars": 11148
+        },
+        {
+          "url": "https://shootnbox.fr/cadeau-fete-des-meres/",
+          "slug": "cadeau-fete-des-meres",
+          "title": "Liste de Cadeaux pour la Fête des Mères 2026Idées Cadeaux Fête des Mères",
+          "file": "data\\scraped\\shootnbox.fr\\cadeau-fete-des-meres.md",
+          "chars": 6382
+        },
+        {
+          "url": "https://shootnbox.fr/organisation-remise-diplome/",
+          "slug": "organisation-remise-diplome",
+          "title": "Remise de Diplômes Mémorable 🎓Organiser & Conseils",
+          "file": "data\\scraped\\shootnbox.fr\\organisation-remise-diplome.md",
+          "chars": 5586
+        },
+        {
+          "url": "https://shootnbox.fr/tradition-mariage/",
+          "slug": "tradition-mariage",
+          "title": "Tradition de Mariage en France 👰 Top 12 des Coutumes & Rituels",
+          "file": "data\\scraped\\shootnbox.fr\\tradition-mariage.md",
+          "chars": 9321
+        },
+        {
+          "url": "https://shootnbox.fr/photocall/",
+          "slug": "photocall",
+          "title": "Photocall Mariage et Anniversaire : Idée de Décor",
+          "file": "data\\scraped\\shootnbox.fr\\photocall.md",
+          "chars": 11945
+        },
+        {
+          "url": "https://shootnbox.fr/assurance-mariage/",
+          "slug": "assurance-mariage",
+          "title": "Assurance Mariage : Annulation, RC et Pièges à éviter (Guide)",
+          "file": "data\\scraped\\shootnbox.fr\\assurance-mariage.md",
+          "chars": 9431
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-6-ans-mariage/",
+          "slug": "anniversaire-6-ans-mariage",
+          "title": "6 Ans de Mariage : Noces de Chypre & Idées Cadeaux",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-6-ans-mariage.md",
+          "chars": 6539
+        },
+        {
+          "url": "https://shootnbox.fr/prix-location-salle-de-mariage/",
+          "slug": "prix-location-salle-de-mariage",
+          "title": "Prix Location Salle Mariage : Tarifs & Astuces BudgetAvantages de la Salle des FêtesAvantages de la Salle de Réception TraditionnelleAstuces pour Réduire le Coût de Location de Salle de Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\prix-location-salle-de-mariage.md",
+          "chars": 11287
+        },
+        {
+          "url": "https://shootnbox.fr/prix-wedding-planner/",
+          "slug": "prix-wedding-planner",
+          "title": "Prix Wedding Planner : Tarif & Astuces pour ÉconomiserAstuces pour Réduire le Coût d'un Wedding Planner",
+          "file": "data\\scraped\\shootnbox.fr\\prix-wedding-planner.md",
+          "chars": 9804
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-hiver/",
+          "slug": "mariage-hiver",
+          "title": "Mariage en Hiver ⛄ Idées Déco, Tenues et Organisation",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-hiver.md",
+          "chars": 19019
+        },
+        {
+          "url": "https://shootnbox.fr/prix-louer-barnum/",
+          "slug": "prix-louer-barnum",
+          "title": "Prix Location Barnum 💰 Tarifs 2025 par Taille (3x3 & 6x12)Tarifs location de barnum par taille — France (sept. 2025)",
+          "file": "data\\scraped\\shootnbox.fr\\prix-louer-barnum.md",
+          "chars": 9046
+        },
+        {
+          "url": "https://shootnbox.fr/idee-cadeau-femme-40-ans/",
+          "slug": "idee-cadeau-femme-40-ans",
+          "title": "Idée Cadeau Femme de 40 ans 🎁 TOP 10 Original & Symbolique",
+          "file": "data\\scraped\\shootnbox.fr\\idee-cadeau-femme-40-ans.md",
+          "chars": 9388
+        },
+        {
+          "url": "https://shootnbox.fr/rentabilite-acheter-photobooth/",
+          "slug": "rentabilite-acheter-photobooth",
+          "title": "Louer ou Acheter un Photobooth ? Guide de Rentabilité (2026)",
+          "file": "data\\scraped\\shootnbox.fr\\rentabilite-acheter-photobooth.md",
+          "chars": 12646
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-10-ans/",
+          "slug": "anniversaire-10-ans",
+          "title": "30 Idées Activités Anniversaire 10 ans : Jeux, Thèmes & FunRésumé Express - Anniversaire 10 ans",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-10-ans.md",
+          "chars": 14765
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-12-ans-mariage/",
+          "slug": "anniversaire-12-ans-mariage",
+          "title": "12 ans de Mariage : Guide Noces de Soie (Idées Cadeaux)",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-12-ans-mariage.md",
+          "chars": 7213
+        },
+        {
+          "url": "https://shootnbox.fr/si-un-photobooth-soccupait-de-votre-gender-reveal/",
+          "slug": "si-un-photobooth-soccupait-de-votre-gender-reveal",
+          "title": "Activités Gender Reveal : 20 Idées pour Annonce Marquante",
+          "file": "data\\scraped\\shootnbox.fr\\si-un-photobooth-soccupait-de-votre-gender-reveal.md",
+          "chars": 8600
+        },
+        {
+          "url": "https://shootnbox.fr/idee-cadeau-baby-shower/",
+          "slug": "idee-cadeau-baby-shower",
+          "title": "Cadeau Baby Shower Mixte : 35 Idées Utiles pour Maman et Bébé",
+          "file": "data\\scraped\\shootnbox.fr\\idee-cadeau-baby-shower.md",
+          "chars": 20831
+        },
+        {
+          "url": "https://shootnbox.fr/ceremonie-mariage-plage/",
+          "slug": "ceremonie-mariage-plage",
+          "title": "Mariage sur la Plage : Autorisation, Déco & Organisation (Guide)",
+          "file": "data\\scraped\\shootnbox.fr\\ceremonie-mariage-plage.md",
+          "chars": 13607
+        },
+        {
+          "url": "https://shootnbox.fr/date-mariage/",
+          "slug": "date-mariage",
+          "title": "Meilleure Date Mariage 2026 : Astuces Secrètes du Calendrier",
+          "file": "data\\scraped\\shootnbox.fr\\date-mariage.md",
+          "chars": 6978
+        },
+        {
+          "url": "https://shootnbox.fr/fleurs-mariage-signification/",
+          "slug": "fleurs-mariage-signification",
+          "title": "Fleurs de Mariage : Signification Secrète du Bouquet de Mariée",
+          "file": "data\\scraped\\shootnbox.fr\\fleurs-mariage-signification.md",
+          "chars": 13713
+        },
+        {
+          "url": "https://shootnbox.fr/theme-mariage-provencal/",
+          "slug": "theme-mariage-provencal",
+          "title": "Mariage Provençal 💍7 Idées Incroyables pour ce Thème",
+          "file": "data\\scraped\\shootnbox.fr\\theme-mariage-provencal.md",
+          "chars": 7663
+        },
+        {
+          "url": "https://shootnbox.fr/quelle-tenue-invite-mariage/",
+          "slug": "quelle-tenue-invite-mariage",
+          "title": "Quelle Tenue Invité de Mariage ? Robe et Look à Adopter",
+          "file": "data\\scraped\\shootnbox.fr\\quelle-tenue-invite-mariage.md",
+          "chars": 11119
+        },
+        {
+          "url": "https://shootnbox.fr/wedding-bag/",
+          "slug": "wedding-bag",
+          "title": "Wedding Bag : Idées, Contenu & Conseils pour un sac parfait",
+          "file": "data\\scraped\\shootnbox.fr\\wedding-bag.md",
+          "chars": 10693
+        },
+        {
+          "url": "https://shootnbox.fr/cousinades/",
+          "slug": "cousinades",
+          "title": "Organiser une Cousinade : Activités de Week-End en Famille",
+          "file": "data\\scraped\\shootnbox.fr\\cousinades.md",
+          "chars": 8850
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-foot-enfant/",
+          "slug": "anniversaire-foot-enfant",
+          "title": "Anniversaire Foot ⚽ Idées Déco & Activités pour Enfants/Ados",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-foot-enfant.md",
+          "chars": 11583
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-oriental/",
+          "slug": "mariage-oriental",
+          "title": "Organisation Mariage Oriental en 10 Étapes Simple",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-oriental.md",
+          "chars": 13232
+        },
+        {
+          "url": "https://shootnbox.fr/pimp-my-photobooth/",
+          "slug": "pimp-my-photobooth",
+          "title": "Accessoires Photobooth Mariage : Idées et Cadres Photos",
+          "file": "data\\scraped\\shootnbox.fr\\pimp-my-photobooth.md",
+          "chars": 3204
+        },
+        {
+          "url": "https://shootnbox.fr/comment-amenager-et-animer-un-lieu-insolite-pour-un-mariage/",
+          "slug": "comment-amenager-et-animer-un-lieu-insolite-pour-un-mariage",
+          "title": "Mariage Insolite en Île-de-France : 16 Lieux Originaux",
+          "file": "data\\scraped\\shootnbox.fr\\comment-amenager-et-animer-un-lieu-insolite-pour-un-mariage.md",
+          "chars": 14107
+        },
+        {
+          "url": "https://shootnbox.fr/organiser-seminaire-entreprise/",
+          "slug": "organiser-seminaire-entreprise",
+          "title": "Séminaire Entreprise : Comment Organiser son Événement",
+          "file": "data\\scraped\\shootnbox.fr\\organiser-seminaire-entreprise.md",
+          "chars": 8493
+        },
+        {
+          "url": "https://shootnbox.fr/activite-team-building/",
+          "slug": "activite-team-building",
+          "title": "Activité Team Building : Ces Idées Sous Côté en Entreprise",
+          "file": "data\\scraped\\shootnbox.fr\\activite-team-building.md",
+          "chars": 14053
+        },
+        {
+          "url": "https://shootnbox.fr/album-photo-bapteme/",
+          "slug": "album-photo-bapteme",
+          "title": "Album Photo de Baptême : Souvenirs Originaux avec Photobooth",
+          "file": "data\\scraped\\shootnbox.fr\\album-photo-bapteme.md",
+          "chars": 9148
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-bebe-1-an/",
+          "slug": "anniversaire-bebe-1-an",
+          "title": "1 an de Bébé : Idées & Thèmes Anniversaire - Organisation",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-bebe-1-an.md",
+          "chars": 12494
+        },
+        {
+          "url": "https://shootnbox.fr/conseils-seminaire-entreprise-paris/",
+          "slug": "conseils-seminaire-entreprise-paris",
+          "title": "Réussir Séminare Entreprise à Paris : 7 Conseils de Lieux",
+          "file": "data\\scraped\\shootnbox.fr\\conseils-seminaire-entreprise-paris.md",
+          "chars": 8788
+        },
+        {
+          "url": "https://shootnbox.fr/photobooth-bapteme-lanimation-originale-pour-votre-bapteme/",
+          "slug": "photobooth-bapteme-lanimation-originale-pour-votre-bapteme",
+          "title": "Animation Baptême : PhotoBooth Indispensable",
+          "file": "data\\scraped\\shootnbox.fr\\photobooth-bapteme-lanimation-originale-pour-votre-bapteme.md",
+          "chars": 16125
+        },
+        {
+          "url": "https://shootnbox.fr/idees-dactivites-pour-un-anniversaire-40-ans/",
+          "slug": "idees-dactivites-pour-un-anniversaire-40-ans",
+          "title": "Anniversaire 40 ans : Animations Indispensables et Jeux",
+          "file": "data\\scraped\\shootnbox.fr\\idees-dactivites-pour-un-anniversaire-40-ans.md",
+          "chars": 6911
+        },
+        {
+          "url": "https://shootnbox.fr/activites-anniversaire-ado/",
+          "slug": "activites-anniversaire-ado",
+          "title": "Anniversaire Ado : 50 Idées Géniales (Nouveautés en 2026)Résumé Anniversaire Ado Réussi - ShootnboxTop 3 Activités Ado - ShootnboxFAQ Anniversaire Adolescent",
+          "file": "data\\scraped\\shootnbox.fr\\activites-anniversaire-ado.md",
+          "chars": 17590
+        },
+        {
+          "url": "https://shootnbox.fr/idees-activites-evjf/",
+          "slug": "idees-activites-evjf",
+          "title": "31 Idées d'Activités EVJF 🎉 Du Pas Cher au Luxe Inoubliable",
+          "file": "data\\scraped\\shootnbox.fr\\idees-activites-evjf.md",
+          "chars": 17274
+        },
+        {
+          "url": "https://shootnbox.fr/soiree-pyjama/",
+          "slug": "soiree-pyjama",
+          "title": "Soirée Pyjama Adulte 🧸 19 Jeux & Idées Tendances (Guide)Preview Contenu Soirée PyjamaOrganisation de Soirée Pyjama",
+          "file": "data\\scraped\\shootnbox.fr\\soiree-pyjama.md",
+          "chars": 14433
+        },
+        {
+          "url": "https://shootnbox.fr/idees-dactivites-pour-un-anniversaire-30-ans/",
+          "slug": "idees-dactivites-pour-un-anniversaire-30-ans",
+          "title": "Anniversaire 30 ans Original 🎂 Activités Marquantes",
+          "file": "data\\scraped\\shootnbox.fr\\idees-dactivites-pour-un-anniversaire-30-ans.md",
+          "chars": 17997
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-18-ans/",
+          "slug": "anniversaire-18-ans",
+          "title": "Anniversaire 18 ans 🎂 Idées de Thèmes et Activités Tendance",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-18-ans.md",
+          "chars": 14277
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-25-ans/",
+          "slug": "anniversaire-25-ans",
+          "title": "Anniversaire 25 ans 🎂 Idée Originale pour une FêteThèmes de Fête",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-25-ans.md",
+          "chars": 8559
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-20-ans/",
+          "slug": "anniversaire-20-ans",
+          "title": "Anniversaire 20 ans 🎂 Idées, Jeux, Lieux & Budget (2025)",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-20-ans.md",
+          "chars": 9500
+        },
+        {
+          "url": "https://shootnbox.fr/nos-idees-et-animations-paques/",
+          "slug": "nos-idees-et-animations-paques",
+          "title": "Animations Pâques 🐰 20 Activités pour le Week End 🥚",
+          "file": "data\\scraped\\shootnbox.fr\\nos-idees-et-animations-paques.md",
+          "chars": 18850
+        },
+        {
+          "url": "https://shootnbox.fr/nos-conseils-pour-choisir-votre-photobooth/",
+          "slug": "nos-conseils-pour-choisir-votre-photobooth",
+          "title": "Comparatif Photobooth 2026 : Avis, Tarifs et Top 5 (Guide)",
+          "file": "data\\scraped\\shootnbox.fr\\nos-conseils-pour-choisir-votre-photobooth.md",
+          "chars": 13669
+        },
+        {
+          "url": "https://shootnbox.fr/activite-evg/",
+          "slug": "activite-evg",
+          "title": "Organisation EVG : Les 12 Meilleures Idées d'Activités en 2026",
+          "file": "data\\scraped\\shootnbox.fr\\activite-evg.md",
+          "chars": 13040
+        },
+        {
+          "url": "https://shootnbox.fr/organisation-mariage-pas-cher/",
+          "slug": "organisation-mariage-pas-cher",
+          "title": "Mariage Pas Cher 💰 TO DO List pour Économiser",
+          "file": "data\\scraped\\shootnbox.fr\\organisation-mariage-pas-cher.md",
+          "chars": 22117
+        },
+        {
+          "url": "https://shootnbox.fr/animation-mariage/",
+          "slug": "animation-mariage",
+          "title": "Animation Mariage : 25 Idées & Jeux pour Ambiance Inoubliable",
+          "file": "data\\scraped\\shootnbox.fr\\animation-mariage.md",
+          "chars": 19405
+        },
+        {
+          "url": "https://shootnbox.fr/exemple-voeux-mariage/",
+          "slug": "exemple-voeux-mariage",
+          "title": "30 Exemples de Vœux de Mariage Originaux & Humour (2026)",
+          "file": "data\\scraped\\shootnbox.fr\\exemple-voeux-mariage.md",
+          "chars": 6855
+        },
+        {
+          "url": "https://shootnbox.fr/combien-donner-a-un-mariage/",
+          "slug": "combien-donner-a-un-mariage",
+          "title": "Combien Donner à un Mariage ? (Prix 2026 & Simulateur)",
+          "file": "data\\scraped\\shootnbox.fr\\combien-donner-a-un-mariage.md",
+          "chars": 8940
+        },
+        {
+          "url": "https://shootnbox.fr/prix-location-salle-des-fetes/",
+          "slug": "prix-location-salle-des-fetes",
+          "title": "Prix Location Salle des Fêtes : Tarifs 2026 Anniversaire & Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\prix-location-salle-des-fetes.md",
+          "chars": 9125
+        },
+        {
+          "url": "https://shootnbox.fr/15-ans-mariage-noces-cristal/",
+          "slug": "15-ans-mariage-noces-cristal",
+          "title": "Noces de Cristal : Signification & Cadeaux 15 ans de Mariage",
+          "file": "data\\scraped\\shootnbox.fr\\15-ans-mariage-noces-cristal.md",
+          "chars": 11196
+        },
+        {
+          "url": "https://shootnbox.fr/calendrier-anniversaire-de-mariage/",
+          "slug": "calendrier-anniversaire-de-mariage",
+          "title": "Tableau des Noces de Mariage : Liste de 1 à 100 ans",
+          "file": "data\\scraped\\shootnbox.fr\\calendrier-anniversaire-de-mariage.md",
+          "chars": 13710
+        },
+        {
+          "url": "https://shootnbox.fr/idee-cadeau-mariage/",
+          "slug": "idee-cadeau-mariage",
+          "title": "Idée Cadeau Mariage Pour les Invités : Top 10 Tendance",
+          "file": "data\\scraped\\shootnbox.fr\\idee-cadeau-mariage.md",
+          "chars": 6629
+        },
+        {
+          "url": "https://shootnbox.fr/5-ans-mariage-noces-bois/",
+          "slug": "5-ans-mariage-noces-bois",
+          "title": "5 ans de Mariage : 10 idées pour fêter vos Noces de Bois",
+          "file": "data\\scraped\\shootnbox.fr\\5-ans-mariage-noces-bois.md",
+          "chars": 7185
+        },
+        {
+          "url": "https://shootnbox.fr/pool-party/",
+          "slug": "pool-party",
+          "title": "Organiser une Pool Party 👙 Activité & Jeux de Piscine",
+          "file": "data\\scraped\\shootnbox.fr\\pool-party.md",
+          "chars": 6866
+        },
+        {
+          "url": "https://shootnbox.fr/2-ans-mariage-noces-cuir/",
+          "slug": "2-ans-mariage-noces-cuir",
+          "title": "2 ans de Mariage : 24 Idées Romantiques pour Noces de Cuir",
+          "file": "data\\scraped\\shootnbox.fr\\2-ans-mariage-noces-cuir.md",
+          "chars": 16685
+        },
+        {
+          "url": "https://shootnbox.fr/mariages-stars-courts-clauses-contrat/",
+          "slug": "mariages-stars-courts-clauses-contrat",
+          "title": "Les Plus Courts Mariages de Stars + Clauses Insolites de Contrat",
+          "file": "data\\scraped\\shootnbox.fr\\mariages-stars-courts-clauses-contrat.md",
+          "chars": 7298
+        },
+        {
+          "url": "https://shootnbox.fr/40-ans-mariage-noces-emeraude/",
+          "slug": "40-ans-mariage-noces-emeraude",
+          "title": "40 ans de Mariage 💚 (Noces Émeraude) : Cadeaux et Idées",
+          "file": "data\\scraped\\shootnbox.fr\\40-ans-mariage-noces-emeraude.md",
+          "chars": 21753
+        },
+        {
+          "url": "https://shootnbox.fr/20-ans-mariage-noces-porcelaine/",
+          "slug": "20-ans-mariage-noces-porcelaine",
+          "title": "Noces de Porcelaine : célébrer 20 ans de mariage | Shootnbox",
+          "file": "data\\scraped\\shootnbox.fr\\20-ans-mariage-noces-porcelaine.md",
+          "chars": 12893
+        },
+        {
+          "url": "https://shootnbox.fr/idee-de-jeu-entre-amis/",
+          "slug": "idee-de-jeu-entre-amis",
+          "title": "15 jeux entre amis pour une soirée mémorable | Shootnbox",
+          "file": "data\\scraped\\shootnbox.fr\\idee-de-jeu-entre-amis.md",
+          "chars": 11803
+        },
+        {
+          "url": "https://shootnbox.fr/jeu-de-groupe-adulte-drole/",
+          "slug": "jeu-de-groupe-adulte-drole",
+          "title": "Top 50 Jeux de Groupe Drôles Entre Amis (Sans Matériel)",
+          "file": "data\\scraped\\shootnbox.fr\\jeu-de-groupe-adulte-drole.md",
+          "chars": 16724
+        },
+        {
+          "url": "https://shootnbox.fr/feter-anniversaire-entreprise/",
+          "slug": "feter-anniversaire-entreprise",
+          "title": "Fêter Anniversaire de l'Entreprise : Début d'une Succès Story",
+          "file": "data\\scraped\\shootnbox.fr\\feter-anniversaire-entreprise.md",
+          "chars": 7489
+        },
+        {
+          "url": "https://shootnbox.fr/mariage-theme-camargue/",
+          "slug": "mariage-theme-camargue",
+          "title": "Mariage Thème Camargue : Guide & Idées Authentiques",
+          "file": "data\\scraped\\shootnbox.fr\\mariage-theme-camargue.md",
+          "chars": 11265
+        },
+        {
+          "url": "https://shootnbox.fr/comment-organiser-evenement-entreprise-original/",
+          "slug": "comment-organiser-evenement-entreprise-original",
+          "title": "Événement d'entreprise original : 10 Idées Inédites (2026)",
+          "file": "data\\scraped\\shootnbox.fr\\comment-organiser-evenement-entreprise-original.md",
+          "chars": 19773
+        },
+        {
+          "url": "https://shootnbox.fr/privatiser-lieu-evenement-entreprise-paris/",
+          "slug": "privatiser-lieu-evenement-entreprise-paris",
+          "title": "Privatiser Lieu pour Événement d'Entreprise à Paris : Guide 2026",
+          "file": "data\\scraped\\shootnbox.fr\\privatiser-lieu-evenement-entreprise-paris.md",
+          "chars": 13556
+        },
+        {
+          "url": "https://shootnbox.fr/anniversaire-50-ans/",
+          "slug": "anniversaire-50-ans",
+          "title": "Animation Anniversaire 50 ans : 10 Idées Indispensables (2026)",
+          "file": "data\\scraped\\shootnbox.fr\\anniversaire-50-ans.md",
+          "chars": 15766
+        },
+        {
+          "url": "https://shootnbox.fr/animation-anniversaire-adulte/",
+          "slug": "animation-anniversaire-adulte",
+          "title": "23 Idées d'Animations Anniversaire Adulte 🎉 (Tendance 2026)",
+          "file": "data\\scraped\\shootnbox.fr\\animation-anniversaire-adulte.md",
+          "chars": 17570
+        },
+        {
+          "url": "https://shootnbox.fr/",
+          "slug": "index",
+          "title": "Shootnbox,\ncréateur de souvenirs.",
+          "file": "data\\scraped\\shootnbox.fr\\index.md",
+          "chars": 4557
+        },
+        {
+          "url": "https://shootnbox.fr/plan-table-mariage/",
+          "slug": "plan-table-mariage",
+          "title": "Plan de Table Mariage 📋 40 Idées Originale (2026)",
+          "file": "data\\scraped\\shootnbox.fr\\plan-table-mariage.md",
+          "chars": 26223
+        },
+        {
+          "url": "https://shootnbox.fr/jeux-anniversaire-5-ans-interieur/",
+          "slug": "jeux-anniversaire-5-ans-interieur",
+          "title": "Jeux Anniversaire 5 ans en Intérieur : 12 Activités en 2026",
+          "file": "data\\scraped\\shootnbox.fr\\jeux-anniversaire-5-ans-interieur.md",
+          "chars": 8777
+        },
+        {
+          "url": "https://shootnbox.fr/ades-sorbonne/",
+          "slug": "ades-sorbonne",
+          "title": "La soirée annuelle Paris 1 : ADES Sorbonne",
+          "file": "data\\scraped\\shootnbox.fr\\ades-sorbonne.md",
+          "chars": 904
+        },
+        {
+          "url": "https://shootnbox.fr/ville-de-paris-bal-de-lamour/",
+          "slug": "ville-de-paris-bal-de-lamour",
+          "title": "Événement : Bal de l'amour & la ville de Paris",
+          "file": "data\\scraped\\shootnbox.fr\\ville-de-paris-bal-de-lamour.md",
+          "chars": 906
+        },
+        {
+          "url": "https://shootnbox.fr/integration-au-contenu/",
+          "slug": "integration-au-contenu",
+          "title": "Intégration au contenu - Shootnbox - Location de photoboothWhatsApp",
+          "file": "data\\scraped\\shootnbox.fr\\integration-au-contenu.md",
+          "chars": 404
+        },
+        {
+          "url": "https://shootnbox.fr/politique-de-confidentialite/",
+          "slug": "politique-de-confidentialite",
+          "title": "Politique de confidentialité",
+          "file": "data\\scraped\\shootnbox.fr\\politique-de-confidentialite.md",
+          "chars": 4367
+        },
+        {
+          "url": "https://shootnbox.fr/red-shot/",
+          "slug": "red-shot",
+          "title": "Red Shot : une personnalisation sur-mesure",
+          "file": "data\\scraped\\shootnbox.fr\\red-shot.md",
+          "chars": 821
+        },
+        {
+          "url": "https://shootnbox.fr/photobooth-black-friday/",
+          "slug": "photobooth-black-friday",
+          "title": "Louer un photobooth ou photomaton\npour mariage, anniversaire et entreprise",
+          "file": "data\\scraped\\shootnbox.fr\\photobooth-black-friday.md",
+          "chars": 18222
+        },
+        {
+          "url": "https://shootnbox.fr/mentions-legales/",
+          "slug": "mentions-legales",
+          "title": "Mentions légales",
+          "file": "data\\scraped\\shootnbox.fr\\mentions-legales.md",
+          "chars": 1368
+        },
+        {
+          "url": "https://shootnbox.fr/blog/",
+          "slug": "blog",
+          "title": "Le Shootnblog",
+          "file": "data\\scraped\\shootnbox.fr\\blog.md",
+          "chars": 240
+        },
+        {
+          "url": "https://shootnbox.fr/faq/",
+          "slug": "faq",
+          "title": "Questions fréquentes",
+          "file": "data\\scraped\\shootnbox.fr\\faq.md",
+          "chars": 228
+        },
+        {
+          "url": "https://shootnbox.fr/ecole-gustave-eiffel/",
+          "slug": "ecole-gustave-eiffel",
+          "title": "Remise de diplôme de l’université Gustave Eiffel",
+          "file": "data\\scraped\\shootnbox.fr\\ecole-gustave-eiffel.md",
+          "chars": 1071
+        },
+        {
+          "url": "https://shootnbox.fr/festibulles/",
+          "slug": "festibulles",
+          "title": "4ème édition du festival Festibulles",
+          "file": "data\\scraped\\shootnbox.fr\\festibulles.md",
+          "chars": 985
+        },
+        {
+          "url": "https://shootnbox.fr/imagine-for-margo/",
+          "slug": "imagine-for-margo",
+          "title": "Imagine for Margo : 4ème édition de la course",
+          "file": "data\\scraped\\shootnbox.fr\\imagine-for-margo.md",
+          "chars": 1170
+        },
+        {
+          "url": "https://shootnbox.fr/la-defense-arena/",
+          "slug": "la-defense-arena",
+          "title": "Paris la Défense Arena : Photobooth en location longue durée",
+          "file": "data\\scraped\\shootnbox.fr\\la-defense-arena.md",
+          "chars": 1193
+        },
+        {
+          "url": "https://shootnbox.fr/les-valseurs/",
+          "slug": "les-valseurs",
+          "title": "Les Valseurs : une production qui fête ses 10 ans",
+          "file": "data\\scraped\\shootnbox.fr\\les-valseurs.md",
+          "chars": 1044
+        },
+        {
+          "url": "https://shootnbox.fr/ils-nous-font-confiance/",
+          "slug": "ils-nous-font-confiance",
+          "title": "Louer un photobooth ou photomaton\npour mariage, anniversaire et entreprise",
+          "file": "data\\scraped\\shootnbox.fr\\ils-nous-font-confiance.md",
+          "chars": 18222
+        },
+        {
+          "url": "https://shootnbox.fr/tout-le-monde-contre-le-cancer-gala-de-noel/",
+          "slug": "tout-le-monde-contre-le-cancer-gala-de-noel",
+          "title": "Tout Le Monde Contre le Cancer : Gala de Noël",
+          "file": "data\\scraped\\shootnbox.fr\\tout-le-monde-contre-le-cancer-gala-de-noel.md",
+          "chars": 1559
+        },
+        {
+          "url": "https://shootnbox.fr/conditions-de-location/",
+          "slug": "conditions-de-location",
+          "title": "Conditions générales",
+          "file": "data\\scraped\\shootnbox.fr\\conditions-de-location.md",
+          "chars": 26449
+        },
+        {
+          "url": "https://shootnbox.fr/exemples-de-personnalisation/",
+          "slug": "exemples-de-personnalisation",
+          "title": "Nos exemples de personnalisation",
+          "file": "data\\scraped\\shootnbox.fr\\exemples-de-personnalisation.md",
+          "chars": 640
+        },
+        {
+          "url": "https://shootnbox.fr/location-photocall/",
+          "slug": "location-photocall",
+          "title": "Location de photocall\n      à Paris\n      & Île-de-France",
+          "file": "data\\scraped\\shootnbox.fr\\location-photocall.md",
+          "chars": 10920
+        },
+        {
+          "url": "https://shootnbox.fr/photobooth-soiree-entreprise/",
+          "slug": "photobooth-soiree-entreprise",
+          "title": "Vos événements\n      méritent mieux\n      qu'un simple photobooth.",
+          "file": "data\\scraped\\shootnbox.fr\\photobooth-soiree-entreprise.md",
+          "chars": 6287
+        },
+        {
+          "url": "https://shootnbox.fr/le-ring/",
+          "slug": "le-ring",
+          "title": "Le Ring,\n      le photobooth numérique\n      sans limite.",
+          "file": "data\\scraped\\shootnbox.fr\\le-ring.md",
+          "chars": 5325
+        },
+        {
+          "url": "https://shootnbox.fr/location-karaoke/",
+          "slug": "location-karaoke",
+          "title": "Location Karaoké à Domicile\n      Paris, IDF et toute la France",
+          "file": "data\\scraped\\shootnbox.fr\\location-karaoke.md",
+          "chars": 5806
+        },
+        {
+          "url": "https://shootnbox.fr/test-avis-mobile-2/",
+          "slug": "test-avis-mobile-2",
+          "title": "Test Avis Mobile - Shootnbox - Location de photoboothWhatsApp",
+          "file": "data\\scraped\\shootnbox.fr\\test-avis-mobile-2.md",
+          "chars": 4807
+        },
+        {
+          "url": "https://shootnbox.fr/home-v2/",
+          "slug": "home-v2",
+          "title": "Location de photobooth professionnel pour vos mariages, soirees d’entreprise et evenements. Livraison dans toute la France.",
+          "file": "data\\scraped\\shootnbox.fr\\home-v2.md",
+          "chars": 5877
+        },
+        {
+          "url": "https://shootnbox.fr/photobooth-anniversaire/",
+          "slug": "photobooth-anniversaire",
+          "title": "Photomaton anniversaire\n      la borne photo qui fait durer la fête",
+          "file": "data\\scraped\\shootnbox.fr\\photobooth-anniversaire.md",
+          "chars": 13325
+        },
+        {
+          "url": "https://shootnbox.fr/vegas/",
+          "slug": "vegas",
+          "title": "Le Vegas,\n      le photobooth star\n      de vos événements.",
+          "file": "data\\scraped\\shootnbox.fr\\vegas.md",
+          "chars": 7717
+        },
+        {
+          "url": "https://shootnbox.fr/le-spinner/",
+          "slug": "le-spinner",
+          "title": "Photobooth 360 degrés en Location :\n      Le Spinner de Shootnbox.",
+          "file": "data\\scraped\\shootnbox.fr\\le-spinner.md",
+          "chars": 8021
+        },
+        {
+          "url": "https://shootnbox.fr/aircam-360/",
+          "slug": "aircam-360",
+          "title": "AirCam 360,\n      le premier vidéobooth en France\n      jusqu'à 15 personnes.",
+          "file": "data\\scraped\\shootnbox.fr\\aircam-360.md",
+          "chars": 4027
+        },
+        {
+          "url": "https://shootnbox.fr/location-fashion-box/",
+          "slug": "location-fashion-box",
+          "title": "La Fashion Box,\n      transformez vos invités\n      en stars de magazine",
+          "file": "data\\scraped\\shootnbox.fr\\location-fashion-box.md",
+          "chars": 4827
+        },
+        {
+          "url": "https://shootnbox.fr/location-photobooth/",
+          "slug": "location-photobooth",
+          "title": "Louer un photobooth ou photomaton\npour mariage, anniversaire et entreprise",
+          "file": "data\\scraped\\shootnbox.fr\\location-photobooth.md",
+          "chars": 18222
+        }
+      ]
+    },
+    "smakk.fr": {
+      "total": 208,
+      "kept": 202,
+      "scraped": 200,
+      "pages": [
+        {
+          "url": "https://smakk.fr/mariage-surprise/",
+          "slug": "mariage-surprise",
+          "title": "Comment faire un mariage surprise qui marquera les esprits à jamais ?",
+          "file": "data\\scraped\\smakk.fr\\mariage-surprise.md",
+          "chars": 5899
+        },
+        {
+          "url": "https://smakk.fr/faire-part-bapteme/",
+          "slug": "faire-part-bapteme",
+          "title": "10 idées incontournables pour un faire part de baptême avec modèles de texte",
+          "file": "data\\scraped\\smakk.fr\\faire-part-bapteme.md",
+          "chars": 10310
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-surprise-ultime/",
+          "slug": "anniversaire-surprise-ultime",
+          "title": "Organisez la surprise d’anniversaire ultime avec ce guide secret !",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-surprise-ultime.md",
+          "chars": 5681
+        },
+        {
+          "url": "https://smakk.fr/idees-mariage-invites/",
+          "slug": "idees-mariage-invites",
+          "title": "12 idées pour mariage complétement inédit afin d’éblouir vos invités",
+          "file": "data\\scraped\\smakk.fr\\idees-mariage-invites.md",
+          "chars": 9797
+        },
+        {
+          "url": "https://smakk.fr/animations-mariage-temoin/",
+          "slug": "animations-mariage-temoin",
+          "title": "Meilleurs jeux pour un mariage : 35 idées d’animations pour divertir les invités",
+          "file": "data\\scraped\\smakk.fr\\animations-mariage-temoin.md",
+          "chars": 16423
+        },
+        {
+          "url": "https://smakk.fr/idee-photo-mariage-invites/",
+          "slug": "idee-photo-mariage-invites",
+          "title": "Photos de mariage avec vos invités : poses, jeux et comment récupérer les photos",
+          "file": "data\\scraped\\smakk.fr\\idee-photo-mariage-invites.md",
+          "chars": 15237
+        },
+        {
+          "url": "https://smakk.fr/organiser-mariage-etapes-budget-serre/",
+          "slug": "organiser-mariage-etapes-budget-serre",
+          "title": "Mariage petit budget : Comment organiser un mariage à moins de 6000€",
+          "file": "data\\scraped\\smakk.fr\\organiser-mariage-etapes-budget-serre.md",
+          "chars": 19061
+        },
+        {
+          "url": "https://smakk.fr/meilleures-tenues-photobooth/",
+          "slug": "meilleures-tenues-photobooth",
+          "title": "Les meilleures tenues pour un photobooth",
+          "file": "data\\scraped\\smakk.fr\\meilleures-tenues-photobooth.md",
+          "chars": 7862
+        },
+        {
+          "url": "https://smakk.fr/robe-mariee-vintage/",
+          "slug": "robe-mariee-vintage",
+          "title": "Vous rêvez d’une robe de mariée vintage ? Ce modèle a ébloui tout un pays !",
+          "file": "data\\scraped\\smakk.fr\\robe-mariee-vintage.md",
+          "chars": 7802
+        },
+        {
+          "url": "https://smakk.fr/livre-or-vocal-audio/",
+          "slug": "livre-or-vocal-audio",
+          "title": "Le livre d’or vocal : l’animation tendance pour un mariage inoubliable",
+          "file": "data\\scraped\\smakk.fr\\livre-or-vocal-audio.md",
+          "chars": 6555
+        },
+        {
+          "url": "https://smakk.fr/mariage-musulman/",
+          "slug": "mariage-musulman",
+          "title": "Mariage musulman : règles, traditions et organisation complète",
+          "file": "data\\scraped\\smakk.fr\\mariage-musulman.md",
+          "chars": 10419
+        },
+        {
+          "url": "https://smakk.fr/revelations-mariage-karim-benzema/",
+          "slug": "revelations-mariage-karim-benzema",
+          "title": "Les révélations inattendues qui pourraient gâcher le mariage de Karim Benzema",
+          "file": "data\\scraped\\smakk.fr\\revelations-mariage-karim-benzema.md",
+          "chars": 3265
+        },
+        {
+          "url": "https://smakk.fr/vol-mariage-50000-dollars/",
+          "slug": "vol-mariage-50000-dollars",
+          "title": "Il vole 50000$ des enveloppes de mariage : la suite est encore plus dingue",
+          "file": "data\\scraped\\smakk.fr\\vol-mariage-50000-dollars.md",
+          "chars": 3546
+        },
+        {
+          "url": "https://smakk.fr/organiser-evjf/",
+          "slug": "organiser-evjf",
+          "title": "Organiser EVJF : 6 étapes pour un enterrement de vie de jeune fille de rêve",
+          "file": "data\\scraped\\smakk.fr\\organiser-evjf.md",
+          "chars": 10766
+        },
+        {
+          "url": "https://smakk.fr/linkaband/",
+          "slug": "linkaband",
+          "title": "Linkaband : bien plus qu’un groupe de musique pour vos événements !",
+          "file": "data\\scraped\\smakk.fr\\linkaband.md",
+          "chars": 3211
+        },
+        {
+          "url": "https://smakk.fr/pourquoi-offrir-dragees-mariage/",
+          "slug": "pourquoi-offrir-dragees-mariage",
+          "title": "Dragées de mariage : 12 alternatives gourmandes pour les remplacer",
+          "file": "data\\scraped\\smakk.fr\\pourquoi-offrir-dragees-mariage.md",
+          "chars": 7880
+        },
+        {
+          "url": "https://smakk.fr/mariage-indien-tigres-benir-maries/",
+          "slug": "mariage-indien-tigres-benir-maries",
+          "title": "Des tigres pour bénir les mariés ? Le mariage indien qui scandalise la SPA",
+          "file": "data\\scraped\\smakk.fr\\mariage-indien-tigres-benir-maries.md",
+          "chars": 3935
+        },
+        {
+          "url": "https://smakk.fr/idee-animation-mariage/",
+          "slug": "idee-animation-mariage",
+          "title": "Meilleurs jeux pour un mariage : 35 idées d’animations pour divertir les invités",
+          "file": "data\\scraped\\smakk.fr\\idee-animation-mariage.md",
+          "chars": 16423
+        },
+        {
+          "url": "https://smakk.fr/smartphone-geant-new-york/",
+          "slug": "smartphone-geant-new-york",
+          "title": "Des smartphones géants envahissent New York et bouleversent les passants",
+          "file": "data\\scraped\\smakk.fr\\smartphone-geant-new-york.md",
+          "chars": 3484
+        },
+        {
+          "url": "https://smakk.fr/jeff-bezos-mariage-venise-selfie-scandale/",
+          "slug": "jeff-bezos-mariage-venise-selfie-scandale",
+          "title": "Comment Jeff Bezos piétine le cœur de Venise pour un selfie VIP",
+          "file": "data\\scraped\\smakk.fr\\jeff-bezos-mariage-venise-selfie-scandale.md",
+          "chars": 3207
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-trump-defile-armee/",
+          "slug": "anniversaire-trump-defile-armee",
+          "title": "Trump organise l’anniversaire le plus cher de l’histoire des États-Unis ?",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-trump-defile-armee.md",
+          "chars": 3375
+        },
+        {
+          "url": "https://smakk.fr/idee-demande-mariage-originale/",
+          "slug": "idee-demande-mariage-originale",
+          "title": "23 idées de demande en mariage originale : grand spectacle ou intimiste",
+          "file": "data\\scraped\\smakk.fr\\idee-demande-mariage-originale.md",
+          "chars": 14225
+        },
+        {
+          "url": "https://smakk.fr/idee-cadeau-femme-40-ans/",
+          "slug": "idee-cadeau-femme-40-ans",
+          "title": "40 idées cadeaux pour une femme de 40 ans : Objets & expériences",
+          "file": "data\\scraped\\smakk.fr\\idee-cadeau-femme-40-ans.md",
+          "chars": 6776
+        },
+        {
+          "url": "https://smakk.fr/comment-faire-un-discours-de-mariage/",
+          "slug": "comment-faire-un-discours-de-mariage",
+          "title": "Comment faire un discours de mariage inoubliable : Guide et conseils pratiques",
+          "file": "data\\scraped\\smakk.fr\\comment-faire-un-discours-de-mariage.md",
+          "chars": 5880
+        },
+        {
+          "url": "https://smakk.fr/astuces-attirer-clients-magasin/",
+          "slug": "astuces-attirer-clients-magasin",
+          "title": "14 idées concrètes pour attirer plus de clients dans votre magasin dès cette semaine",
+          "file": "data\\scraped\\smakk.fr\\astuces-attirer-clients-magasin.md",
+          "chars": 7641
+        },
+        {
+          "url": "https://smakk.fr/demande-mariage-discrete-genz/",
+          "slug": "demande-mariage-discrete-genz",
+          "title": "Découvrez la nouvelle tendance qui séduit la génération Z : demande en mariage discrète",
+          "file": "data\\scraped\\smakk.fr\\demande-mariage-discrete-genz.md",
+          "chars": 6400
+        },
+        {
+          "url": "https://smakk.fr/mariage-princesse-iran/",
+          "slug": "mariage-princesse-iran",
+          "title": "Même la princesse d’Iran s’y met : son mariage a surpris tout le monde",
+          "file": "data\\scraped\\smakk.fr\\mariage-princesse-iran.md",
+          "chars": 4820
+        },
+        {
+          "url": "https://smakk.fr/conge-mariage/",
+          "slug": "conge-mariage",
+          "title": "Congé de mariage : vos droits, durée, démarches et rémunération",
+          "file": "data\\scraped\\smakk.fr\\conge-mariage.md",
+          "chars": 7703
+        },
+        {
+          "url": "https://smakk.fr/animation-soiree-entreprise/",
+          "slug": "animation-soiree-entreprise",
+          "title": "23 idées pour une animation de soirée d’entreprise spectaculaire",
+          "file": "data\\scraped\\smakk.fr\\animation-soiree-entreprise.md",
+          "chars": 14558
+        },
+        {
+          "url": "https://smakk.fr/jeu-des-duos-mariage/",
+          "slug": "jeu-des-duos-mariage",
+          "title": "Jeu des duos de mariage : rires, rencontres et souvenirs garantis",
+          "file": "data\\scraped\\smakk.fr\\jeu-des-duos-mariage.md",
+          "chars": 6253
+        },
+        {
+          "url": "https://smakk.fr/plan-table-mariage-original/",
+          "slug": "plan-table-mariage-original",
+          "title": "Comment créer un plan de table de mariage original et mémorable ?",
+          "file": "data\\scraped\\smakk.fr\\plan-table-mariage-original.md",
+          "chars": 16546
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-5-ans/",
+          "slug": "anniversaire-5-ans",
+          "title": "Jeux et activités originaux pour un anniversaire 5 ans réussi",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-5-ans.md",
+          "chars": 8704
+        },
+        {
+          "url": "https://smakk.fr/animation-bapteme-enfants-adultes/",
+          "slug": "animation-bapteme-enfants-adultes",
+          "title": "Comment animer un baptême pour les enfants et les adultes ?",
+          "file": "data\\scraped\\smakk.fr\\animation-bapteme-enfants-adultes.md",
+          "chars": 11630
+        },
+        {
+          "url": "https://smakk.fr/feter-une-communion/",
+          "slug": "feter-une-communion",
+          "title": "Guide complet pour fêter une première communion parfaite",
+          "file": "data\\scraped\\smakk.fr\\feter-une-communion.md",
+          "chars": 11168
+        },
+        {
+          "url": "https://smakk.fr/conseil-planification-mariage-sans-stress/",
+          "slug": "conseil-planification-mariage-sans-stress",
+          "title": "10 astuces incroyables pour organiser un mariage sans stress !",
+          "file": "data\\scraped\\smakk.fr\\conseil-planification-mariage-sans-stress.md",
+          "chars": 11196
+        },
+        {
+          "url": "https://smakk.fr/6-mois-prison-utilisation-photomaton/",
+          "slug": "6-mois-prison-utilisation-photomaton",
+          "title": "Il écope de 6 mois de prison après l’utilisation d’un photomaton",
+          "file": "data\\scraped\\smakk.fr\\6-mois-prison-utilisation-photomaton.md",
+          "chars": 2076
+        },
+        {
+          "url": "https://smakk.fr/trier-photos/",
+          "slug": "trier-photos",
+          "title": "Rangement et tri de vos photos : méthodes simples et logiciels pratiques",
+          "file": "data\\scraped\\smakk.fr\\trier-photos.md",
+          "chars": 10499
+        },
+        {
+          "url": "https://smakk.fr/organiser-baby-shower/",
+          "slug": "organiser-baby-shower",
+          "title": "Comment organiser une baby shower pleine de rires et de souvenirs ?",
+          "file": "data\\scraped\\smakk.fr\\organiser-baby-shower.md",
+          "chars": 17032
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-60-ans/",
+          "slug": "anniversaire-60-ans",
+          "title": "Fêtez un anniversaire 60 ans en beauté avec idées et inspirations",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-60-ans.md",
+          "chars": 7660
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-28-ans/",
+          "slug": "anniversaire-28-ans",
+          "title": "Anniversaire 28 ans : 10 façons de marquer le coup",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-28-ans.md",
+          "chars": 9178
+        },
+        {
+          "url": "https://smakk.fr/fete-des-meres/",
+          "slug": "fete-des-meres",
+          "title": "12 manières originales de célébrer la fête des mères et de lui dire merci",
+          "file": "data\\scraped\\smakk.fr\\fete-des-meres.md",
+          "chars": 8314
+        },
+        {
+          "url": "https://smakk.fr/feter-paques/",
+          "slug": "feter-paques",
+          "title": "Comment fêter Pâques en famille de façon originale ?",
+          "file": "data\\scraped\\smakk.fr\\feter-paques.md",
+          "chars": 8215
+        },
+        {
+          "url": "https://smakk.fr/soiree-theme-annees-80/",
+          "slug": "soiree-theme-annees-80",
+          "title": "Comment organiser une soirée inoubliable sur le thème des années 80 ?",
+          "file": "data\\scraped\\smakk.fr\\soiree-theme-annees-80.md",
+          "chars": 7146
+        },
+        {
+          "url": "https://smakk.fr/preparatif-mariage-to-do-list-gratuit/",
+          "slug": "preparatif-mariage-to-do-list-gratuit",
+          "title": "To do list mariage à imprimer : la check-list complète des préparatifs par mois",
+          "file": "data\\scraped\\smakk.fr\\preparatif-mariage-to-do-list-gratuit.md",
+          "chars": 7123
+        },
+        {
+          "url": "https://smakk.fr/idee-jeux-evjf/",
+          "slug": "idee-jeux-evjf",
+          "title": "Choisir les meilleurs jeux pour un EVJF : idées gratuites ou à sensations fortes",
+          "file": "data\\scraped\\smakk.fr\\idee-jeux-evjf.md",
+          "chars": 10945
+        },
+        {
+          "url": "https://smakk.fr/mariage-theme-bridgerton/",
+          "slug": "mariage-theme-bridgerton",
+          "title": "Comment organiser un mariage thème Bridgerton élégant ?",
+          "file": "data\\scraped\\smakk.fr\\mariage-theme-bridgerton.md",
+          "chars": 10352
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-theme-pokemon/",
+          "slug": "anniversaire-theme-pokemon",
+          "title": "Organisez un anniversaire Pokémon magique et inoubliable",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-theme-pokemon.md",
+          "chars": 10298
+        },
+        {
+          "url": "https://smakk.fr/mariage-rock/",
+          "slug": "mariage-rock",
+          "title": "Mariage rock ? Voici 5 secrets pour une fête à couper le souffle !",
+          "file": "data\\scraped\\smakk.fr\\mariage-rock.md",
+          "chars": 5272
+        },
+        {
+          "url": "https://smakk.fr/organisation-soiree-remise-prix/",
+          "slug": "organisation-soiree-remise-prix",
+          "title": "Comment transformer votre remise de prix en un moment mémorable ?",
+          "file": "data\\scraped\\smakk.fr\\organisation-soiree-remise-prix.md",
+          "chars": 9692
+        },
+        {
+          "url": "https://smakk.fr/idee-incentive-entreprise/",
+          "slug": "idee-incentive-entreprise",
+          "title": "19 idées d’incentive entreprise pour motiver votre équipe",
+          "file": "data\\scraped\\smakk.fr\\idee-incentive-entreprise.md",
+          "chars": 5665
+        },
+        {
+          "url": "https://smakk.fr/numerisation-cassette-vhs/",
+          "slug": "numerisation-cassette-vhs",
+          "title": "Préserver les souvenirs de famille grâce à la numérisation de vos cassettes",
+          "file": "data\\scraped\\smakk.fr\\numerisation-cassette-vhs.md",
+          "chars": 5984
+        },
+        {
+          "url": "https://smakk.fr/voiture-ancienne-mariage/",
+          "slug": "voiture-ancienne-mariage",
+          "title": "Pourquoi opter pour une voiture ancienne pour votre mariage ?",
+          "file": "data\\scraped\\smakk.fr\\voiture-ancienne-mariage.md",
+          "chars": 9552
+        },
+        {
+          "url": "https://smakk.fr/bijoux-mariage-fait-main/",
+          "slug": "bijoux-mariage-fait-main",
+          "title": "Découvrez l’élégance des bijoux de mariage faits à la main et écoresponsables",
+          "file": "data\\scraped\\smakk.fr\\bijoux-mariage-fait-main.md",
+          "chars": 8511
+        },
+        {
+          "url": "https://smakk.fr/demander-son-homme-en-mariage/",
+          "slug": "demander-son-homme-en-mariage",
+          "title": "Comment demander son homme en mariage : Approche moderne et gestion des émotions",
+          "file": "data\\scraped\\smakk.fr\\demander-son-homme-en-mariage.md",
+          "chars": 6742
+        },
+        {
+          "url": "https://smakk.fr/activites-anniversaire-ado/",
+          "slug": "activites-anniversaire-ado",
+          "title": "Idées d’activités pour un anniversaire ado selon son âge",
+          "file": "data\\scraped\\smakk.fr\\activites-anniversaire-ado.md",
+          "chars": 13350
+        },
+        {
+          "url": "https://smakk.fr/feter-anniversaire-paris/",
+          "slug": "feter-anniversaire-paris",
+          "title": "Guide indispensable pour un anniversaire à Paris exceptionnel et une soirée de rêve",
+          "file": "data\\scraped\\smakk.fr\\feter-anniversaire-paris.md",
+          "chars": 15095
+        },
+        {
+          "url": "https://smakk.fr/animation-halloween-entreprise/",
+          "slug": "animation-halloween-entreprise",
+          "title": "Les meilleures animation pour fêter Halloween en entreprise",
+          "file": "data\\scraped\\smakk.fr\\animation-halloween-entreprise.md",
+          "chars": 7557
+        },
+        {
+          "url": "https://smakk.fr/animation-mariage-gironde/",
+          "slug": "animation-mariage-gironde",
+          "title": "15 idées d’animation pour votre mariage en Gironde",
+          "file": "data\\scraped\\smakk.fr\\animation-mariage-gironde.md",
+          "chars": 3211
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-20-ans-pas-cher/",
+          "slug": "anniversaire-20-ans-pas-cher",
+          "title": "Organiser un anniversaire 20 ans avec un petit budget mais qui cartonne sur Instagram",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-20-ans-pas-cher.md",
+          "chars": 7529
+        },
+        {
+          "url": "https://smakk.fr/cadeau-mariage-pas-cher/",
+          "slug": "cadeau-mariage-pas-cher",
+          "title": "Offrez un souvenir aux mariés avec un cadeau de mariage pas cher",
+          "file": "data\\scraped\\smakk.fr\\cadeau-mariage-pas-cher.md",
+          "chars": 9213
+        },
+        {
+          "url": "https://smakk.fr/avis-comparatif-photobooth-cheerz-smakk/",
+          "slug": "avis-comparatif-photobooth-cheerz-smakk",
+          "title": "Comparatif entre Photobooth Cheerz et Smakk pour vos événements",
+          "file": "data\\scraped\\smakk.fr\\avis-comparatif-photobooth-cheerz-smakk.md",
+          "chars": 6653
+        },
+        {
+          "url": "https://smakk.fr/guide-bague-mariage-doigt/",
+          "slug": "guide-bague-mariage-doigt",
+          "title": "Sur quelle main porter une bague de mariage ? [Guide Pratique]",
+          "file": "data\\scraped\\smakk.fr\\guide-bague-mariage-doigt.md",
+          "chars": 5293
+        },
+        {
+          "url": "https://smakk.fr/quiz-theme-mariage/",
+          "slug": "quiz-theme-mariage",
+          "title": "Quizz pour choisir le thème de mariage parfait et idées inspirantes",
+          "file": "data\\scraped\\smakk.fr\\quiz-theme-mariage.md",
+          "chars": 7600
+        },
+        {
+          "url": "https://smakk.fr/magicien-mentaliste/",
+          "slug": "magicien-mentaliste",
+          "title": "Pourquoi inviter un magicien mentaliste à vos évènements ?",
+          "file": "data\\scraped\\smakk.fr\\magicien-mentaliste.md",
+          "chars": 4969
+        },
+        {
+          "url": "https://smakk.fr/animation-soiree-inauguration/",
+          "slug": "animation-soiree-inauguration",
+          "title": "Idée originale pour une inauguration : animations inoubliables pour votre soirée",
+          "file": "data\\scraped\\smakk.fr\\animation-soiree-inauguration.md",
+          "chars": 7637
+        },
+        {
+          "url": "https://smakk.fr/organiser-soiree-evenementielle/",
+          "slug": "organiser-soiree-evenementielle",
+          "title": "5 secrets pour rendre votre soirée événementielle mémorable !",
+          "file": "data\\scraped\\smakk.fr\\organiser-soiree-evenementielle.md",
+          "chars": 10163
+        },
+        {
+          "url": "https://smakk.fr/animation-grande-surface-commerciale/",
+          "slug": "animation-grande-surface-commerciale",
+          "title": "Animation en grande surface : Comment optimiser vos ventes et fidéliser vos clients",
+          "file": "data\\scraped\\smakk.fr\\animation-grande-surface-commerciale.md",
+          "chars": 8255
+        },
+        {
+          "url": "https://smakk.fr/mariage-insolite/",
+          "slug": "mariage-insolite",
+          "title": "Organiser un mariage insolite : idées atypiques pour une cérémonie unique",
+          "file": "data\\scraped\\smakk.fr\\mariage-insolite.md",
+          "chars": 9157
+        },
+        {
+          "url": "https://smakk.fr/decoration-mariage/",
+          "slug": "decoration-mariage",
+          "title": "Décoration salle de mariage : créez une réception qui fera sensation",
+          "file": "data\\scraped\\smakk.fr\\decoration-mariage.md",
+          "chars": 11417
+        },
+        {
+          "url": "https://smakk.fr/accessoires-photobooth/",
+          "slug": "accessoires-photobooth",
+          "title": "Comment choisir ses accessoires photobooth pour votre événement ?",
+          "file": "data\\scraped\\smakk.fr\\accessoires-photobooth.md",
+          "chars": 4913
+        },
+        {
+          "url": "https://smakk.fr/defi-photo-mariage/",
+          "slug": "defi-photo-mariage",
+          "title": "Organiser un défi photo mariage : 30 idées fun pour vos invités",
+          "file": "data\\scraped\\smakk.fr\\defi-photo-mariage.md",
+          "chars": 8497
+        },
+        {
+          "url": "https://smakk.fr/organisation-bapteme/",
+          "slug": "organisation-bapteme",
+          "title": "Créer des souvenirs inoubliables : animation pour un baptême réussi",
+          "file": "data\\scraped\\smakk.fr\\organisation-bapteme.md",
+          "chars": 9837
+        },
+        {
+          "url": "https://smakk.fr/comparatif-photobooth/",
+          "slug": "comparatif-photobooth",
+          "title": "Tableau comparatif photobooth : Combien ça coûte réellement ?",
+          "file": "data\\scraped\\smakk.fr\\comparatif-photobooth.md",
+          "chars": 7036
+        },
+        {
+          "url": "https://smakk.fr/tarif-location-photobooth-mariage/",
+          "slug": "tarif-location-photobooth-mariage",
+          "title": "Combien coute la location d’un photobooth de mariage ?",
+          "file": "data\\scraped\\smakk.fr\\tarif-location-photobooth-mariage.md",
+          "chars": 5156
+        },
+        {
+          "url": "https://smakk.fr/theme-mariage-vigne/",
+          "slug": "theme-mariage-vigne",
+          "title": "Mariage dans les vignes : Échanger ses vœux au cœur des vignobles",
+          "file": "data\\scraped\\smakk.fr\\theme-mariage-vigne.md",
+          "chars": 8684
+        },
+        {
+          "url": "https://smakk.fr/tendance-mariage-anti-wedding/",
+          "slug": "tendance-mariage-anti-wedding",
+          "title": "Tendance anti wedding : mariage alternatif qui casse les codes traditionnels",
+          "file": "data\\scraped\\smakk.fr\\tendance-mariage-anti-wedding.md",
+          "chars": 8162
+        },
+        {
+          "url": "https://smakk.fr/impression-photobooth/",
+          "slug": "impression-photobooth",
+          "title": "Combien d’impression avec un photobooth ? Tirage photo instantanée",
+          "file": "data\\scraped\\smakk.fr\\impression-photobooth.md",
+          "chars": 4821
+        },
+        {
+          "url": "https://smakk.fr/comparatif-photobooth-miroir-360/",
+          "slug": "comparatif-photobooth-miroir-360",
+          "title": "Photobooth Miroir vs Videobooth 360 : Quelle animation pour votre événement ?",
+          "file": "data\\scraped\\smakk.fr\\comparatif-photobooth-miroir-360.md",
+          "chars": 5941
+        },
+        {
+          "url": "https://smakk.fr/bar-mitzvah/",
+          "slug": "bar-mitzvah",
+          "title": "Pourquoi le photobooth est incontournable pour organiser une Bar Mitzvah ?",
+          "file": "data\\scraped\\smakk.fr\\bar-mitzvah.md",
+          "chars": 4591
+        },
+        {
+          "url": "https://smakk.fr/astuces-borne-photo-mariage/",
+          "slug": "astuces-borne-photo-mariage",
+          "title": "5 Astuces pour faire de votre borne photo de mariage un succès !",
+          "file": "data\\scraped\\smakk.fr\\astuces-borne-photo-mariage.md",
+          "chars": 3863
+        },
+        {
+          "url": "https://smakk.fr/photo-groupe/",
+          "slug": "photo-groupe",
+          "title": "Photo de groupe : Astuce infaillible pour des souvenirs mémorables",
+          "file": "data\\scraped\\smakk.fr\\photo-groupe.md",
+          "chars": 11982
+        },
+        {
+          "url": "https://smakk.fr/photo-booth-reseaux-sociaux/",
+          "slug": "photo-booth-reseaux-sociaux",
+          "title": "Ne négligez pas la puissance des photos des réseaux sociaux pour votre événement",
+          "file": "data\\scraped\\smakk.fr\\photo-booth-reseaux-sociaux.md",
+          "chars": 4427
+        },
+        {
+          "url": "https://smakk.fr/comment-choisir-photobooth/",
+          "slug": "comment-choisir-photobooth",
+          "title": "7 Conseils pour choisir le meilleur photobooth pour votre événement",
+          "file": "data\\scraped\\smakk.fr\\comment-choisir-photobooth.md",
+          "chars": 11891
+        },
+        {
+          "url": "https://smakk.fr/vin-honneur-mariage-100-personnes/",
+          "slug": "vin-honneur-mariage-100-personnes",
+          "title": "Vin d’honneur pour 100 personnes : 5 astuces pour ne rien oublier",
+          "file": "data\\scraped\\smakk.fr\\vin-honneur-mariage-100-personnes.md",
+          "chars": 7873
+        },
+        {
+          "url": "https://smakk.fr/cadeau-pot-depart/",
+          "slug": "cadeau-pot-depart",
+          "title": "Idée cadeau pour un pot de départ : 30 idées classées par budget",
+          "file": "data\\scraped\\smakk.fr\\cadeau-pot-depart.md",
+          "chars": 6740
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-harry-potter/",
+          "slug": "anniversaire-harry-potter",
+          "title": "Plongez dans la magie : un anniversaire Harry Potter inoubliable",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-harry-potter.md",
+          "chars": 11212
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-18-ans/",
+          "slug": "anniversaire-18-ans",
+          "title": "Anniversaire 18 ans : animation et jeux pour une fête de rêve",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-18-ans.md",
+          "chars": 14669
+        },
+        {
+          "url": "https://smakk.fr/animations-restaurants/",
+          "slug": "animations-restaurants",
+          "title": "Animations restaurants : attirer des clients",
+          "file": "data\\scraped\\smakk.fr\\animations-restaurants.md",
+          "chars": 10472
+        },
+        {
+          "url": "https://smakk.fr/animation-noel/",
+          "slug": "animation-noel",
+          "title": "Comment bien préparer un arbre de noël en entreprise",
+          "file": "data\\scraped\\smakk.fr\\animation-noel.md",
+          "chars": 6311
+        },
+        {
+          "url": "https://smakk.fr/photocall-mariage/",
+          "slug": "photocall-mariage",
+          "title": "Photocall Mariage : un décor inoubliable pour votre cérémonie",
+          "file": "data\\scraped\\smakk.fr\\photocall-mariage.md",
+          "chars": 8374
+        },
+        {
+          "url": "https://smakk.fr/livre-or-mariage/",
+          "slug": "livre-or-mariage",
+          "title": "10 idées pour un livre d’or de mariage original à votre cérémonie",
+          "file": "data\\scraped\\smakk.fr\\livre-or-mariage.md",
+          "chars": 8964
+        },
+        {
+          "url": "https://smakk.fr/animation-anniversaire-adulte/",
+          "slug": "animation-anniversaire-adulte",
+          "title": "16 idées d’animations pour un anniversaire adulte absolument hilarant",
+          "file": "data\\scraped\\smakk.fr\\animation-anniversaire-adulte.md",
+          "chars": 14757
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-5-ans-mariage/",
+          "slug": "anniversaire-5-ans-mariage",
+          "title": "5 ans de mariage : noces de bois avec idées cadeaux, activités & textes",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-5-ans-mariage.md",
+          "chars": 9264
+        },
+        {
+          "url": "https://smakk.fr/nouvel-an-lunaire/",
+          "slug": "nouvel-an-lunaire",
+          "title": "Nouvel an lunaire 2026 : Célébrez l’année du cheval de feu",
+          "file": "data\\scraped\\smakk.fr\\nouvel-an-lunaire.md",
+          "chars": 6066
+        },
+        {
+          "url": "https://smakk.fr/mariage-gaulois-parc-asterix/",
+          "slug": "mariage-gaulois-parc-asterix",
+          "title": "Du village sarthois au Parc Astérix, l’incroyable ascension d’un mariage Gaulois",
+          "file": "data\\scraped\\smakk.fr\\mariage-gaulois-parc-asterix.md",
+          "chars": 5471
+        },
+        {
+          "url": "https://smakk.fr/guide-mariage-hiver/",
+          "slug": "guide-mariage-hiver",
+          "title": "Se marier en hiver : élégance, intimité et économies",
+          "file": "data\\scraped\\smakk.fr\\guide-mariage-hiver.md",
+          "chars": 16600
+        },
+        {
+          "url": "https://smakk.fr/destination-seminaire-france/",
+          "slug": "destination-seminaire-france",
+          "title": "Top 5 des destinations en France pour un séminaire inoubliable",
+          "file": "data\\scraped\\smakk.fr\\destination-seminaire-france.md",
+          "chars": 5920
+        },
+        {
+          "url": "https://smakk.fr/renouvellement-voeux-mariage-guide/",
+          "slug": "renouvellement-voeux-mariage-guide",
+          "title": "Renouveler ses vœux : célébrer un amour qui dure",
+          "file": "data\\scraped\\smakk.fr\\renouvellement-voeux-mariage-guide.md",
+          "chars": 23350
+        },
+        {
+          "url": "https://smakk.fr/quelle-tenue-choisir-pour-un-mariage/",
+          "slug": "quelle-tenue-choisir-pour-un-mariage",
+          "title": "5 astuces indispensables pour choisir sa tenue de mariage cette année",
+          "file": "data\\scraped\\smakk.fr\\quelle-tenue-choisir-pour-un-mariage.md",
+          "chars": 6471
+        },
+        {
+          "url": "https://smakk.fr/chemin-de-table-mariage/",
+          "slug": "chemin-de-table-mariage",
+          "title": "Chemin de table mariage : L’élément clé pour sublimer votre décoration",
+          "file": "data\\scraped\\smakk.fr\\chemin-de-table-mariage.md",
+          "chars": 7541
+        },
+        {
+          "url": "https://smakk.fr/idee-cadeau-homme-50-ans/",
+          "slug": "idee-cadeau-homme-50-ans",
+          "title": "Quelle idée cadeau homme 50 ans original choisir ? high-tech et autres",
+          "file": "data\\scraped\\smakk.fr\\idee-cadeau-homme-50-ans.md",
+          "chars": 7312
+        },
+        {
+          "url": "https://smakk.fr/kit-survie-mariage/",
+          "slug": "kit-survie-mariage",
+          "title": "Kit de survie pour mariage : liste complète des indispensables",
+          "file": "data\\scraped\\smakk.fr\\kit-survie-mariage.md",
+          "chars": 8272
+        },
+        {
+          "url": "https://smakk.fr/theme-anniversaire-soiree/",
+          "slug": "theme-anniversaire-soiree",
+          "title": "18 idées de thème d’anniversaire pour organiser une fête tendance",
+          "file": "data\\scraped\\smakk.fr\\theme-anniversaire-soiree.md",
+          "chars": 15421
+        },
+        {
+          "url": "https://smakk.fr/buffet-thematique-evenement/",
+          "slug": "buffet-thematique-evenement",
+          "title": "5 idées de buffets thématiques pour vos événements",
+          "file": "data\\scraped\\smakk.fr\\buffet-thematique-evenement.md",
+          "chars": 5910
+        },
+        {
+          "url": "https://smakk.fr/20-ans-mariage-noces-porcelaine/",
+          "slug": "20-ans-mariage-noces-porcelaine",
+          "title": "Noces de porcelaine : 20 ans de mariage, fête inoubliable",
+          "file": "data\\scraped\\smakk.fr\\20-ans-mariage-noces-porcelaine.md",
+          "chars": 11053
+        },
+        {
+          "url": "https://smakk.fr/meilleures-villes-demande-mariage/",
+          "slug": "meilleures-villes-demande-mariage",
+          "title": "Meilleures villes pour une demande en mariage inoubliable",
+          "file": "data\\scraped\\smakk.fr\\meilleures-villes-demande-mariage.md",
+          "chars": 9966
+        },
+        {
+          "url": "https://smakk.fr/phrase-romantique-saint-valentin/",
+          "slug": "phrase-romantique-saint-valentin",
+          "title": "Phrase romantique de Saint-Valentin : 40 messages d’amour personnalisés",
+          "file": "data\\scraped\\smakk.fr\\phrase-romantique-saint-valentin.md",
+          "chars": 12309
+        },
+        {
+          "url": "https://smakk.fr/comment-dire-je-taime/",
+          "slug": "comment-dire-je-taime",
+          "title": "Comment dire je t’aime dans toutes les langues à travers le monde",
+          "file": "data\\scraped\\smakk.fr\\comment-dire-je-taime.md",
+          "chars": 14447
+        },
+        {
+          "url": "https://smakk.fr/florajet-livraison-fleurs-fraiches/",
+          "slug": "florajet-livraison-fleurs-fraiches",
+          "title": "Florajet : la référence en livraison de fleurs fraîches pour tous vos événements",
+          "file": "data\\scraped\\smakk.fr\\florajet-livraison-fleurs-fraiches.md",
+          "chars": 5719
+        },
+        {
+          "url": "https://smakk.fr/tendance-mariage/",
+          "slug": "tendance-mariage",
+          "title": "Découvrez les toutes dernières tendances de mariage en 2026",
+          "file": "data\\scraped\\smakk.fr\\tendance-mariage.md",
+          "chars": 13658
+        },
+        {
+          "url": "https://smakk.fr/mariage-disney/",
+          "slug": "mariage-disney",
+          "title": "Mariage Disney : Vivez une cérémonie dans un rêve éveillé",
+          "file": "data\\scraped\\smakk.fr\\mariage-disney.md",
+          "chars": 8288
+        },
+        {
+          "url": "https://smakk.fr/mariage-noel/",
+          "slug": "mariage-noel",
+          "title": "Un mariage de Noël : féérie et souvenirs éternels",
+          "file": "data\\scraped\\smakk.fr\\mariage-noel.md",
+          "chars": 11537
+        },
+        {
+          "url": "https://smakk.fr/mariage-pas-cher/",
+          "slug": "mariage-pas-cher",
+          "title": "Organiser un mariage à petit budget, un défi à relever !",
+          "file": "data\\scraped\\smakk.fr\\mariage-pas-cher.md",
+          "chars": 18949
+        },
+        {
+          "url": "https://smakk.fr/mariage-paris-salle-pas-chere/",
+          "slug": "mariage-paris-salle-pas-chere",
+          "title": "Mariage à Paris : nos salles pas chères et originales",
+          "file": "data\\scraped\\smakk.fr\\mariage-paris-salle-pas-chere.md",
+          "chars": 12863
+        },
+        {
+          "url": "https://smakk.fr/gender-reveal/",
+          "slug": "gender-reveal",
+          "title": "Gender Reveal : Guide complet avec 21 idées tendance et décoration",
+          "file": "data\\scraped\\smakk.fr\\gender-reveal.md",
+          "chars": 13184
+        },
+        {
+          "url": "https://smakk.fr/brunch-lendemain-mariage/",
+          "slug": "brunch-lendemain-mariage",
+          "title": "Brunch lendemain de mariage : nouvelle tendance pour un moment convivial",
+          "file": "data\\scraped\\smakk.fr\\brunch-lendemain-mariage.md",
+          "chars": 10075
+        },
+        {
+          "url": "https://smakk.fr/35-ans-mariage-noces-rubis/",
+          "slug": "35-ans-mariage-noces-rubis",
+          "title": "35 ans de mariage : réussir vos noces de rubis",
+          "file": "data\\scraped\\smakk.fr\\35-ans-mariage-noces-rubis.md",
+          "chars": 10091
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-30-ans-original/",
+          "slug": "anniversaire-30-ans-original",
+          "title": "Anniversaire 30 ans : idées et activités pour marquer le coup",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-30-ans-original.md",
+          "chars": 13474
+        },
+        {
+          "url": "https://smakk.fr/mariage-traditionnel/",
+          "slug": "mariage-traditionnel",
+          "title": "Comment éviter un mariage traditionnel : découvrez l’union de Nikita et Marion",
+          "file": "data\\scraped\\smakk.fr\\mariage-traditionnel.md",
+          "chars": 5783
+        },
+        {
+          "url": "https://smakk.fr/mariage-bretagne-lieu/",
+          "slug": "mariage-bretagne-lieu",
+          "title": "Comment dénicher le domaine adéquat pour un mariage mémorable en Bretagne ?",
+          "file": "data\\scraped\\smakk.fr\\mariage-bretagne-lieu.md",
+          "chars": 5667
+        },
+        {
+          "url": "https://smakk.fr/tableau-des-noces-de-mariage/",
+          "slug": "tableau-des-noces-de-mariage",
+          "title": "Tableau des noces de mariage : de 1 mois à 100 ans (+ PDF)",
+          "file": "data\\scraped\\smakk.fr\\tableau-des-noces-de-mariage.md",
+          "chars": 7544
+        },
+        {
+          "url": "https://smakk.fr/combien-donner-pour-un-mariage-guide-pour-un-geste-memorable/",
+          "slug": "combien-donner-pour-un-mariage-guide-pour-un-geste-memorable",
+          "title": "Combien donner pour un mariage en 2026 ? Enveloppe pour les futurs mariés",
+          "file": "data\\scraped\\smakk.fr\\combien-donner-pour-un-mariage-guide-pour-un-geste-memorable.md",
+          "chars": 4989
+        },
+        {
+          "url": "https://smakk.fr/nombre-mariage-france/",
+          "slug": "nombre-mariage-france",
+          "title": "Nombre de mariages en 2026 : Rush des réservations et des prestataires",
+          "file": "data\\scraped\\smakk.fr\\nombre-mariage-france.md",
+          "chars": 2731
+        },
+        {
+          "url": "https://smakk.fr/animation-nouvel-an/",
+          "slug": "animation-nouvel-an",
+          "title": "Top 10 des idées d’animation du Nouvel An et réveillon 2026",
+          "file": "data\\scraped\\smakk.fr\\animation-nouvel-an.md",
+          "chars": 7584
+        },
+        {
+          "url": "https://smakk.fr/idees-cadeaux-tendance-quoi-offrir-cette-annee/",
+          "slug": "idees-cadeaux-tendance-quoi-offrir-cette-annee",
+          "title": "Idées cadeaux tendance 2026 : Quoi offrir cette année ?",
+          "file": "data\\scraped\\smakk.fr\\idees-cadeaux-tendance-quoi-offrir-cette-annee.md",
+          "chars": 6977
+        },
+        {
+          "url": "https://smakk.fr/deguisement-femme-halloween/",
+          "slug": "deguisement-femme-halloween",
+          "title": "Quelles tendances pour les déguisements femme pour d’Halloween 2026 ?",
+          "file": "data\\scraped\\smakk.fr\\deguisement-femme-halloween.md",
+          "chars": 8118
+        },
+        {
+          "url": "https://smakk.fr/jeux-soiree/",
+          "slug": "jeux-soiree",
+          "title": "10 meilleurs jeux de soirée pour une ambiance inoubliable en 2026",
+          "file": "data\\scraped\\smakk.fr\\jeux-soiree.md",
+          "chars": 7038
+        },
+        {
+          "url": "https://smakk.fr/animation-fete-galette-des-rois/",
+          "slug": "animation-fete-galette-des-rois",
+          "title": "Animation galette des rois en entreprise : Louez un photobooth pour l’Épiphanie",
+          "file": "data\\scraped\\smakk.fr\\animation-fete-galette-des-rois.md",
+          "chars": 9614
+        },
+        {
+          "url": "https://smakk.fr/choisir-centre-congres-evenement-professionnel/",
+          "slug": "choisir-centre-congres-evenement-professionnel",
+          "title": "Comment choisir le bon centre des congrès pour un événement professionnel réussi",
+          "file": "data\\scraped\\smakk.fr\\choisir-centre-congres-evenement-professionnel.md",
+          "chars": 7299
+        },
+        {
+          "url": "https://smakk.fr/exemple-voeux-mariage-moderne/",
+          "slug": "exemple-voeux-mariage-moderne",
+          "title": "Voeux de mariage moderne : Écrire un discours touchant et original",
+          "file": "data\\scraped\\smakk.fr\\exemple-voeux-mariage-moderne.md",
+          "chars": 14336
+        },
+        {
+          "url": "https://smakk.fr/animation-seminaire-entreprise/",
+          "slug": "animation-seminaire-entreprise",
+          "title": "Animation de séminaire d’entreprise : guide pour engager vos équipes facilement",
+          "file": "data\\scraped\\smakk.fr\\animation-seminaire-entreprise.md",
+          "chars": 10948
+        },
+        {
+          "url": "https://smakk.fr/tente-stretch-nomade/",
+          "slug": "tente-stretch-nomade",
+          "title": "Idées déco et lumières pour un anniversaire réussi sous une tente stretch nomade",
+          "file": "data\\scraped\\smakk.fr\\tente-stretch-nomade.md",
+          "chars": 7234
+        },
+        {
+          "url": "https://smakk.fr/soiree-theme-coachella/",
+          "slug": "soiree-theme-coachella",
+          "title": "10 conseils essentiels pour organiser une soirée Coachella inoubliable",
+          "file": "data\\scraped\\smakk.fr\\soiree-theme-coachella.md",
+          "chars": 11636
+        },
+        {
+          "url": "https://smakk.fr/garden-party/",
+          "slug": "garden-party",
+          "title": "Comment organiser une garden party réussie",
+          "file": "data\\scraped\\smakk.fr\\garden-party.md",
+          "chars": 15051
+        },
+        {
+          "url": "https://smakk.fr/mariage-ceremonie-laique/",
+          "slug": "mariage-ceremonie-laique",
+          "title": "Mariage cérémonie laïque : guide pratique, idées de rituels et textes inspirants",
+          "file": "data\\scraped\\smakk.fr\\mariage-ceremonie-laique.md",
+          "chars": 9319
+        },
+        {
+          "url": "https://smakk.fr/mariage-intime/",
+          "slug": "mariage-intime",
+          "title": "Mariage intime : guide pour une célébration simple et originale",
+          "file": "data\\scraped\\smakk.fr\\mariage-intime.md",
+          "chars": 15654
+        },
+        {
+          "url": "https://smakk.fr/comment-perenniser-impact-evenement/",
+          "slug": "comment-perenniser-impact-evenement",
+          "title": "Comment pérenniser l’impact d’un événement ?",
+          "file": "data\\scraped\\smakk.fr\\comment-perenniser-impact-evenement.md",
+          "chars": 6883
+        },
+        {
+          "url": "https://smakk.fr/comment-creer-celebration-memorable/",
+          "slug": "comment-creer-celebration-memorable",
+          "title": "Comment créer une célébration mémorable ?",
+          "file": "data\\scraped\\smakk.fr\\comment-creer-celebration-memorable.md",
+          "chars": 6085
+        },
+        {
+          "url": "https://smakk.fr/soiree-clients/",
+          "slug": "soiree-clients",
+          "title": "Comment organiser une soirée clients mémorable en 10 points essentiels ?",
+          "file": "data\\scraped\\smakk.fr\\soiree-clients.md",
+          "chars": 6699
+        },
+        {
+          "url": "https://smakk.fr/animation-stand-salon-professionnel/",
+          "slug": "animation-stand-salon-professionnel",
+          "title": "10 idées d’animation pour un stand de salon professionnel",
+          "file": "data\\scraped\\smakk.fr\\animation-stand-salon-professionnel.md",
+          "chars": 12301
+        },
+        {
+          "url": "https://smakk.fr/soiree-lancement-produit/",
+          "slug": "soiree-lancement-produit",
+          "title": "Réussir sa soirée de lancement : Comment promouvoir un nouveau produit ?",
+          "file": "data\\scraped\\smakk.fr\\soiree-lancement-produit.md",
+          "chars": 13137
+        },
+        {
+          "url": "https://smakk.fr/repas-de-mariage/",
+          "slug": "repas-de-mariage",
+          "title": "Organisez un repas de mariage parfait : idées, conseils et inspirations",
+          "file": "data\\scraped\\smakk.fr\\repas-de-mariage.md",
+          "chars": 13260
+        },
+        {
+          "url": "https://smakk.fr/photo-soiree/",
+          "slug": "photo-soiree",
+          "title": "Comment réussir vos photos de soirée ? Astuces pour souvenir inoubliable",
+          "file": "data\\scraped\\smakk.fr\\photo-soiree.md",
+          "chars": 9367
+        },
+        {
+          "url": "https://smakk.fr/comment-reussir-organisation-evg/",
+          "slug": "comment-reussir-organisation-evg",
+          "title": "Comment réussir l’organisation d’un EVG sans stresser ?",
+          "file": "data\\scraped\\smakk.fr\\comment-reussir-organisation-evg.md",
+          "chars": 18448
+        },
+        {
+          "url": "https://smakk.fr/idees-activites-evg/",
+          "slug": "idees-activites-evg",
+          "title": "Activité EVG : 44 idées & quiz pour organiser un enterrement de vie de garçon",
+          "file": "data\\scraped\\smakk.fr\\idees-activites-evg.md",
+          "chars": 15731
+        },
+        {
+          "url": "https://smakk.fr/mariage-glam-chic/",
+          "slug": "mariage-glam-chic",
+          "title": "Mariage Glam Chic : guide complet pour un événement inoubliable",
+          "file": "data\\scraped\\smakk.fr\\mariage-glam-chic.md",
+          "chars": 14577
+        },
+        {
+          "url": "https://smakk.fr/se-marier-en-semaine/",
+          "slug": "se-marier-en-semaine",
+          "title": "Se marier en semaine : plan du siècle ou fausse bonne idée ?",
+          "file": "data\\scraped\\smakk.fr\\se-marier-en-semaine.md",
+          "chars": 9753
+        },
+        {
+          "url": "https://smakk.fr/activites-kermesse/",
+          "slug": "activites-kermesse",
+          "title": "Meilleures activités de kermesse pour réussir la fête d’école de fin d’année",
+          "file": "data\\scraped\\smakk.fr\\activites-kermesse.md",
+          "chars": 16359
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-pirate-enfant/",
+          "slug": "anniversaire-pirate-enfant",
+          "title": "Organisez un anniversaire pirate épique : déco, jeux et astuces essentielles",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-pirate-enfant.md",
+          "chars": 15021
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-2-ans/",
+          "slug": "anniversaire-2-ans",
+          "title": "Comment fêter l’anniversaire des 2 ans de votre enfant ?",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-2-ans.md",
+          "chars": 18323
+        },
+        {
+          "url": "https://smakk.fr/morphologie-robe-mariee/",
+          "slug": "morphologie-robe-mariee",
+          "title": "Morphologie et robe de mariée : trouvez la coupe parfaite pour vous sublimer",
+          "file": "data\\scraped\\smakk.fr\\morphologie-robe-mariee.md",
+          "chars": 17970
+        },
+        {
+          "url": "https://smakk.fr/location-mobilier-evenement-entreprise/",
+          "slug": "location-mobilier-evenement-entreprise",
+          "title": "Location de mobilier pour événement d’entreprise : le guide pour ne rien oublier",
+          "file": "data\\scraped\\smakk.fr\\location-mobilier-evenement-entreprise.md",
+          "chars": 14686
+        },
+        {
+          "url": "https://smakk.fr/candy-bar-pour-mariage/",
+          "slug": "candy-bar-pour-mariage",
+          "title": "Combien de bonbons prévoir pour un candy bar de mariage ?",
+          "file": "data\\scraped\\smakk.fr\\candy-bar-pour-mariage.md",
+          "chars": 9157
+        },
+        {
+          "url": "https://smakk.fr/soiree-blanche/",
+          "slug": "soiree-blanche",
+          "title": "Organiser fête thème soirée : Guide complet & Soirée Blanche",
+          "file": "data\\scraped\\smakk.fr\\soiree-blanche.md",
+          "chars": 17351
+        },
+        {
+          "url": "https://smakk.fr/mariage-theme-bleu-et-blanc/",
+          "slug": "mariage-theme-bleu-et-blanc",
+          "title": "Mariage Thème Bleu Blanc : Déco, Idées et Tendances 2026",
+          "file": "data\\scraped\\smakk.fr\\mariage-theme-bleu-et-blanc.md",
+          "chars": 13038
+        },
+        {
+          "url": "https://smakk.fr/organiser-anniversaire-enfant-original/",
+          "slug": "organiser-anniversaire-enfant-original",
+          "title": "Organiser anniversaire enfant original : Guide et Idées",
+          "file": "data\\scraped\\smakk.fr\\organiser-anniversaire-enfant-original.md",
+          "chars": 13261
+        },
+        {
+          "url": "https://smakk.fr/team-building-original/",
+          "slug": "team-building-original",
+          "title": "Team building 12 idées originales pour vos équipes 2026",
+          "file": "data\\scraped\\smakk.fr\\team-building-original.md",
+          "chars": 19448
+        },
+        {
+          "url": "https://smakk.fr/comparatif-photobooth-sharingbox-vs-smakk/",
+          "slug": "comparatif-photobooth-sharingbox-vs-smakk",
+          "title": "Avis Sharingbox 2026 : Comparatif honnête face à Smakk",
+          "file": "data\\scraped\\smakk.fr\\comparatif-photobooth-sharingbox-vs-smakk.md",
+          "chars": 9171
+        },
+        {
+          "url": "https://smakk.fr/35-ans-mariage-noces-rubis-idees/",
+          "slug": "35-ans-mariage-noces-rubis-idees",
+          "title": "Que faire pour célébrer vos 35 ans de mariage ?",
+          "file": "data\\scraped\\smakk.fr\\35-ans-mariage-noces-rubis-idees.md",
+          "chars": 19036
+        },
+        {
+          "url": "https://smakk.fr/anniversaire-50-ans/",
+          "slug": "anniversaire-50-ans",
+          "title": "Célébrer votre anniversaire 50 ans en organisant une journée de rêve",
+          "file": "data\\scraped\\smakk.fr\\anniversaire-50-ans.md",
+          "chars": 15870
+        },
+        {
+          "url": "https://smakk.fr/mariage-boheme/",
+          "slug": "mariage-boheme",
+          "title": "Mariage bohème chic : Guide 2026 pour une cérémonie unique",
+          "file": "data\\scraped\\smakk.fr\\mariage-boheme.md",
+          "chars": 22180
+        },
+        {
+          "url": "https://smakk.fr/mariage-albanais-traditions/",
+          "slug": "mariage-albanais-traditions",
+          "title": "Mariage albanais : Quelles sont les traditions incontournables ?",
+          "file": "data\\scraped\\smakk.fr\\mariage-albanais-traditions.md",
+          "chars": 16429
+        },
+        {
+          "url": "https://smakk.fr/organiser-mariage-champetre/",
+          "slug": "organiser-mariage-champetre",
+          "title": "Organiser un mariage champêtre : Idées déco et animations",
+          "file": "data\\scraped\\smakk.fr\\organiser-mariage-champetre.md",
+          "chars": 12793
+        },
+        {
+          "url": "https://smakk.fr/coutume-mariage/",
+          "slug": "coutume-mariage",
+          "title": "10 superstitions et coutumes de mariage en France : signification et modernité",
+          "file": "data\\scraped\\smakk.fr\\coutume-mariage.md",
+          "chars": 13008
+        },
+        {
+          "url": "https://smakk.fr/mariage-peniche/",
+          "slug": "mariage-peniche",
+          "title": "Organiser mariage péniche Paris : Guide complet et Prix 2026",
+          "file": "data\\scraped\\smakk.fr\\mariage-peniche.md",
+          "chars": 21605
+        },
+        {
+          "url": "https://smakk.fr/murder-party/",
+          "slug": "murder-party",
+          "title": "Organiser une murder party : l’outil fun et puissant pour souder une équipe",
+          "file": "data\\scraped\\smakk.fr\\murder-party.md",
+          "chars": 13722
+        },
+        {
+          "url": "https://smakk.fr/mesurer-taille-doigt-bague/",
+          "slug": "mesurer-taille-doigt-bague",
+          "title": "Mesurer la taille du doigt pour une bague : Le guide 2026",
+          "file": "data\\scraped\\smakk.fr\\mesurer-taille-doigt-bague.md",
+          "chars": 6405
+        },
+        {
+          "url": "https://smakk.fr/activites-soiree-pyjama/",
+          "slug": "activites-soiree-pyjama",
+          "title": "Jeux et activités amusantes pour organiser une soirée pyjama originale entre adulte",
+          "file": "data\\scraped\\smakk.fr\\activites-soiree-pyjama.md",
+          "chars": 6421
+        },
+        {
+          "url": "https://smakk.fr/",
+          "slug": "index",
+          "title": "Smakk : l'événement dont vos invités\n      parleront encore l'année prochaine.",
+          "file": "data\\scraped\\smakk.fr\\index.md",
+          "chars": 8783
+        },
+        {
+          "url": "https://smakk.fr/pool-party/",
+          "slug": "pool-party",
+          "title": "Organiser pool party l’année : Top 10 idées (2026)",
+          "file": "data\\scraped\\smakk.fr\\pool-party.md",
+          "chars": 13941
+        },
+        {
+          "url": "https://smakk.fr/menu-mariage-original/",
+          "slug": "menu-mariage-original",
+          "title": "Menu de mariage original : 20 idées pour surprendre vos invités",
+          "file": "data\\scraped\\smakk.fr\\menu-mariage-original.md",
+          "chars": 13589
+        },
+        {
+          "url": "https://smakk.fr/voiture-balai-mariage/",
+          "slug": "voiture-balai-mariage",
+          "title": "Voiture balai mariage : idées et conseils pour la décorer",
+          "file": "data\\scraped\\smakk.fr\\voiture-balai-mariage.md",
+          "chars": 6911
+        },
+        {
+          "url": "https://smakk.fr/paris/",
+          "slug": "paris",
+          "title": "Location de photobooth Smakk.\n        Photos illimitées + 600 tirages inclus.",
+          "file": "data\\scraped\\smakk.fr\\paris.md",
+          "chars": 22022
+        },
+        {
+          "url": "https://smakk.fr/mentions-legales/",
+          "slug": "mentions-legales",
+          "title": "Mentions légales.",
+          "file": "data\\scraped\\smakk.fr\\mentions-legales.md",
+          "chars": 731
+        },
+        {
+          "url": "https://smakk.fr/amenager-evenement-professionnel-nantes/",
+          "slug": "amenager-evenement-professionnel-nantes",
+          "title": "Comment aménager un coin convivial pour un événement professionnel à Nantes ?",
+          "file": "data\\scraped\\smakk.fr\\amenager-evenement-professionnel-nantes.md",
+          "chars": 6686
+        },
+        {
+          "url": "https://smakk.fr/politique-de-confidentialite/",
+          "slug": "politique-de-confidentialite",
+          "title": "Politique de confidentialité.",
+          "file": "data\\scraped\\smakk.fr\\politique-de-confidentialite.md",
+          "chars": 8418
+        },
+        {
+          "url": "https://smakk.fr/support/",
+          "slug": "support",
+          "title": "- SmakkWhatsApp",
+          "file": "data\\scraped\\smakk.fr\\support.md",
+          "chars": 182
+        },
+        {
+          "url": "https://smakk.fr/conditions-generales-de-location/",
+          "slug": "conditions-generales-de-location",
+          "title": "Conditions générales de location.",
+          "file": "data\\scraped\\smakk.fr\\conditions-generales-de-location.md",
+          "chars": 21891
+        },
+        {
+          "url": "https://smakk.fr/photobooth-bordeaux/",
+          "slug": "photobooth-bordeaux",
+          "title": "Location photobooth\n\t\t\t\t\n\t\t\t\t\tBordeaux\n\t\t\t\t\n\t\t\t\t\t: nos prix",
+          "file": "data\\scraped\\smakk.fr\\photobooth-bordeaux.md",
+          "chars": 5677
+        },
+        {
+          "url": "https://smakk.fr/miroir-photobooth/",
+          "slug": "miroir-photobooth",
+          "title": "Location photobooth Miroir Magique.\n        L'expérience VIP photo plain-pied.",
+          "file": "data\\scraped\\smakk.fr\\miroir-photobooth.md",
+          "chars": 9112
+        },
+        {
+          "url": "https://smakk.fr/photobooth-360/",
+          "slug": "photobooth-360",
+          "title": "Location photobooth\n        360 degrés.",
+          "file": "data\\scraped\\smakk.fr\\photobooth-360.md",
+          "chars": 10172
+        },
+        {
+          "url": "https://smakk.fr/mariage/",
+          "slug": "mariage",
+          "title": "Location photobooth mariage :\n        animez votre cérémonie.",
+          "file": "data\\scraped\\smakk.fr\\mariage.md",
+          "chars": 8736
+        },
+        {
+          "url": "https://smakk.fr/accueil/",
+          "slug": "accueil",
+          "title": "Location Photobooth dès 299€",
+          "file": "data\\scraped\\smakk.fr\\accueil.md",
+          "chars": 28539
+        },
+        {
+          "url": "https://smakk.fr/anniversaire/",
+          "slug": "anniversaire",
+          "title": "Location photobooth anniversaire :\n        animez votre soirée.",
+          "file": "data\\scraped\\smakk.fr\\anniversaire.md",
+          "chars": 8049
+        },
+        {
+          "url": "https://smakk.fr/entreprise/",
+          "slug": "entreprise",
+          "title": "Photobooth entreprise :\n        animation & outil marketing.",
+          "file": "data\\scraped\\smakk.fr\\entreprise.md",
+          "chars": 5941
+        },
+        {
+          "url": "https://smakk.fr/photobooth-antony/",
+          "slug": "photobooth-antony",
+          "title": "Location Photobooth à Antony",
+          "file": "data\\scraped\\smakk.fr\\photobooth-antony.md",
+          "chars": 10504
+        },
+        {
+          "url": "https://smakk.fr/photobooth-bagneux/",
+          "slug": "photobooth-bagneux",
+          "title": "Location Photobooth à Bagneux",
+          "file": "data\\scraped\\smakk.fr\\photobooth-bagneux.md",
+          "chars": 11549
+        },
+        {
+          "url": "https://smakk.fr/photobooth-bois-colombes/",
+          "slug": "photobooth-bois-colombes",
+          "title": "Location Photobooth à Bois-Colombes",
+          "file": "data\\scraped\\smakk.fr\\photobooth-bois-colombes.md",
+          "chars": 10424
+        },
+        {
+          "url": "https://smakk.fr/photobooth-asnieres-sur-seine/",
+          "slug": "photobooth-asnieres-sur-seine",
+          "title": "Location Photobooth à Asnières-sur-Seine",
+          "file": "data\\scraped\\smakk.fr\\photobooth-asnieres-sur-seine.md",
+          "chars": 14260
+        },
+        {
+          "url": "https://smakk.fr/photobooth-boulogne-billancourt/",
+          "slug": "photobooth-boulogne-billancourt",
+          "title": "Location Photobooth à Boulogne Billancourt",
+          "file": "data\\scraped\\smakk.fr\\photobooth-boulogne-billancourt.md",
+          "chars": 11564
+        },
+        {
+          "url": "https://smakk.fr/photobooth-bourg-la-reine/",
+          "slug": "photobooth-bourg-la-reine",
+          "title": "Location Photobooth à Bourg-la-Reine",
+          "file": "data\\scraped\\smakk.fr\\photobooth-bourg-la-reine.md",
+          "chars": 10604
+        },
+        {
+          "url": "https://smakk.fr/contact/",
+          "slug": "contact",
+          "title": "Nous contacter ? Une question ?",
+          "file": "data\\scraped\\smakk.fr\\contact.md",
+          "chars": 216
+        },
+        {
+          "url": "https://smakk.fr/photobooth-chatenay-malabry/",
+          "slug": "photobooth-chatenay-malabry",
+          "title": "Location Photobooth à Chatenay Malabry",
+          "file": "data\\scraped\\smakk.fr\\photobooth-chatenay-malabry.md",
+          "chars": 9871
+        },
+        {
+          "url": "https://smakk.fr/photobooth-chatillon/",
+          "slug": "photobooth-chatillon",
+          "title": "Location Photobooth à Châtillon",
+          "file": "data\\scraped\\smakk.fr\\photobooth-chatillon.md",
+          "chars": 7496
+        },
+        {
+          "url": "https://smakk.fr/location-photocall/",
+          "slug": "location-photocall",
+          "title": "Location\n        Photocall sur-mesure.",
+          "file": "data\\scraped\\smakk.fr\\location-photocall.md",
+          "chars": 5091
+        },
+        {
+          "url": "https://smakk.fr/photobooth-chaville/",
+          "slug": "photobooth-chaville",
+          "title": "Location Photobooth à Chaville",
+          "file": "data\\scraped\\smakk.fr\\photobooth-chaville.md",
+          "chars": 6976
+        },
+        {
+          "url": "https://smakk.fr/location-photobooth/",
+          "slug": "location-photobooth",
+          "title": "Location de photobooth Smakk.\n        Photos illimitées + 600 tirages inclus.",
+          "file": "data\\scraped\\smakk.fr\\location-photobooth.md",
+          "chars": 22022
+        },
+        {
+          "url": "https://smakk.fr/photobooth-clamart/",
+          "slug": "photobooth-clamart",
+          "title": "Location Photobooth à Clamart",
+          "file": "data\\scraped\\smakk.fr\\photobooth-clamart.md",
+          "chars": 5928
+        },
+        {
+          "url": "https://smakk.fr/photobooth-clichy/",
+          "slug": "photobooth-clichy",
+          "title": "Location Photobooth à Clichy",
+          "file": "data\\scraped\\smakk.fr\\photobooth-clichy.md",
+          "chars": 6379
+        },
+        {
+          "url": "https://smakk.fr/photobooth-colombes/",
+          "slug": "photobooth-colombes",
+          "title": "Location Photobooth à Colombes",
+          "file": "data\\scraped\\smakk.fr\\photobooth-colombes.md",
+          "chars": 6745
+        }
+      ]
+    }
+  }
+}
