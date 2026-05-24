@@ -424,19 +424,27 @@ Question originale : "${question}"`;
 });
 
 // Test une question sans la logger (pour le mode train)
+// Accepte un historique pour permettre les conversations multi-tour (mode commercial)
 app.post('/api/train/test', requireAuth, async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message, history = [] } = req.body;
     if (!message) return res.status(400).json({ error: 'message requis' });
 
-    const strongFaq = faq.findStrongMatch(message);
-    if (strongFaq) {
-      return res.json({ text: strongFaq.answer, source: 'faq', faq_id: strongFaq.id });
+    // En conversation multi-tour, le shortcut FAQ direct devient risqué (peut être hors contexte)
+    if (history.length === 0) {
+      const strongFaq = faq.findStrongMatch(message);
+      if (strongFaq) {
+        return res.json({ text: strongFaq.answer, source: 'faq', faq_id: strongFaq.id });
+      }
     }
-    const chunks = ragSearch(message, 4);
-    const softFaqs = faq.searchFaq(message, 2);
+    // Enrichit la requête avec l'historique si follow-up
+    const followUp = history.length > 0 && message.trim().length < 60;
+    const searchQuery = followUp ? history.slice(-2).map(h => h.content).concat(message).join(' ') : message;
+
+    const chunks = ragSearch(searchQuery, 4);
+    const softFaqs = faq.searchFaq(searchQuery, 2);
     const systemPrompt = buildSystemPrompt(chunks, softFaqs);
-    const reply = await askLLM(message, [], systemPrompt);
+    const reply = await askLLM(message, history, systemPrompt);
     res.json({ text: reply, source: 'llm', faq_hints: softFaqs.map(f => ({ id: f.id, q: f.questions[0] })) });
   } catch (err) {
     res.status(500).json({ error: err.message });

@@ -361,6 +361,7 @@
     let currentAnswer = '';
     let selectedVariants = [];
     let answerMode = 'text';
+    let conversationHistory = [];   // pour les conversations multi-tour (mode commercial)
 
     const $ = (id) => document.getElementById(id);
     const showView = (v) => {
@@ -447,15 +448,23 @@
       }
     });
 
-    // ----- Test current bot answer -----
+    // ----- Test current bot answer (avec historique multi-tour) -----
     async function testCurrentAnswer(message) {
       $('card-current').style.display = 'block';
       $('reply-current').innerHTML = '<em>L\'IA réfléchit…</em>';
       try {
-        const r = await api('/api/train/test', { method: 'POST', body: JSON.stringify({ message }) });
+        const r = await api('/api/train/test', {
+          method: 'POST',
+          body: JSON.stringify({ message, history: conversationHistory })
+        });
         const weak = /je vous invite|demander un devis|nous contacter|contactez/i.test(r.text);
         $('reply-current').className = 'reply-block ' + (weak ? 'weak' : '');
         $('reply-current').innerHTML = `<span class="badge ${r.source}">${r.source.toUpperCase()}${r.faq_id ? ' #' + r.faq_id : ''}</span><br>${escapeHtml(r.text)}`;
+
+        // Met à jour l'historique de conversation
+        conversationHistory.push({ role: 'user', content: message });
+        conversationHistory.push({ role: 'assistant', content: r.text });
+        renderConversationHistory();
 
         $('card-answer').style.display = 'block';
         $('card-variants').style.display = 'block';
@@ -464,6 +473,55 @@
         $('reply-current').textContent = '❌ ' + err.message;
       }
     }
+
+    // Affiche l'historique en dessous + un bouton pour repartir à zéro
+    function renderConversationHistory() {
+      let box = document.getElementById('history-box');
+      if (!box) {
+        box = document.createElement('div');
+        box.id = 'history-box';
+        box.className = 'card';
+        box.innerHTML = `
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <h2 style="margin:0">💬 Conversation en cours</h2>
+            <button class="action secondary" style="padding:6px 12px;font-size:12px;width:auto" onclick="resetConversation()">🔄 Nouvelle</button>
+          </div>
+          <div id="history-content"></div>
+        `;
+        // Insérer après #card-current
+        $('card-current').after(box);
+      }
+      const content = document.getElementById('history-content');
+      if (conversationHistory.length <= 2) {
+        box.style.display = 'none';
+        return;
+      }
+      box.style.display = 'block';
+      content.innerHTML = conversationHistory.map(m => `
+        <div style="margin:6px 0;padding:8px 12px;border-radius:10px;background:${m.role==='user'?'var(--rose-light)':'#f0f0f5'};font-size:13px">
+          <strong>${m.role==='user'?'🙋':'🤖'}</strong> ${escapeHtml(m.content)}
+        </div>
+      `).join('');
+    }
+
+    window.resetConversation = () => {
+      conversationHistory = [];
+      currentQuestion = '';
+      $('question-text').textContent = 'La question apparaîtra ici…';
+      $('question-text').classList.add('empty');
+      $('edit-question').style.display = 'none';
+      $('card-current').style.display = 'none';
+      $('card-answer').style.display = 'none';
+      $('card-variants').style.display = 'none';
+      $('card-save').style.display = 'none';
+      $('answer-input').value = '';
+      $('answer-vocal-text').value = '';
+      $('variants-list').innerHTML = '';
+      $('retest-result').innerHTML = '';
+      const box = document.getElementById('history-box');
+      if (box) box.style.display = 'none';
+      toast('Conversation réinitialisée');
+    };
 
     // ----- Answer mode tabs -----
     document.querySelectorAll('.mode-tab').forEach(t => {
