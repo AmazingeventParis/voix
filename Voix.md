@@ -1,365 +1,352 @@
-# Voix Shootnbox — Documentation complète
+# Voix Shootnbox — Documentation complète (handoff)
 
-Assistant vocal pour le groupe Shootnbox. Le client parle, l'assistant répond en voix réaliste avec des infos sourcées du vrai site shootnbox.fr / smakk.fr et des FAQ personnalisées.
-
----
-
-## 🎯 Vision
-
-Un assistant vocal **gratuit ou low-cost** (~2€/mois) intégrable à deux endroits :
-- **Widget JS** sur shootnbox.fr (web)
-- **Bouton micro** dans l'app Flutter MyShootnbox (mobile)
-
-Pour répondre instantanément aux questions des clients : tarifs, types de bornes, livraison, utilisation de l'app, etc.
+> Ce document permet à n'importe qui (humain ou IA) de **reprendre le projet de zéro**.
+> Lis-le en entier avant de toucher au code. Dernière mise à jour : 2026-05-28.
 
 ---
 
-## 🧱 Stack technique
+## 1. Résumé en 30 secondes
 
-| Couche | Choix | Pourquoi |
-|---|---|---|
-| **STT** (toi qui parles) | Web Speech API du navigateur | Gratuit, intégré Chrome/Edge/Safari, marche sans clé |
-| **Cerveau (LLM)** | Groq (Llama 3.3 70B) | Gratuit avec quotas généreux, **ultra-rapide** (~500 tok/s) — critique pour réduire la latence vocale |
-| **LLM fallback** | Gemini 2.0 Flash | Aussi gratuit, sert si Groq indispo |
-| **Voix (TTS)** | OpenAI TTS-1-HD voix `coral` | Voix féminine chaleureuse, quasi-humaine. ~2€/mois pour 500 conversations |
-| **TTS fallback gratuit** | Microsoft Edge TTS, sinon Google Translate TTS | Si jamais on veut basculer 100% gratuit |
-| **Knowledge base** | 405 pages scrapées (shootnbox.fr + smakk.fr) | Indexées en local pour réponses sourcées |
-| **Recherche** | MiniSearch (BM25) sur 6716 chunks | Pas d'embeddings nécessaire → 0 coût d'indexation |
-| **FAQ personnalisée** | JSON éditable via admin web | Réponses officielles prioritaires sur le LLM |
-| **Backend** | Node.js 24 + Express | Léger, déployable Coolify |
+**Voix** est un assistant vocal pour le groupe Shootnbox (location de photobooths).
+Le client **parle** (micro), l'assistant **comprend**, cherche dans une base de connaissances (site + FAQ + catalogue), **répond par texte ET en voix réaliste**, et **pose des questions de qualification** comme un vrai commercial.
+
+- **En prod** : https://voix.swipego.app (protégé par mot de passe)
+- **Repo** : https://github.com/AmazingeventParis/voix (public, sans secrets)
+- **Hébergement** : Coolify sur serveur OVH `217.182.89.133`
+- **Coût réel** : ~0-2 €/mois (LLM gratuit + voix OpenAI à l'usage)
 
 ---
 
-## 🏗️ Architecture
+## 2. Vision & objectif
 
-```
-                  ┌──────────────────────┐
-                  │  Front : shootnbox.fr │
-                  │  ou app MyShootnbox   │
-                  └──────────┬───────────┘
-                             │ POST /chat
-                             ▼
-              ┌─────────────────────────────┐
-              │      API Node.js Express     │
-              │                              │
-              │  1. searchFaq(question)      │
-              │     ├─ Match fort ? ─────────┼──→ Réponse FAQ directe (skip LLM)
-              │     └─ Sinon ─────┐          │
-              │                   ▼          │
-              │  2. ragSearch(question)      │
-              │     → top 4 chunks site      │
-              │                              │
-              │  3. askLLM(question + ctx)   │
-              │     → Groq Llama 3.3         │
-              │                              │
-              │  4. textToSpeech(réponse)    │
-              │     → OpenAI Coral           │
-              └──────────────┬───────────────┘
-                             │ {text, audio_base64, sources}
-                             ▼
-                    Lecture audio navigateur
-```
+But final : intégrer cet assistant à **2 endroits** (pas encore fait) :
+1. **Widget sur shootnbox.fr** (site web public)
+2. **App Flutter MyShootnbox** (mobile, déjà en prod sur stores)
 
-### Flux de décision
+Le backend est **unique et centralisé** : les deux fronts appelleront la même API. Pour l'instant on a un MVP complet + page web + page d'entraînement, déployé et fonctionnel, mais **pas encore branché sur le site ni l'app**.
 
-| Cas | Action |
+---
+
+## 3. Accès rapide (où est quoi)
+
+| Ressource | Valeur |
 |---|---|
-| **Question simple** + match FAQ très fort (score ≥ 8) | **Réponse FAQ directe**. Pas d'appel LLM. Gratuit, instantané, cohérent. |
-| **Question multiple** (cf. détection ci-dessous) | LLM appelé avec **top 5 FAQ + top 8 RAG** pour couvrir tous les sujets |
-| Question simple proche d'une FAQ | LLM avec les FAQ comme exemples + RAG du site |
-| Question sans FAQ pertinente | LLM + RAG sur les 405 pages scrapées |
-| Hors sujet (recette, météo…) | Le prompt système redirige poliment vers Shootnbox |
+| URL prod | https://voix.swipego.app |
+| Repo GitHub | https://github.com/AmazingeventParis/voix (public) |
+| Dossier local | `C:\Users\asche\Downloads\claude\Voix` |
+| Coolify UI | https://coolify.swipego.app (ou IP directe `http://217.182.89.133:8000`) |
+| App UUID Coolify | `x12u3ebbfc6bmsn7iuh77jo2` |
+| Serveur UUID | `s0cw4wsowg8wkok4wkwsko44` |
+| Projet UUID | `c4gw0sos0o4cgws4404s4cwk` |
+| Mot de passe admin/chat | dans `.env` local (`ADMIN_PASSWORD`) — aussi dans CLAUDE.md global |
 
-### Mémoire conversationnelle (follow-up)
+### Pages disponibles (toutes protégées par mot de passe)
+- `/` — chat de test (micro + voix)
+- `/train` — entraînement vocal mobile (créer des FAQ depuis le téléphone)
+- `/admin` — gestion FAQ + conversations loguées + catalogue
 
-L'assistant garde le contexte des questions précédentes. Si tu enchaînes :
+### Où sont les secrets (clés API)
+**JAMAIS dans le repo** (le repo est public). Ils vivent à 2 endroits :
+1. **`.env` local** (dans le dossier, gitignored) — pour le dev local
+2. **Variables d'environnement Coolify** (panel de l'app) — pour la prod
 
-```
-Toi : C'est quoi le Vegas ?
-Bot : Le Vegas est notre borne photo la plus populaire, idéale pour…
-Toi : Et son prix ?
-Bot : Le prix du Vegas dépend de la durée, des options…  ← comprend "le Vegas"
-Toi : Pour combien de personnes ?
-Bot : Le Vegas accueille jusqu'à…                         ← suit toujours le contexte
-```
-
-Comment ça marche :
-- **Côté client** : la page web maintient un tableau `history` envoyé à chaque appel
-- **Côté serveur** :
-  - L'historique est passé au LLM (mémoire conversation classique)
-  - **Plus important** : la requête de recherche RAG/FAQ est **enrichie** avec le dernier échange si la question courante est un follow-up détecté
-  - Heuristique follow-up : question courte (< 60 chars) commençant par *"Et …"*, *"Son …"*, *"Le …"*, *"Comment …"*, etc.
-  - Si follow-up détecté → on désactive le raccourci FAQ direct (la FAQ matchée pourrait être hors contexte)
-
-⚠️ **Limite actuelle** : l'historique vit dans le navigateur. Si tu rafraîchis la page, la mémoire repart à zéro. (À terme : ajouter localStorage ou stockage serveur par session.)
-
-### Détection multi-question
-
-Une heuristique détecte si l'utilisateur pose plusieurs questions dans le même message. Cas détectés :
-
-- **2+ points d'interrogation** : *"C'est cher ? Vous livrez à Lyon ?"*
-- **Coordination** : *"et est-ce que…"*, *"et combien…"*, *"et aussi…"*, *"ainsi que…"*, *"et puis…"*
-- **"Aussi/également" + mot interrogatif** : *"tarifs et aussi quels types…"*
-- **2+ mots interrogatifs** dans un message > 40 chars : *"combien ça coûte avec quelles options…"*
-- **2+ phrases avec marqueurs interrogatifs** séparées par `.` ou `;`
-
-Si multi-question détectée :
-- Le **raccourci FAQ direct est désactivé** (sinon on ne répondrait qu'à la 1ère question)
-- On monte le `topK` du RAG (4 → 8) et de la FAQ (2 → 5)
-- Le LLM compose une réponse qui répond à **chaque sous-question** dans l'ordre, avec des transitions naturelles (*"Alors, pour… Et concernant…"*)
+Clés nécessaires : `GROQ_API_KEY`, `GEMINI_API_KEY`, `OPENAI_API_KEY`, `ADMIN_PASSWORD`.
+Voir `.env.example` pour la liste complète et où les obtenir.
 
 ---
 
-## 📂 Structure du projet
+## 4. Stack technique (et pourquoi)
+
+| Couche | Techno | Pourquoi ce choix |
+|---|---|---|
+| **STT** (parole→texte) | Web Speech API navigateur | Gratuit, intégré Chrome/Edge/Safari, 0 clé, marche sur mobile |
+| **Cerveau (LLM)** | Groq Llama 3.3 70B → Gemini → OpenAI GPT-4o-mini | Chain de fallback (voir §7). Groq = gratuit + ultra-rapide |
+| **Voix (TTS)** | OpenAI TTS-1-HD voix `coral` | Voix féminine quasi-humaine. ~0,001 €/réponse |
+| **TTS fallback** | Edge TTS (gratuit) → Google Translate TTS | Si on veut du 100% gratuit (voix moins bonnes) |
+| **Recherche (RAG)** | MiniSearch (BM25 full-text) | Pas besoin d'embeddings → 0 coût, 0 dépendance externe |
+| **Connaissances** | 405 pages scrapées shootnbox.fr + smakk.fr | Réponses sourcées sur le vrai contenu |
+| **FAQ** | JSON éditable via /admin | Réponses officielles prioritaires sur le LLM |
+| **Catalogue** | JSON structuré (bornes/tarifs) | Source de vérité injectée intelligemment |
+| **Backend** | Node.js 24 + Express (ESM) | Léger, déployable Coolify via Dockerfile |
+| **Hébergement** | Coolify (PaaS self-hosted) + Traefik SSL | Même infra que les autres projets du groupe |
+
+---
+
+## 5. Architecture & flux d'une requête
 
 ```
-C:\Users\asche\Downloads\claude\Voix\
-├── server.js              # API Express : /chat /tts /search /admin /api/faq
-├── rag.js                 # MiniSearch sur les pages scrapées
-├── faq.js                 # Store FAQ : load, search, add, update, delete
-├── scraper.js             # Crawl shootnbox.fr + smakk.fr → data/scraped/*.md
-├── package.json
-├── .env                   # Clés API (GROQ, OPENAI, ADMIN_PASSWORD)
-├── .env.example
-├── README.md
-├── Voix.md                # Ce document
+[Navigateur : micro Web Speech API → texte]
+         │  POST /chat {message, history, voice}  + header x-admin-token
+         ▼
+┌──────────────────────── server.js ────────────────────────┐
+│                                                            │
+│  1. requireAuth (vérifie le mot de passe)                  │
+│                                                            │
+│  2. isMultiQuestion(message) ?  isFollowUp(message) ?      │
+│                                                            │
+│  3. SI question simple + match FAQ très fort (score≥30)    │
+│        → réponse FAQ directe (SKIP LLM, gratuit, instant)  │
+│                                                            │
+│  4. SINON :                                                 │
+│     a. buildSearchQuery() — enrichit avec l'historique     │
+│        si c'est un follow-up                               │
+│     b. ragSearch() — top chunks du site (MiniSearch)       │
+│     c. faq.searchFaq() — FAQ proches                       │
+│     d. buildSystemPrompt() — assemble :                    │
+│          prompt de base + catalogue contextualisé          │
+│          + FAQ + extraits site                             │
+│     e. askLLM() — chain Groq→Gemini→OpenAI                 │
+│                                                            │
+│  5. textToSpeech(reply) — OpenAI Coral → MP3              │
+│  6. logger.logExchange() — log dans conversations.jsonl    │
+│                                                            │
+└────────────────────────────────────────────────────────────┘
+         │  {text, audio_base64, source, sources}
+         ▼
+[Navigateur : affiche le texte + joue l'audio]
+```
+
+---
+
+## 6. Structure des fichiers
+
+```
+Voix/
+├── server.js          # API Express — CŒUR DU PROJET (646 lignes)
+├── rag.js             # Recherche MiniSearch sur les pages scrapées (130 l)
+├── faq.js             # Store FAQ : load/search/add/update/delete (126 l)
+├── logger.js          # Log conversations + détection réponses faibles (84 l)
+├── scraper.js         # Crawl shootnbox.fr + smakk.fr → data/scraped/ (178 l)
+├── Dockerfile         # Image de prod (node:24-alpine)
+├── .dockerignore
+├── .gitignore         # exclut .env, node_modules, conversations.jsonl
+├── .env               # SECRETS (local, gitignored) — clés API + mot de passe
+├── .env.example       # Template des variables d'env
+├── package.json       # deps : express, cors, dotenv, msedge-tts, minisearch, gray-matter, cheerio
+├── README.md          # Quickstart
+├── Voix.md            # CE FICHIER
 │
 ├── public/
-│   ├── index.html         # Page de test client (chat + micro)
-│   ├── admin.html         # Interface admin FAQ
-│   └── nova_test.mp3      # (échantillon audio test)
+│   ├── index.html     # Page chat (micro + voix + login)
+│   ├── admin.html     # Admin 3 onglets : FAQ / Conversations / Catalogue
+│   └── train.html     # Entraînement vocal mobile-first
 │
 └── data/
-    ├── scraped/           # 405 fichiers .md scrapés
-    │   ├── shootnbox.fr/  # 205 pages
-    │   └── smakk.fr/      # 200 pages
-    ├── manifest.json      # Index du scraping
-    └── faq.json           # Tes Q/R personnalisées
+    ├── scraped/       # 405 fichiers .md (205 shootnbox + 200 smakk)
+    │   ├── shootnbox.fr/
+    │   └── smakk.fr/
+    ├── manifest.json  # Index du scraping (URLs + métadonnées)
+    ├── faq.json       # FAQ personnalisées (éditable via /admin)
+    ├── catalogue.json # Catalogue bornes/tarifs/options
+    └── conversations.jsonl  # Logs (généré au runtime, gitignored)
 ```
+
+### Rôle de chaque fichier JS
+
+- **server.js** — Tout le backend. Routes, auth, chain LLM, TTS, assemblage du prompt, détection multi-question/follow-up. C'est le fichier à comprendre en priorité.
+- **rag.js** — Charge les .md, les découpe en chunks (~800 chars), construit un index MiniSearch (BM25), expose `search(query, topK)`.
+- **faq.js** — Gère `data/faq.json`. `findStrongMatch()` = match direct (seuil 30 + ratio top1/top2 ≥ 2.5 pour éviter les faux positifs). `searchFaq()` = recherche souple pour le contexte LLM.
+- **logger.js** — Append chaque échange dans `conversations.jsonl`. Détecte les "réponses faibles" (regex : "je vous invite", "demander un devis"…) pour repérer ce qu'il faut enrichir.
+- **scraper.js** — À relancer si le site change. Récupère les sitemaps, filtre les pages SEO ville redondantes, détecte le moteur (Elementor pour smakk, thème custom pour shootnbox), extrait le contenu en Markdown.
 
 ---
 
-## 🔌 Endpoints API
+## 7. La chain LLM (point critique)
+
+Dans `server.js`, `askLLM()` essaie 3 cerveaux dans l'ordre. Si l'un échoue avec une erreur **récupérable** (429 quota, 503, 5xx), il passe au suivant :
+
+```
+1. Groq Llama 3.3 70B    → gratuit, rapide, excellent mode commercial
+        ↓ (si 429/503/5xx)
+2. Gemini 2.5 Flash      → gratuit  ⚠️ ATTENTION : la clé actuelle renvoie
+                            "limit: 0" / 403. À re-créer (voir §11)
+        ↓ (si erreur)
+3. OpenAI GPT-4o-mini    → payant ~0,15$/1M tokens (≈0,03 cent/req)
+                            très fiable, bon mode commercial
+```
+
+**Pourquoi 3 niveaux** : Groq a un quota gratuit serré (100k tokens/jour ≈ 50 questions). Pour ne jamais couper le service, on bascule automatiquement. En pratique Groq fait 95% du boulot → coût ≈ 0.
+
+Modèles utilisés (à connaître pour les mettre à jour) :
+- Groq : `llama-3.3-70b-versatile`
+- Gemini : `gemini-2.5-flash`
+- OpenAI (cerveau) : `gpt-4o-mini`
+- OpenAI (voix) : `tts-1-hd`, voix `coral`
+
+---
+
+## 8. Fonctionnalités développées (chronologie)
+
+Construites dans cet ordre, du 2026-05-23 au 2026-05-28 :
+
+1. **MVP backend** — API `/chat` + `/tts`, Groq + Edge TTS
+2. **Page web de test** (`index.html`) — micro Web Speech API + chat + lecture audio
+3. **Choix de la voix** — Edge TTS bloqué en sandbox → bascule OpenAI. 11 voix testables, **Coral** choisie
+4. **Scraper** — 405 pages shootnbox.fr + smakk.fr en Markdown
+5. **RAG MiniSearch** — 6716 chunks indexés, réponses sourcées
+6. **Système FAQ** — `data/faq.json` + match prioritaire + `/admin`
+7. **Multi-questions** — détecte "et", "aussi", 2+ "?" → répond à chaque sous-question
+8. **Mémoire conversationnelle** — follow-up ("Et son prix ?") garde le contexte (ex: Vegas)
+9. **Catalogue produits** — `data/catalogue.json`, injecté intelligemment (seulement les bornes citées)
+10. **Logging + apprentissage** — toutes les convs loguées, bouton "Convertir en FAQ" dans /admin
+11. **Page /train** — entraînement vocal mobile : pose une question, donne la bonne réponse (texte ou vocal), génère 4 variantes auto via LLM, sauve en FAQ
+12. **Mode commercial actif** — le bot POSE des questions de qualification (lieu/date/type/invités/durée) avant de chiffrer
+13. **Déploiement Coolify** — prod sur voix.swipego.app
+14. **Auth** — mot de passe sur chat + admin + train
+15. **Optimisation tokens** — ~5k → ~2k tokens/req (catalogue light, prompt compressé, historique limité à 6 messages)
+16. **Chain LLM 3 niveaux** — Groq → Gemini → OpenAI, fallback auto
+
+### Comportements clés à connaître
+
+- **Match FAQ direct** : si question simple + score FAQ ≥ 30 + top1 nettement > top2 → réponse FAQ sans appeler le LLM (gratuit, instantané). Désactivé pour les follow-ups et multi-questions.
+- **Mode commercial** : piloté par le `SYSTEM_PROMPT_BASE`. Le bot demande lieu/date/type/invités/durée avant un tarif. Ne redemande pas une info déjà donnée (lit l'historique).
+- **Catalogue contextualisé** : `buildCatalogueSnippet()` n'injecte que les bornes mentionnées dans la question ou détectées dans les chunks RAG (économie de tokens).
+
+---
+
+## 9. Endpoints API
 
 | Route | Méthode | Auth | Description |
 |---|---|---|---|
-| `/` | GET | – | Page de test web (chat + micro) |
-| `/admin` | GET | – | Interface admin FAQ |
-| `/health` | GET | – | Statut serveur (LLM, voix, RAG stats) |
-| `/chat` | POST | – | `{message, history?, voice?}` → `{text, audio_base64, source, sources?}` |
-| `/tts` | POST | – | `{text, voice?}` → MP3 stream (utile pour preview voix) |
-| `/search` | POST | – | `{query, topK}` → debug du RAG sur le site |
-| `/api/faq` | GET | token | Liste toutes les FAQ |
-| `/api/faq` | POST | token | Ajoute une FAQ `{questions[], answer, tags[]}` |
-| `/api/faq/:id` | PUT | token | Modifie une FAQ |
-| `/api/faq/:id` | DELETE | token | Supprime une FAQ |
+| `/` | GET | – | Page chat |
+| `/train` | GET | – | Page entraînement |
+| `/admin` | GET | – | Page admin |
+| `/health` | GET | – | Statut (LLM, voix, stats RAG) |
+| `/api/login` | POST | – | Valide un mot de passe `{password}` |
+| `/chat` | POST | ✅ | `{message, history, voice}` → `{text, audio_base64, source, sources}` |
+| `/tts` | POST | ✅ | `{text, voice}` → MP3 (preview voix) |
+| `/search` | POST | ✅ | `{query, topK}` → debug RAG |
+| `/api/variants` | POST | ✅ | `{question}` → 4 reformulations générées par LLM |
+| `/api/train/test` | POST | ✅ | `{message, history}` → réponse SANS audio (mode train, économie) |
+| `/api/faq` | GET/POST | ✅ | Liste / ajoute une FAQ |
+| `/api/faq/:id` | PUT/DELETE | ✅ | Modifie / supprime |
+| `/api/conversations` | GET/DELETE | ✅ | Logs + stats / vide les logs |
+| `/api/catalogue` | GET/PUT | ✅ | Lit / écrit `data/catalogue.json` |
 
-Auth admin : header `x-admin-token: <ADMIN_PASSWORD>` ou `?token=...`
-
----
-
-## 🔐 Système FAQ personnalisée
-
-### Pourquoi ?
-
-Le RAG sur le site est bon pour les infos générales, mais :
-- ❌ Peut louper une formulation inhabituelle
-- ❌ Le LLM peut être prudent et rediriger vers un devis au lieu de répondre
-- ❌ Coût LLM + délai de réponse à chaque question
-
-La FAQ comble ces trous : **tes** réponses, dans **ton** ton, avec **tes** infos exactes.
-
-### Comment ça marche
-
-Chaque entrée FAQ a :
-- **Plusieurs variantes** de question (plus il y en a, mieux c'est)
-- **Une réponse** (1-3 phrases orales)
-- **Des tags** optionnels pour le tri
-
-À chaque question utilisateur :
-1. L'API tokenise la question (sans accents, sans stopwords)
-2. Cherche dans toutes les FAQ via MiniSearch (BM25 + fuzzy match)
-3. Si meilleur score ≥ **seuil 8** → réponse FAQ directe (skip LLM, économie totale)
-4. Sinon → top 2 FAQ injectées dans le prompt comme exemples + RAG normal
-
-### Comment ajouter une FAQ
-
-1. Va sur **http://localhost:3000/admin**
-2. Mot de passe par défaut : `shootnbox2026` (modifiable dans `.env` → `ADMIN_PASSWORD=`)
-3. Remplis le formulaire :
-   - **Questions** : une par ligne, **mets plusieurs variantes** !
-   - **Réponse** : phrases orales, 1 à 3 phrases max
-   - **Tags** : optionnel, pour t'organiser
-4. Clic "Ajouter cette Q/R" → l'index se recharge instantanément, la réponse est dispo
-
-### Bonnes pratiques
-
-✅ **À faire**
-- 3-5 variantes par question minimum (formulations différentes)
-- Réponses courtes, orales, naturelles
-- Toujours inclure un CTA quand pertinent (devis, contact)
-- Tag par thème (tarif, livraison, app, mariage, etc.)
-
-❌ **À éviter**
-- Réponses personnalisées à un client précis ("votre créneau 13h-16h") — ça sera lu à tous
-- Markdown, listes à puces — c'est de l'oral
-- Phrases trop longues — coupe court
-- Faire des FAQ avec une seule formulation — tu rates 80% des reformulations clients
-
-### Exemple bien construit
-
-```json
-{
-  "id": 5,
-  "questions": [
-    "Combien de temps dure la location ?",
-    "C'est pour combien d'heures ?",
-    "Durée de location",
-    "On garde la borne combien de temps ?",
-    "Plage horaire de la location"
-  ],
-  "answer": "La durée standard est de 4 heures de prestation effective, mais on peut étendre selon ton événement. Pour une demande précise, fais ton devis sur shootnbox.fr.",
-  "tags": ["durée", "horaire", "location"]
-}
-```
+Auth = header `x-admin-token: <ADMIN_PASSWORD>` ou `?token=...`
 
 ---
 
-## 🌐 Sites scrapés
-
-| Domaine | Pages scrapées | Pages totales sitemap |
-|---|---|---|
-| shootnbox.fr | 205 | 385 (–180 SEO villes redondantes) |
-| smakk.fr | 200 | 208 |
-| **Total** | **405** | **593** |
-
-Le scraper :
-- Récupère les sitemaps automatiquement
-- Skip les pages SEO ville répétitives (garde 1 template)
-- Skip auteurs/catégories/tags techniques
-- Détecte le moteur (Elementor pour smakk, thème custom pour shootnbox)
-- Extrait le contenu principal en Markdown
-
-Pour re-scraper après modification du site :
-```powershell
-cd C:\Users\asche\Downloads\claude\Voix
-node scraper.js
-# Puis redémarre le serveur pour réindexer
-```
-
----
-
-## 🚀 Lancer en local
+## 10. Développer en local
 
 ```powershell
 cd C:\Users\asche\Downloads\claude\Voix
-npm install        # première fois uniquement
-node server.js
-# → http://localhost:3000        (chat)
-# → http://localhost:3000/admin  (admin FAQ)
+npm install                  # 1ère fois
+# Crée .env à partir de .env.example et remplis les clés
+node server.js               # → http://localhost:3000
 ```
 
-### Configuration `.env`
-
-```bash
-# CERVEAU
-GROQ_API_KEY=gsk_xxx           # gratuit https://console.groq.com/keys
-GEMINI_API_KEY=                # optionnel fallback
-
-# VOIX
-TTS_PROVIDER=openai            # edge | openai | google
-OPENAI_API_KEY=sk-proj-xxx     # https://platform.openai.com/api-keys ($5 minimum)
-OPENAI_VOICE=coral             # coral | nova | shimmer | sage | alloy | ash | echo | ballad | onyx | fable | verse
-TTS_VOICE=fr-FR-DeniseNeural   # (utilisé si TTS_PROVIDER=edge)
-
-# ADMIN
-ADMIN_PASSWORD=shootnbox2026   # accès à /admin
-
-PORT=3000
-```
-
----
-
-## 💰 Coûts mensuels estimés
-
-Hypothèse : **500 conversations/mois** × 300 caractères de réponse en moyenne.
-
-| Combo | Coût/mois |
-|---|---|
-| Groq + Edge TTS | **0€** (mais Edge TTS peut casser sans préavis) |
-| Groq + Google Translate TTS | **0€** (voix robotique) |
-| **Groq + OpenAI Coral HD** ✅ | **~2€** (notre setup actuel) |
-| Claude Haiku + OpenAI Coral HD | ~3€ |
-| Claude Sonnet + ElevenLabs | ~15€ |
-
-⚠️ Avec des **FAQ bien remplies**, ~40% des questions sont matchées directement → **divisé par 2** la conso OpenAI réelle.
-
----
-
-## 📦 État actuel (24 mai 2026)
-
-### ✅ Fait
-- [x] Backend Node.js + Express (server.js)
-- [x] LLM Groq Llama 3.3 70B avec fallback Gemini (askLLM)
-- [x] TTS 3 providers : Edge (gratuit) / OpenAI HD (premium) / Google (fallback)
-- [x] 11 voix OpenAI configurables (coral par défaut)
-- [x] Page web de test (`/` — chat + micro Web Speech API)
-- [x] Scraper shootnbox.fr + smakk.fr : 405 pages en Markdown
-- [x] RAG MiniSearch BM25 : 6716 chunks indexés, cite ses sources
-- [x] Système FAQ personnalisée (`data/faq.json` + `faq.js`)
-- [x] Interface admin web (`/admin`) protégée par mot de passe
-- [x] Match FAQ prioritaire (skip LLM si match fort)
-
-### ⏳ À faire
-- [ ] **Déploiement Coolify** → `https://voix.swipego.app` (prérequis pour les 2 intégrations)
-- [ ] **Widget JS embeddable** pour shootnbox.fr (bouton micro flottant)
-- [ ] **Package Flutter** pour MyShootnbox (bouton micro dans l'app)
-- [ ] (Bonus) Branchement Supabase pour réponses dynamiques (créneau livraison réel, statut commande, etc.)
-
----
-
-## 🛣️ Roadmap
-
-### Phase 1 : Pilot local — ✅ FAIT
-Backend complet, RAG, FAQ, admin, test en local sur PC.
-
-### Phase 2 : Mise en prod — EN COURS
-1. Deploy Coolify sur nouveau serveur (217.182.89.133)
-2. Sous-domaine `voix.swipego.app` (Traefik SSL auto)
-3. Test public depuis mobile
-
-### Phase 3 : Intégration shootnbox.fr
-Widget JS auto-chargé via `<script src="https://voix.swipego.app/widget.js">` dans le footer WordPress. Bouton micro flottant en bas à droite, ouvre une modale chat.
-
-### Phase 4 : Intégration MyShootnbox (Flutter)
-Nouvel onglet "Assistant" ou bouton micro dans le menu principal. Utilise `speech_to_text` (STT natif iOS/Android) + http POST `/chat` + `just_audio` pour lecture MP3.
-
-### Phase 5 : Données dynamiques (optionnel)
-Branchement Supabase pour répondre avec les vraies infos client : créneau réservé, statut commande, lien galerie événement, etc. Demande un système d'auth par téléphone ou token de réservation.
-
----
-
-## 🔧 Commandes utiles
-
+Re-scraper le site (si shootnbox.fr/smakk.fr change) :
 ```powershell
-# Démarrer
-node server.js
+node scraper.js              # régénère data/scraped/ + manifest.json
+# puis redémarre le serveur pour réindexer
+```
 
-# Tester un endpoint
+Tester un endpoint :
+```powershell
 curl http://localhost:3000/health
-curl -X POST http://localhost:3000/chat -H "Content-Type: application/json" -d "{\"message\":\"prix borne mariage\"}"
-
-# Re-scraper (après modif site)
-node scraper.js
-
-# Voir ce que le RAG remonte pour une question
-curl -X POST http://localhost:3000/search -H "Content-Type: application/json" -d "{\"query\":\"aircam 360\",\"topK\":3}"
+curl -X POST http://localhost:3000/chat -H "Content-Type: application/json" -H "x-admin-token: <PASSWORD>" -d '{"message":"prix vegas mariage lyon"}'
 ```
 
 ---
 
-## 🐛 Problèmes connus
+## 11. Déploiement (Coolify)
 
-- **Edge TTS échoue dans la sandbox Claude Code** → bloqué au niveau WebSocket vers `speech.platform.bing.com`. Sur ta machine en dehors de Claude, ça devrait marcher. Pour l'instant on bypasse en utilisant OpenAI TTS.
-- **Variantes manquantes en FAQ** → si tu ajoutes une FAQ avec une seule formulation, le matching fuzzy n'attrapera pas les reformulations clients. Mets-en plusieurs.
-- **Pas de mémoire long terme** → l'historique est passé client → serveur à chaque appel (paramètre `history` de `/chat`). Pas de stockage des conversations côté serveur pour l'instant.
+Le repo GitHub est connecté à Coolify. **Workflow de déploiement** :
+
+```powershell
+git add . && git commit -m "mon changement"
+git push
+# Puis déclencher le build Coolify :
+curl "http://217.182.89.133:8000/api/v1/deploy?uuid=x12u3ebbfc6bmsn7iuh77jo2&force=true" -H "Authorization: Bearer <TOKEN_COOLIFY>"
+```
+
+Le `<TOKEN_COOLIFY>` est dans le CLAUDE.md global de l'utilisateur (infra partagée).
+
+Le build prend ~20-60s. Vérifier ensuite :
+```powershell
+curl https://voix.swipego.app/health
+```
+
+### ⚠️ Important sur le déploiement
+- Le repo doit être **public** OU avoir une deploy key SSH configurée dans Coolify (actuellement public car aucun secret dans le code).
+- Les **données scrapées** (`data/scraped/`) DOIVENT être commitées (sinon RAG = 0 chunks en prod). Elles sont volontairement retirées du `.gitignore`.
+- Les **secrets** sont en variables d'env Coolify (pas dans le repo). Pour en ajouter une :
+  ```
+  POST http://217.182.89.133:8000/api/v1/applications/x12u3ebbfc6bmsn7iuh77jo2/envs
+  Body JSON : {"key":"NOM","value":"valeur","is_preview":false,"is_literal":true}
+  ```
+  ⚠️ ne PAS envoyer le champ `is_build_time` (rejeté par l'API).
+
+### API Coolify : note
+L'API ne répond QUE sur l'IP directe `http://217.182.89.133:8000`, **pas** sur `https://coolify.swipego.app` (problème de routage Traefik à ce jour).
+
+---
+
+## 12. Problèmes rencontrés & solutions (pour ne pas refaire les erreurs)
+
+| Problème | Cause | Solution appliquée |
+|---|---|---|
+| **Edge TTS échoue** (Connect Error) | Sandbox Claude Code bloque le WebSocket vers `speech.platform.bing.com` | Bascule sur OpenAI TTS. Edge marche sur une vraie machine mais peu fiable, on l'a abandonné en prod |
+| **Scraper smakk : 391 chars partout** | smakk utilise Elementor, mauvais sélecteur CSS | Détection `.elementor-widget-theme-post-content` |
+| **Scraper shootnbox : 16 pages au lieu de 205** | Le `<body>` a la classe `header-layout-logo-menu` → mes filtres `[class*="header"]` viraient tout le body | Sélecteurs ciblés sur `div[...]` + `[id*=...]`, jamais sur le body |
+| **RAG plante au boot** | `:` dans les titres cassait le YAML frontmatter | Échapper les valeurs frontmatter avec guillemets |
+| **FAQ "Vegas" matche Aircam** | fuzzy matching trop permissif (score 26 sur seuil 8) | Seuil monté à 30 + ratio top1/top2 ≥ 2.5 + AND au lieu de OR |
+| **/train ne garde pas le contexte** | `/api/train/test` n'envoyait pas l'historique | Ajout du paramètre `history` + maintien côté client |
+| **Quota Groq explosé (97k/100k)** | ~37 requêtes de test × ~6k tokens (catalogue entier injecté) | Optimisation : catalogue contextualisé, prompt compressé → ~2k tokens/req |
+| **Clé Gemini "limit: 0" / 403** | Projet Google AI Studio bloqué/sans accès free tier | **NON RÉSOLU** — la clé Gemini actuelle ne marche pas. Fallback OpenAI prend le relais. À refaire : créer un nouveau projet Google AI Studio + nouvelle clé |
+
+---
+
+## 13. Coûts
+
+Hypothèse usage modéré (quelques centaines de questions/mois) :
+
+| Poste | Coût |
+|---|---|
+| Groq (cerveau, 95% des requêtes) | **0 €** |
+| Gemini (fallback) | 0 € (quand ça marche) |
+| OpenAI GPT-4o-mini (fallback ultime) | ~0,3 €/mois pire cas |
+| OpenAI TTS Coral (voix) | ~1-2 €/mois selon volume |
+| Serveur OVH + Coolify | déjà payé (infra partagée) |
+| **TOTAL** | **~1-2 €/mois** |
+
+Astuce : un bon remplissage de la FAQ réduit les appels LLM (match direct gratuit) ET améliore la qualité.
+
+---
+
+## 14. Ce qui reste à faire (roadmap)
+
+- [ ] **Widget JS embeddable** pour shootnbox.fr (bouton micro flottant `<script src=...>`)
+- [ ] **Intégration Flutter** dans MyShootnbox (package Dart : `speech_to_text` + http + `just_audio`)
+- [ ] **Recréer une clé Gemini fonctionnelle** (la clé actuelle est bloquée)
+- [ ] **Remplir le catalogue** avec les vrais tarifs (`data/catalogue.json` a des placeholders sur les prix)
+- [ ] **Enrichir la FAQ** (objectif 50-100 entrées via /train)
+- [ ] (Bonus) **Branchement Supabase** pour réponses dynamiques : dispo réelle d'une date, statut commande, créneau de livraison réel d'un client
+- [ ] (Bonus) **Persistance des conversations** (actuellement l'historique vit dans le navigateur, perdu au refresh)
+
+---
+
+## 15. Checklist pour reprendre le projet
+
+Si tu es un nouveau dev / Claude qui reprend :
+
+1. **Lis ce fichier en entier.**
+2. Clone le repo : `git clone https://github.com/AmazingeventParis/voix`
+3. Récupère les secrets : demande à l'utilisateur le `.env` (ou les clés). Sans clés LLM, rien ne marche.
+4. `npm install` puis `node server.js` → teste sur http://localhost:3000
+5. Pour comprendre le code, commence par **server.js** (le flux `/chat`), puis rag.js, faq.js.
+6. Pour modifier le comportement commercial : édite `SYSTEM_PROMPT_BASE` dans server.js.
+7. Pour déployer : `git push` + appel API Coolify (voir §11).
+8. **Prochaine grosse étape logique** : le widget JS pour shootnbox.fr (front simple qui appelle `/chat`), puis l'intégration Flutter.
+
+### Détails métier importants
+- Shootnbox = location photobooths (Vegas, AirCam 360, Ring, Spinner, Fashion Box, Photobooth, Karaoké, Photocall)
+- Smakk = marque mariage du même groupe (smakk.fr)
+- MyShootnbox = app mobile pour les invités (photos, défis, galerie)
+- Le ton doit être **commercial chaleureux**, qualifier avant de chiffrer, toujours finir par un CTA (devis sur shootnbox.fr)
+- Voix par défaut : **Coral** (OpenAI), féminine chaleureuse
+
+---
+
+*Fin du document. Pour toute question sur l'infra partagée (serveur, Coolify, Supabase), voir le CLAUDE.md global de l'utilisateur.*
